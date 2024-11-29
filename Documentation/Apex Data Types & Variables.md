@@ -17,12 +17,11 @@ As Apex is strongly typed all the variables must be declared with the Data Types
 
 <details>
   <summary> Primitive Data Types</summary> 
-  | Data Type     | Description                | Example                |
-  | ------------- | -------------------------- | ---------------------- |
 
   
-  | Data Type| Description                         | Example                   |
-  |---------|-------------------------------------|---------------------------|
-  |Integer  | 32-bit number withou decimal point  | Integer iCount = 1;       |
+  | Data Type | Description                         | Example                   |
+  |-----------|-------------------------------------|---------------------------|
+  |Integer    | 32-bit number withou decimal point  | Integer iCount = 1;       |
+  
 </details>
 
