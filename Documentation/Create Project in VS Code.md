@@ -17,7 +17,7 @@
 4. check the folders for the components.
 
 
-## Depoy the code from VS to Saelsforce Org
+## Depoy the code from VS to Salesforce Org
 
 1. Save the changes within VS Code using cmd + s (macOS) or ctrl +s (windows)
 2. Right click and execute **SFDX:Deploy this source to org**
