@@ -1,6 +1,6 @@
 # Setup your VS Code for Development
 
-1. Create a new Salesforce Developer org for this training  - [Sign up] (https://developer.salesforce.com/signup) and reset your password
+1. Create a new Salesforce Developer org for this training  - [Sign up](https://developer.salesforce.com/signup) and reset your password
 2. Install VS code and CLI aloong with the extensions mentioned in the next step. Follow steps - [Quick Start: Visual Studio Code for Salesforce Development](https://trailhead.salesforce.com/content/learn/projects/quickstart-vscode-salesforce?trail_id=set-up-your-workspace-and-install-developer-tools)
 3. Enable the Extensions given below:
    _ Apex
@@ -11,7 +11,7 @@
    _ SOQL
    - Visualforce
 4. Create a new Apex Class - "HelloWorld" using developer console
-5. In Visual studio, create new Project with Manifest & Authorize newly created org following steps given in - [Create Project in VS Code] (Documentation/Create Project in VS Code.md) 
+5. In Visual studio, create new Project with Manifest & Authorize newly created org following steps given in - [Create Project in VS Code](./Documentation/Create Project in VS Code.md) 
 
 
 
