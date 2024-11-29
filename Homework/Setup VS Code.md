@@ -11,7 +11,7 @@
    - SOQL
    - Visualforce
 4. Create a new Apex Class - "HelloWorld" using developer console
-5. In Visual studio, create new Project with Manifest & Authorize newly created org following steps given in - [Create Project in VS Code](Documentation/Create Project in VS Code.md)
+5. In Visual studio, create new Project with Manifest & Authorize newly created org following steps given in - Documentation/Create Project in VS Code.md
 
 
 
