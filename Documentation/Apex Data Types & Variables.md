@@ -22,6 +22,11 @@ As Apex is strongly typed all the variables must be declared with the Data Types
   | Data Type | Description                         | Example                   |
   |-----------|-------------------------------------|---------------------------|
   |Integer    | 32-bit number withou decimal point  | Integer iCount = 1;       |
+  |Decimal    | number with decimal point           | Decimal amount = 120.40;  |
+  |Double     | 64-bit number with decimal          | Double pi = 3.14159;      |
+  |Blob       | Single object stores binary data    |                           |
+  |String     | Characters set within single quotes | String name = 'Apex';     |
+  |Boolean    | A value with true, false or null    | Boolean isValid = true;   |
   
 </details>
 
