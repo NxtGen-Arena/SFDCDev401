@@ -3,12 +3,10 @@
 - Apex is a block structured language, which means we write blocks of the code.
 - Blocks are defined with curly braces {} and All the statements end with semicolon ;
 - A class can contain variables and methods, constructors.
-- 
 - Primitiive Data types are all objects and allows to call methods from these objects.
 
 
 # What is Class?
-
 A class is a template or bluprint from which objects are created. It basically describes the details.We will talk more about classes later. Public classes are accessible to application within which they are located. TO use class anywhere within Salesforce, define classes as Public.
 
 # Variables 
@@ -40,7 +38,7 @@ As Apex is strongly typed all the variables must be declared with the Data Types
 The most common approach to resolve it is Constants class, which contains all final variables. You can create a metadata to define these or if there are too many approach is to define them in the apex class.
 </details>
 
-<details>
-  <summary> References</summary> 
-[^1]:  [Constants in Apex](https://beyondthecloud.dev/blog/constants-in-apex)
-</details>
+
+# References 
+[Constants in Apex](https://beyondthecloud.dev/blog/constants-in-apex)
+
