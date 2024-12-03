@@ -39,5 +39,7 @@ As Apex is strongly typed all the variables must be declared with the Data Types
 > Picklist values, profile and permission set names, common business values – all constants can be scattered across Apex code. The best practice is to store them in one place to avoid repetitions. (DRY)
 The most common approach to resolve it is Constants class, which contains all final variables. You can create a metadata to define these or if there are too many approach is to define them in the apex class.
 
-
+<details>
+  <summary> References</summary> 
 [^1]:  [Constants in Apex](https://beyondthecloud.dev/blog/constants-in-apex)
+</details>
