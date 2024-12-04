@@ -63,4 +63,4 @@ Here is a Demo Class [^1].
 - Collections can consume large amounts of memory, especially with large datasets, leading to out-of-memory errors. Minimize memory usage by clearing unused collections and using smaller data structures where possible.
 - Set and Map enforce uniqueness based on the hashcode and equals methods of the objects being stored. If you store custom objects, you may need to override these methods for proper behavior. Override hashCode and equals methods in your custom objects to ensure correct behavior when used in Sets and Maps.
 
-[^1]: [Collections.cls](./CodeBase/Collections.cls)
+[^1]: [Collections.cls](../CodeBase/Collections.cls)
