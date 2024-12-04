@@ -34,3 +34,8 @@
 
 
 ![image](https://github.com/user-attachments/assets/9f524f4c-2e8c-4657-9de0-474911c537b7)
+
+
+# References for further study
+[Success Cloud Coding Conventions](https://trailhead.salesforce.com/content/learn/modules/success-cloud-coding-conventions)
+[Salesforce Naming Conventions by Apex Hours](https://www.apexhours.com/salesforce-naming-conventions-best-practices/)
