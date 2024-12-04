@@ -37,5 +37,5 @@
 
 
 # References for further study
-[Success Cloud Coding Conventions](https://trailhead.salesforce.com/content/learn/modules/success-cloud-coding-conventions)
-[Salesforce Naming Conventions by Apex Hours](https://www.apexhours.com/salesforce-naming-conventions-best-practices/)
+1. [Success Cloud Coding Conventions](https://trailhead.salesforce.com/content/learn/modules/success-cloud-coding-conventions)
+2. [Salesforce Naming Conventions by Apex Hours](https://www.apexhours.com/salesforce-naming-conventions-best-practices/)
