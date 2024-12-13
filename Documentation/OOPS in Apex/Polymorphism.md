@@ -11,13 +11,13 @@ In Salesforce Apex, polymorphism enables you to write generic code that can work
 
 ## When to use Method Overloading - Benefits
 
-**Flexible Behavior:** 
+**Flexible Behavior:**
 When you want a method to handle multiple types of data but perform similar tasks (e.g., printing different types of messages). Method’s core functionality is the same but may vary slightly based on input
 
-**Code Clarity: **
+**Code Clarity:**
 When you want the code to be clean and readable by keeping related logic under the same method name. Avoid having multiple method names like barkLoudly(), barkManyTimes(), etc. Instead, you use the same method name, making the code more intuitive and easier to maintain.
 
-**Improved Reusability: **
+**Improved Reusability:**
 Reduces the need to define multiple methods with different names for similar functionality, making the code more reusable.
 
 
