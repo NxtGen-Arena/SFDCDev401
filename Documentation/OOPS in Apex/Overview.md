@@ -1,9 +1,10 @@
 # OOPs Concept in Salesforce
 
-Salesforce Apex is a powerful tool for building flexible solutions within Salesforce. It uses Object-Oriented Programming (OOP) concepts, which are like building blocks for developers. Understanding these concepts is really important for developers to make the most out of Salesforce.By using OOP in Apex, developers can make their code more organized, easier to understand, and simpler to update. This helps them create better solutions for businesses using Salesforce.
+Object-Oriented Programming (OOPs) concepts in Salesforce Apex refer to the principles of organizing code around objects, which are like blueprints for creating instances of data. 
 
-Object-Oriented Programming (OOPs) concepts in Salesforce Apex refer to the principles of organizing code around objects, which are like blueprints for creating instances of data. OOPs concepts in Apex include classes, objects, inheritance, encapsulation, and polymorphism, which help in creating modular, reusable, and maintainable code.
+Salesforce Apex is a powerful tool for building flexible solutions within Salesforce. and Apex is really good at following the principles of OOP. It’s important to understand these principles because they help us write code that works well and is easy to change. Knowing how OOP works in Salesforce Apex is key for making programs that are efficient and easy to work with. These concepts are the building blocks of modern software development on the Salesforce platform. They let developers create programs that are smart and can grow with the needs of the business.
 
+OOPs concepts in Apex include classes, objects, inheritance, encapsulation, and polymorphism, which help in creating modular, reusable, and maintainable code.
 
 ## Classes
 - Blueprints for making objects. Defines what information an object can hold and what it can do.
@@ -19,6 +20,23 @@ myDog.bark();    //non-static method
 
 Dog.dontBark();   //static method
 ```
+
+## Abstraction:
+Abstraction is about simplifying things. In Salesforce Apex, it means focusing on what something does, rather than how it does it. So, instead of worrying about how a car moves, we just care that it can move. We leave the details for later.
+
+## Inheritance:
+Inheritance is like passing down traits in a family. In Salesforce Apex, it means a new class can inherit characteristics from an existing class. For instance, an electric car can inherit traits from a regular car, like having wheels and doors. 
+
+Inheritance is through extension and virtual class and methods.
+
+## Polymorphism:
+Polymorphism is about having different forms. In Salesforce Apex, it means methods or objects can do different things in different situations. For example, a method to draw shapes might draw circles differently than squares. Polymorphism is achieved through Method overloading and overriding.
+
+## Encapsulation:
+Bundling data and methods together and protecting them. So, you can’t mess with a car’s speed directly you have to use methods like accelerate or brake. This helps keep things organized and safe.
+
+
+
 
 
 
