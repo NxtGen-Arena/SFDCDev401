@@ -35,9 +35,11 @@ Apex is tightly integrated with the Lightning Platform persistence layer. Record
 
 <Details>
    <Summary>Best Practices</Summary>
+   
    1. Ensure all the required fields are populated.
    2. Don't run DML statements on null elements
    3. Watch out for governor limits.
    4. Look for the field lengths and data types.
+      
 </Details>
 
