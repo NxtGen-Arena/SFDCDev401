@@ -17,7 +17,8 @@ Classes Consists of:
 2. You do not have to use access modifier for the declaration of the inner level class
 3. Required: the keyword class followed by the name of the class
 
-[!IMPORTANT] A class can implement multiple interfaces, but only extend one existing class. This restriction means that Apex does not support "multiple inheritance".
+>[!IMPORTANT]
+> A class can implement multiple interfaces, but only extend one existing class. This restriction means that Apex does not support "multiple inheritance".
 
 ### How classes are defined in Apex
   ```
