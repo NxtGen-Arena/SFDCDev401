@@ -6,11 +6,11 @@
 - In Apex Classes are fundamental units of code that define the behavior of objects.They encapsulate data and methods to operate on that data. Apex classes are stored and executed on Salesforce servers. Class can implement Interfaces and can be extended.
 
 Classes Consists of:
-  _ Access Modifiers: Decides who can access the class
-  _ Variables: Store the specific data temporary within class and method.used to specify state of an object, such as the object Name and Type. Since these variables are associated with a class and are       
+  * Access Modifiers: Decides who can access the class
+  * Variables: Store the specific data temporary within class and method.used to specify state of an object, such as the object Name and Type. Since these variables are associated with a class and are       
     members of it, they are commonly refered to as **member variables**.
-  _ Methods: Process the business logic using I/P parameters and returns void or results.
-  _ Constructors: First entry intializers for classes.
+  * Methods: Process the business logic using I/P parameters and returns void or results.
+  * Constructors: First entry intializers for classes.
 
 ### To define a class
 1. You must use one of the access modifiers (such as public) in definition of the top-level class
