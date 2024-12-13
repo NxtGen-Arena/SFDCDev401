@@ -7,25 +7,6 @@ Object-Oriented Programming (OOPs) concepts in Salesforce Apex refer to the prin
 
 ## Classes
 - Blueprints for making objects. Defines what information an object can hold and what it can do.
-- In Apex Classes are fundamental units of code that define the behavior of objects.
-- They encapsulate data and methods to operate on that data.
-- Apex classes are stored and executed on Salesforce servers.
-- Class can implement Interfaces and can be extended.
-- Classes Consists of:
-  _ Access Modifiers: Decides who can access the class
-  _ Variables: Store the specific data temporary within class and method
-  _ Methods: Process the business logic using I/P parameters and returns void or results.
-  _Constructors: First entry intializers for classes.
-  
-
-```
-class Dog {
-  public Dog() {...} //Default constructor
-  String breed;      //Variable declaration
-  void bark(){...}   //Methods
-  static void dontBark() {..} // static method
-}
-```
 
 ## Objects
 - Container that holds information and is instanceOf Class.
