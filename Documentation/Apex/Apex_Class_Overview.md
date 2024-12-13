@@ -1,4 +1,6 @@
-### Apex Classes,Variables & Methods
+# Apex Classes,Variables & Methods
+
+## Apex Class:
 
 - A class can contain variables and methods.A class can contain other classes, exception types and initialization code.
 - In Apex Classes are fundamental units of code that define the behavior of objects.They encapsulate data and methods to operate on that data. Apex classes are stored and executed on Salesforce servers. Class can implement Interfaces and can be extended.
@@ -36,7 +38,7 @@ Classes Consists of:
 | Virtual               | class allows extension and overrides.You cannot override a method with the override keyword unless the class has been defined as virtual. |
 | Abstract              | class contains abstract methods, that is, methods that only have their signature declared and no body defined.|
 
-### To declare a variable
+## Declare a variable
 1. **Optional**: Modifiers, such as public or final, as well as static.
 2. **Required**: The data type of the variable, such as String or Boolean.
 3. **Required**: The name of the variable.
@@ -47,7 +49,7 @@ Classes Consists of:
      [public | private | protected | global] [final] [static] data_type variable_name [= value]
      ```
   
-  ### To define a method
+  ## Define a method
   1. **Optional**: Modifiers, such as public or protected.
   2. **Required**: The data type of the value returned by the method, such as String or Integer. Use void if the method does not return a value.
   3. **Required**: A list of input parameters for the method, separated by commas, each preceded by its data type, and enclosed in parentheses (). If there are no parameters, use a set of empty parentheses.     A method can only have 32 input parameters.
