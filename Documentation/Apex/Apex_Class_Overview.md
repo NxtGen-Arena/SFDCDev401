@@ -50,29 +50,34 @@ Classes Consists of:
      [public | private | protected | global] [final] [static] data_type variable_name [= value]
      ```
   
-  ## Define a method
+  ## Methods in Apex
+  1. A method is a procedure associated with a class.
+  2. A method defines the behavior of the objects that are created from the class. Another way to say this is that a method is an action that an object is able to perform. 
+  3. You can use override to override methods only in classes that have been defined as virtual or abstract.
+  4. methods that return values can also be run as a statement if their results are not assigned to another variable. Can be recursive.
+  5. Can have side effects, such as DML insert statements that initialize sObject record IDs.
+  6. Can refer to themselves or to methods defined later in the same class or anonymous block. Apex parses methods in two phases, so forward declarations are not needed.
+  7. Can be polymorphic. For example, a method named example can be implemented in two ways, one with a single Integer parameter and one with two Integer parameters.
+  8. Depending on whether the method is called with one or two Integers, the Apex parser selects the appropriate implementation to execute. If the parser cannot find an exact match, it then seeks an
+      approximate match using type coercion rules.
+  9. If the parser finds multiple approximate matches, a parse-time exception is generated.
+  10. Methods with a void return type are typically invoked as a stand-alone statement in Apex code.
+
+  ## Method Declaration:
   1. **Optional**: Modifiers, such as public or protected.
   2. **Required**: The data type of the value returned by the method, such as String or Integer. Use void if the method does not return a value.
   3. **Required**: A list of input parameters for the method, separated by commas, each preceded by its data type, and enclosed in parentheses (). If there are no parameters, use a set of empty parentheses.     A method can only have 32 input parameters.
   4. **Required**: The body of the method, enclosed in braces {}. All the code for the method, including any local variable declarations, is contained here.
 
-   Method Structure:
-    ```
-    [public | private | protected | global] [override] [static] data_type method_name (input parameters)
-    {
+ 
+  
+   ## Method Structure:
+   ```
+    [public | private | protected | global] [override] [static] return_data_type method_name (input parameters) {
         // The body of the method
-    }
-    ```
-  5. You can use override to override methods only in classes that have been defined as virtual or abstract.
-  6. methods that return values can also be run as a statement if their results are not assigned to another variable.
-  7. Can be recursive.
-  8. Can have side effects, such as DML insert statements that initialize sObject record IDs.
-  9. Can refer to themselves or to methods defined later in the same class or anonymous block. Apex parses methods in two phases, so forward declarations are not needed.
-  10. Can be polymorphic. For example, a method named example can be implemented in two ways, one with a single Integer parameter and one with two Integer parameters. Depending on whether the method is     
-      called with one or two Integers, the Apex parser selects the appropriate implementation to execute. If the parser cannot find an exact match, it then seeks an approximate match using type coercion     
-      rules.
-  11. If the parser finds multiple approximate matches, a parse-time exception is generated.
-  12. Methods with a void return type are typically invoked as a stand-alone statement in Apex code.
+        return; 
+        }
+   ```
 
 ### Passing Method Arguments by Value
 * all primitive data type arguments, such as Integer or String, are passed into methods by value. This fact means that any changes to the arguments exist only within the scope of the method. When the method returns, the changes to the arguments are lost.
