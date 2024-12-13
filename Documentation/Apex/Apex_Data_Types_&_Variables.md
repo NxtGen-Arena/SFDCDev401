@@ -1,4 +1,4 @@
-### Apex: Data Types
+# Apex Data Types
 
 - Apex is a block structured language, which means we write blocks of the code.
 - Blocks are defined with curly braces {} and All the statements end with semicolon ;
