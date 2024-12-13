@@ -1,17 +1,32 @@
-### Apex Classes
+### Apex Classes,Variables & Methods
 
-- A class can contain variables and methods.
-- Variables are used to specify state of an object, such as the object Name and Type. Since these variables are associated with a class and are members of it, they are commonly refered to as member 
-  variables.
-- Methods are used to control behavior, such as "getOtherQuotes" or "copyLineItems"
-- A class can contain other classes, exception types and initialization code.
-- An "interface" is like a class in which none of the methods have been implemented.
+- A class can contain variables and methods.A class can contain other classes, exception types and initialization code.
+- In Apex Classes are fundamental units of code that define the behavior of objects.They encapsulate data and methods to operate on that data. Apex classes are stored and executed on Salesforce servers. Class can implement Interfaces and can be extended.
+
+Classes Consists of:
+  _ Access Modifiers: Decides who can access the class
+  _ Variables: Store the specific data temporary within class and method.used to specify state of an object, such as the object Name and Type. Since these variables are associated with a class and are       
+    members of it, they are commonly refered to as **member variables**.
+  _ Methods: Process the business logic using I/P parameters and returns void or results.
+  _ Constructors: First entry intializers for classes.
 
 ### To define a class
 1. You must use one of the access modifiers (such as public) in definition of the top-level class
 2. You do not have to use access modifier for the declaration of the inner level class
 3. Required: the keyword class followed by the name of the class
-4. A class can implement multiple interfaces, but only extend one existing class. This restriction means that Apex does not support `multiple inheritance`.
+
+[!IMPORTANT] A class can implement multiple interfaces, but only extend one existing class. This restriction means that Apex does not support "multiple inheritance".
+
+### How classes are defined in Apex
+  ```
+  class Dog {
+    public Dog() {...} //Default constructor
+    String breed;      //Variable declaration
+    void bark(){...}   //Methods
+    static void dontBark() {..} // static method
+  }
+  ```
+### Class Access Modifiers who can perform what actions with the class. 
 
 | Access Modifier       | Purpose                                | 
 |-----------------------|----------------------------------------|
