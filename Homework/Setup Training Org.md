@@ -6,4 +6,4 @@
    
 2. Check your inbox, confirm email address and reset the password.
 3. Login to your training org
-4. Link this org to your VS Code follow - [Setup VS Code](Setup vS Code.md)
+4. Link this org to your VS Code follow - [Setup VS Code](Setup-VSCode.md)
