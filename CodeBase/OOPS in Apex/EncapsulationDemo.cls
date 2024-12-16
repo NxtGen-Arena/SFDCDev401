@@ -1,7 +1,8 @@
 # While Saving the class use "BankAccount" as a name
 
 public class BankAccount {
-    // Private variables to achieve encapsulation
+    // Private variables to achieve encapsulation and 
+    // making sure they cannot be accessed or modified directly from outside the class.
     private String accountHolderName;
     private String accountNumber;
     private Decimal balance;
@@ -12,6 +13,8 @@ public class BankAccount {
         this.accountNumber = accountNumber;
         this.balance = initialBalance;
     }
+
+    //Getter and Setter Methods : control how the private variables are accessed or updated, adding a layer of validation or logic if needed.
 
     // Getter for accountHolderName
     public String getAccountHolderName() {
@@ -35,6 +38,7 @@ public class BankAccount {
         return balance;
     }
 
+    //encapsulate the logic for modifying the balance, including validations to prevent invalid operations.
     // Method to deposit money into the account
     public void deposit(Decimal amount) {
         if (amount > 0) {
