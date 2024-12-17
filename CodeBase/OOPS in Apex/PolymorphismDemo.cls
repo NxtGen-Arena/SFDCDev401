@@ -1,4 +1,4 @@
-public class PolymorphismDemo {
+public class NotificationMessage {
 
     // Method overloading by changing the number of parameters
     public void displayMessage() {
