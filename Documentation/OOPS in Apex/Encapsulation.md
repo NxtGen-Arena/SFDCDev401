@@ -37,5 +37,6 @@
   <Summary>References and Further Read</Summary>
 
   1. Sample Class - /CodeBase/OOPS in Apex/ EncapsulationDemo.cls
+  2. [Encapsulation](https://www.youtube.com/watch?v=JLF8rpfIYjI)
 
 </Details>
