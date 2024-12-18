@@ -32,8 +32,8 @@ When a class extends an abstract class, it must provide an implementation for al
 **Abstract classes can have final methods:** Abstract classes can also have final methods that cannot be overridden by the inheriting classes. This can be useful if the abstract class wants to enforce a specific behaviour that should not be changed by the inheriting classes.
 
 <Details>
-  <Summary>References and Further Reading </Summary>
-  - ## [Refer Sample Class from] - /OOPS in Apex/Abstraction 
+  <Summary> References and Further Reading </Summary>
+  - Refer Sample Class - /OOPS in Apex/Abstraction
 </Details>
 
 
