@@ -12,4 +12,8 @@ The method in the parent class is declared as virtual (to allow overriding).
 The subclass uses the override keyword to provide a specific implementation. 
 When a method is called on a reference of the parent class, the runtime determines which version of the method to invoke based on the actual object type.
 
+![image](https://github.com/user-attachments/assets/d1ce1d02-9695-45c7-b396-b61a51b5d328)
+
+
+
 
