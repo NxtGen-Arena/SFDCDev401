@@ -16,4 +16,9 @@ Using Triggers in Salesforce provides numerous benefits, including:
 * Scalability - Triggers are scalable and can handle large volumes of data and complex calculations.
 * Flexibility- Triggers can be created on standard and custom objects, providing flexibility and customization options.
 
+## Common Uses of Triggers in Salesforce
+
+![image](https://github.com/user-attachments/assets/f1dddba2-6097-470f-a346-91e215fe70e7)
+
+
 Overall, Triggers are a powerful tool in Salesforce that can improve productivity, streamline processes, and enhance the user experience.
