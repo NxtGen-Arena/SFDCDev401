@@ -3,6 +3,8 @@
 * Before triggers - are used to update or validate record values before they are saved to the database.
 * After triggers - are used to access field values that are set by the system (such as record's Id or `LastModifiedDate` field), and to affect changes in other records.  The records that fire the after trigger are read-only.
 
+> [!Important] Ids are generated after "before insert" triggers.
+
 ### Using Context Variables
 Triggers are often used to access and manage records related to the records in the trigger context - the records that caused this trigger to fire.
 
