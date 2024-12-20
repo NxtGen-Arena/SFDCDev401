@@ -111,8 +111,9 @@ To ensure the accurate tracking of number of Active, Inactive and Total Instruct
 5. Update the No_of_Contacts__c field with the new count
 6. Perform bulk dml to update the account records
      
-## Classes to refer:
+## Solution:
 
-[ContactTrigger.Trigger](/CodeBase/Triggers/Contacttrigger.trigger)
+[ContactTrigger.Trigger](/CodeBase/Triggers/Contacttrigger.trigger) 
+
 [ContacttriggerHandler.cls](/CodeBase/Triggers/ContacttriggerHandler.cls)
 
