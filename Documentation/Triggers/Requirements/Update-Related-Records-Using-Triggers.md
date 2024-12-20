@@ -113,6 +113,6 @@ To ensure the accurate tracking of number of Active, Inactive and Total Instruct
      
 ## Classes to refer:
 
-[ContactTrigger.Trigger](../CodeBase/Triggers/Contacttrigger.trigger)
-[ContacttriggerHandler.cls](../CodeBase/Triggers/ContacttriggerHandler.cls)
+[ContactTrigger.Trigger](/CodeBase/Triggers/Contacttrigger.trigger)
+[ContacttriggerHandler.cls](/CodeBase/Triggers/ContacttriggerHandler.cls)
 
