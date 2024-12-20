@@ -32,3 +32,4 @@ Currently Leaders are facinf challgenges with reporting on Cosed-Lost opportunit
 
 * [Opportunity.trigger](/CodeBase/Triggers/OpportunityTrigger.trigger)
 * [OpportunityHandler.cls](/CodeBase/Triggers/OpportunityHandler.cls)
+* [AccountDeletion.trigger](/CodeBase/Triggers/AccountDeletion.trigger)
