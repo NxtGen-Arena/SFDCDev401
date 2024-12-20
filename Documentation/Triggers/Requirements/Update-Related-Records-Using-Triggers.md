@@ -94,18 +94,15 @@ Custom Field to be created:
 Test with bulk inserts (up to Salesforce bulk limits) to ensure governor limits are respected.
 
 **Benefits**:
-
 - Improved data accuracy for reporting and analysis.
 - Reduced manual effort for users.
 - Scalable and maintainable architecture for future enhancements.
-
 
 ## Business Requirement:
 
 To ensure the accurate tracking of number of Active, Inactive and Total Instructors aassociated with the Institute.
 
-
-Psuedo Logic:
+**Psuedo Logic:**
 
 1. Retrieve all the contacts being inerted, updated,deleted
 2. Check if the contact has linked account, or if the account linked on contact has been updated.
@@ -114,5 +111,8 @@ Psuedo Logic:
 5. Update the No_of_Contacts__c field with the new count
 6. Perform bulk dml to update the account records
      
+## Classes to refer:
 
-  
+[ContactTrigger.Trigger](../CodeBase/Triggers/Contacttrigger.trigger)
+[ContacttriggerHandler.cls](../CodeBase/Triggers/ContacttriggerHandler.cls)
+
