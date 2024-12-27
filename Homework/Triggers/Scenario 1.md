@@ -1,7 +1,4 @@
-# Triggers Homework
-
-<Details>
-  <Summary>Account Address Sync </Summary>
+# Sync Account and Contact Addresses
   
   **Business Challenge**:
   
@@ -18,5 +15,3 @@
  * The sync should be controlled and should be able to be triggered based on the Account flag "Enable Address Sync".
  * This function should work only for the Active Accounts.
  * Business also wants to capture when was the last address change triggered.
-
-</Details>
