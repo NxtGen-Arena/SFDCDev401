@@ -1,4 +1,5 @@
-# SFDCDev-401
+# SFDCDev-401 - Programmatic Development on Salesforce Lightning Platform
+
 Repository for all the Salesforce Development training. This contains codebase, documentation and links required for upskilling you. All the homework that needs to be completed is also located in this repository.
 
 1. CodeBase - Sample Code and any code built while learning in live classes
