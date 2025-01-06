@@ -39,6 +39,5 @@ Hotel reservation software is designed to automate and facilitate all booking-re
 <details> 
   <summary> Requirements </summary>
 
-
 1. 
 
