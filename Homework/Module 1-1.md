@@ -1,7 +1,8 @@
-# Preparing for Salesforce Customization
+# Prepare Org for Training sessions
 
-## Tasks:
-
-1. Create a new Training Org and reset your user details.
-2. Confirm your email address, set security question and reset password.
-3. Login to your Salesforce Training Org.
+1. Sign-up for a new Developer Org - [Developer Org](https://developer.salesforce.com/signup)
+   > [!Important]
+   > make sure to create unique username, this cannot be re-used throughout Salesforce ecosystem later.
+   
+2. Check your inbox, confirm email address and reset the password.
+3. Login to your training org and update User Profile to reflect Picture and other personal information.
