@@ -4,7 +4,9 @@ Challenges:
 
 * No Single Source of truth 
 * Rooms are double booked and cancellations are not commuicated to property.
-* 
+* No centralized view for stakeholders
+* Decreased customer satisfaction due to communication issues
+* Customer reps lacks 360 view for the customers profile
 
 What is business looking for?
 
