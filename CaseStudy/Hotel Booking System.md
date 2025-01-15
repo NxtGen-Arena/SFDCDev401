@@ -1,4 +1,4 @@
-Wonderland Hotel is a hotel chain with international presence. The bookings are done through - direct travelers, travel agents or tour operators, Direct Property. 
+Wonderland Hotel is a hotel chain with international presence. The bookings are done through - direct travelers, travel agents or tour operators, Direct Property. They want to enable customers to make reservations directly from the Hotel System or via Front desk, to avoid middleman.
 
 Challenges:
 
