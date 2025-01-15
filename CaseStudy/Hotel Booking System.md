@@ -63,6 +63,7 @@ Hotel reservation software is designed to automate and facilitate all booking-re
      reservation record, and shared with other modules.
    - Sometimes reservations are cancelled. In this case, the room has to be unblocked to allow for further booking, and, if prepayment took place, a refund has to be issued (if envisaged by the hotel’s 
      policy). As soon as availability changes in the CRS, the channel manager shares this information across different channels.
+ 7. Data collection and reporting. Reports for reservation-related processes to Keep track of expected arrivals, booking activity, occupancy, revenue, and other critical hotel KPIs. 
 
 ![image](https://github.com/user-attachments/assets/6c095e72-16cf-4fa8-aefd-aa91253f09c5)
 
