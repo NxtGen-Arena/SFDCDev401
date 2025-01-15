@@ -2,7 +2,7 @@
 
 <Details>
   <Summary> Pre-Work: Admin and Configuration Concepts</Summary>
-
+  
 | Type  | Module Ref. | Comments/Notes |
 | ------------- | ------------- | ------------- |
 | Demo Environment  | [Spin up new Development Org](https://developer.salesforce.com/signup)  | Make Sure username is in the form of email and add ".dev{yy}}" ot make it unique. Username once used cannot be reused.|
