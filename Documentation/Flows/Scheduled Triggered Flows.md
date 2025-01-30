@@ -12,7 +12,9 @@ Many a times we need operations to be executed in the background at a specified 
 - Testing and debugging schedule-triggered flows is fairly limited. Unlike a record-triggered flow or autolaunched flow where you can specify the record to use to debug, if you debug the schedule- triggered flow, it will automatically take the oldest matching record.
 
 
-
+## Things to look out for
+- The Automated Process user mentioned under "Process Automation Settings" runs schedule-triggered flows
+- Scheduled jobs run in background so make sure to add error handling mechanism to process the final results. Use fault paths to send email notififcations or log the final results in custom object for better tracking.
 
 
 
