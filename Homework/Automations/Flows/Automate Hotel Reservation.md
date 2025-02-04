@@ -41,7 +41,7 @@ Create all the required fields to build this automation.
 |Reservation|Guest Name |Guest|Lookup filter (Contact = guest)|
 |Reservation|Check-in Date |Date|
 |Reservation|Check-out Date |Date|
-|Reservation|Room Type |Picklist|Standard, Deluxe, Suite|
+|Reservation|Room |Lookup(Room)|Assigned room.|
 |Reservation|Status |Picklist|Pending, Confirmed, Canceled|
 |Reservation|Booking Staff |Lookup(Contact)|Lookup filter (Contact = Staff)|
 
@@ -52,3 +52,8 @@ Create all the required fields to build this automation.
 |Contact|Email|Email|
 |Contact|Is VIP?|Checkbox|
 
+| Object|Field Name|Data Type|Comments|
+|-------|----------|---------|--------|
+|Room|Room Type |Picklist|Standard, Deluxe, Suite|
+|Room|Room Rate |Currency|Cost per Night|
+|Room|Is Available? |Checkbox|Confim if the room is still available|
