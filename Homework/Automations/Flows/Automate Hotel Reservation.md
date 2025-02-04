@@ -1,4 +1,4 @@
-# Automate Hotel Reservation Confirmation Using Record-Triggered Flow in Salesforce
+# Automate Hotel Reservation Confirmation Using Flows in Salesforce
 
 ## Challenge
 RoyalSuite Hotel has recently started using Salesforce to manage their room reservations. Currently, entire process is manual and time consuming. They are looking for automation to support their new reservations, cancellations, check in and check out process. 
@@ -8,7 +8,7 @@ RoyalSuite Hotel has recently started using Salesforce to manage their room rese
 * Use Custom Metadata to select the email notification to be sent.
 * Create Lightning email templates for notifications.
 * Handle errors gracefully.
-* Select the appropriate flow types.
+* Select the appropriate flow types. and justify why you choose the specific flow type.
 
 ## Business Requirements
 
@@ -56,10 +56,3 @@ If the reservation is for more than 7 days, send an email suggesting a room upgr
 |Contact|Email|Email|
 |Contact|Is VIP?|Checkbox|
 
-
-
-
-| Object|Field Name|Data Type|Comments|
-|-------|----------|---------|--------|
-|Guest|Name|Text|
-|Guest|Email|Email|
