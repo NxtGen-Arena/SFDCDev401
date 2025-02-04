@@ -5,7 +5,7 @@ RoyalSuite Hotel has recently started using Salesforce to manage their room rese
 
 ## Solution
 * Implement the flow to automte the actions to be performed manually.
-* Use Custom Metadata to select the email notification to be sent.
+* Use Custom Metadata to select the email notification to be sent. 
 * Create Lightning email templates for notifications.
 * Handle errors gracefully.
 * Select the appropriate flow types. and justify why you choose the specific flow type.
@@ -33,11 +33,7 @@ If the reservation is for more than 7 days, send an email suggesting a room upgr
 
 **Technical Requirements**
 
-* Flow Type: Record-Triggered Flow, Scheduled Path
-* Entry Condition: When a record is created and its status is "Confirmed."
-* Actions: Send an email using the Email Alert or Send Email action.
-* Objects Used: Reservation, Guest(contact), Staff/(Contact)
-* Fields to be used:
+Create all the required fields to build this automation.
   
 | Object|Field Name|Data Type|Comments|
 |-------|----------|---------|--------|
