@@ -19,7 +19,17 @@
 
 | Type  | Module Ref. |Comments/Notes |
 | ------------- | ------------- |------------- |
-| Trailhead  | [Data Modelling](https://trailhead.salesforce.com/content/learn/modules/data_modeling)  | Complete by - 19th Jan'25 |
+| Trailhead  | [Data Modelling](https://trailhead.salesforce.com/content/learn/modules/data_modeling)  | |
 | Case Study  | Design Data Model for Case Study - Hotel Reservation System | Design the key entities and ERD using draw.io or LucidChart |
 | Case Study | Create Data Model Deep Dive | Design the Data Model with Attributes in excel template. Generate Schema for each entity with Key fields, Data Types, Constrains(Read only, required), Picklist Values, record types etc.|
+</Details>
+
+<Details>
+  <Summary> Automations - Flow </Summary>
+
+| Type  | Module Ref. |Comments/Notes |
+| ------------- | ------------- |------------- |
+| Trailhead  | [Run-flow-within-flow](https://trailhead.salesforce.com/content/learn/modules/flow-build-logic/run-flow-within-flow)  |
+| Salesforce Help  | [How to call Subflows from Record-Triggered Flows](https://help.salesforce.com/s/articleView?id=000396957&type=1) |
+| Superbadge | [Scheduled Flow and Subflow Superbadge Unit](https://trailhead.salesforce.com/content/learn/superbadges/superbadge_scheduled_and_subflows_sbu) ||
 </Details>
