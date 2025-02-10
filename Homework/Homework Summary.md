@@ -31,5 +31,6 @@
 | ------------- | ------------- |------------- |
 | Trailhead  | [Run-flow-within-flow](https://trailhead.salesforce.com/content/learn/modules/flow-build-logic/run-flow-within-flow)  |
 | Salesforce Help  | [How to call Subflows from Record-Triggered Flows](https://help.salesforce.com/s/articleView?id=000396957&type=1) |
-| Superbadge | [Scheduled Flow and Subflow Superbadge Unit](https://trailhead.salesforce.com/content/learn/superbadges/superbadge_scheduled_and_subflows_sbu) ||
+| Superbadge | [Scheduled Flow and Subflow Superbadge Unit](https://trailhead.salesforce.com/content/learn/superbadges/superbadge_scheduled_and_subflows_sbu) |
+| Trailhead | [Flow Builder Logic](https://trailhead.salesforce.com/content/learn/modules/flow-build-logic)
 </Details>
