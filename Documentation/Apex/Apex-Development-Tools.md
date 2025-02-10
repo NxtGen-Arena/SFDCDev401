@@ -1,4 +1,4 @@
-# Where can write code?
+# Where can we write code?
 
 You can write Apex code using multiple tools:
 
@@ -8,7 +8,61 @@ You can write Apex code using multiple tools:
 4. Code Builder - Browser based Visual Studio tool. Can be enabled for sandboxes from setup > code builder. No need to locally install visual studio.
 5. Third Party 
 
-We are focused on understanding Visual Studio Code and extensions we can use.
+<h1>Developer Console</h1>
+<p>
+  
+Developer Console allows to perform operations such as:
+* Code writing and compilation of code: create an apex class, trigger, lightning component or visualforce page, etc using the source code editor and as soon as you save your code it will automatically be compiled on the force.com server. Use “Execute Anonymous Window” from Debug menu to create executing apex code.
+* Explore the Components:**  Explore  Salesforce components like – Aura, Apex Class, Objects, Triggers from Console directly. 
+* Debugging: Using the Developer Console and the debug logs, you can debug Apex code, set checkpoints to make debugging easier.
+* Testing: build and execute test cases for a specific apex class and inspect the code coverage.
+* SOQL/SOSL  queries: perform both SOQL and SOSL queries.
+* Color coding and autocomplete: In addition to auto-completion for class and method names, the editor uses a color scheme to make code elements easier to read.
+</p>
+
+<h1>Code Builder</h1>
+<p>
+
+* Provides a modern developer experience and work from anywhere with web-based Visual Studio Code IDE that connects seamlessly to your Salesforce org.
+* VS Code is a powerful IDE but it requires you to install the app and related tools on your computer. Code Builder enables you to use VS Code in your browser without the need to install anything.
+* Code Builder is installed as a managed package, and it comes with everything you need: VS Code, Salesforce extensions, and Salesforce CLI.
+* No matter whether you’re using VS Code on your desktop or Code Builder from a browser, the Salesforce extensions you access are the same.
+* Code builder is managed package which needs to be installed from setup > Search > code builder > install
+* Based on User Licenses and The number of Code Builder licenses available depends on the Salesforce edition.
+
+### Enabling Code Builder
+
+1. Click the Setup icon (gear icon in the upper right corner), and click Setup.
+2. In Quick Find, search for Code Builder, and select Code Builder.
+3. Dismiss the error message. This is due to the pre-installation of Code Builder.
+4. Click the Enable Code Builder toggle to enable Code Builder. Review and accept the license agreement.
+5. Click the App Launcher icon (waffle icon in the upper left corner), and select the Code Builder app.
+6. In the Code Builder Dashboard, click the Launch button.
+7. Open the command palette (Press CMD+SHIFT+P on Mac or CTRL+SHIFT+P on PC).
+8. Search for Authorize an Org. If it is not yet available, wait Code Builder to fully initialize.
+9. Select SFDX: Authorize an Org. > Project Default
+10. Enter the org alias and press Return.
+11. Connect and you are set to create your first project.
+
+![image](https://github.com/user-attachments/assets/6ffbe1c0-912c-4f6c-9ef2-f146c8f1a75f)
+
+</p>
+
+<h1>Visual Studio Code</h1>
+<p>
+
+* Allows developers to code locally and synchronize with the salesforce org you are using.
+* Depend heavily on two runtime environments behind the scenes: Node.js and Java.
+* Node is a JavaScript runtime environment that’s used for the Salesforce CLI, Lightning Web Components, and the overall structure of your Salesforce project.
+* Java is used for the Apex language server.
+* Apex is used to interact with the Salesforce database and backend.
+* The Apex language server helps write code faster by providing the Visual Studio Code extension with useful code-editing features, such as code completion.
+* Install additional extensions to enable more streamlined and faster development. E.g: Prettier – Code Formatter, Agentforce for Developers, Apex, Apex PMD, Apex Replay Debugger, Aura Components,Lightning Web Component, ESLint 
+
+![image](https://github.com/user-attachments/assets/c0242b7b-3d3d-4bb1-8172-035e6626669f)
+
+  
+</p>
 
 <Details> 
   <Summary><h2>Create a new Salesforce project in Visual Studio Code (VS Code)</h2></Summary>
