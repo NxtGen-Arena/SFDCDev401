@@ -16,8 +16,7 @@
 3. Right click and execute **SFDX: retrieve this source from Org**. **NOTE**: If your org has too much customization, number of components may slow down the retrieval. Unders these circumstances you can selectively retrieve.
 4. check the folders for the components.
 
-
-## Depoy the code from VS to Salesforce Org
+## Deploy the code from VS to Salesforce Org
 
 1. Save the changes within VS Code using cmd + s (macOS) or ctrl +s (windows)
 2. Right click and execute **SFDX:Deploy this source to org**
