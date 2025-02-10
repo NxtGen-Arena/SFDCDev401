@@ -4,7 +4,7 @@
 RoyalSuite Hotel has recently started using Salesforce to manage their room reservations. Currently, entire process is manual and time consuming. They are looking for automation to support their new reservations, cancellations, check in and check out process. 
 
 ## Solution
-* Implement the flow to automte the actions to be performed manually.
+* Implement the flow to automate the actions to be performed manually.
 * Use Custom Metadata to select the email notification to be sent. 
 * Create Lightning email templates for notifications.
 * Handle errors gracefully.
