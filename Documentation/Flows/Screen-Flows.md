@@ -36,4 +36,4 @@ You can also select the - CHeckbox Group, Radio Button Group, Data Table Compone
 # Further Read
 
 * Blog [Screen Flow Examples](https://salesforcegeek.in/5-salesforce-screen-flow-with-examples/)
-* 
+* Superbadge [Screen Flow Fundamentals](https://trailhead.salesforce.com/content/learn/superbadges/superbadge_screen_flows_sbu)
