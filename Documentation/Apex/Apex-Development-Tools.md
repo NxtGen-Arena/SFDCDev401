@@ -13,10 +13,25 @@ We are focused on understanding Visual Studio Code and extensions we can use.
 <Details> 
   <Summary><h2>Create a new Salesforce project in Visual Studio Code (VS Code)</h2></Summary>
 
-###  Installing VS Code Locally
-[Setup VS Code with Extensions](Homework/Preparing-for-Development/Setup-VSCode.md)
+<h3>Setup your VS Code for Development</h3>
 
-### Create Project with Manifest and Authorize an Org
+1. Create a new Salesforce Developer org for this training  - [Sign up](https://developer.salesforce.com/signup) and reset your password
+2. Install VS code and CLI aloong with the extensions mentioned in the next step. Follow steps - [Quick Start: Visual Studio Code for Salesforce Development](https://trailhead.salesforce.com/content/learn/projects/quickstart-vscode-salesforce?trail_id=set-up-your-workspace-and-install-developer-tools)
+3. Enable the Extensions given below:
+   - Apex
+   - Apex PMD
+   - Aura Components & Lightning Web Components
+   - Prettier - Code Formatter
+   - Salesforce Code Analyzer
+   - SOQL
+   - Visualforce
+4. Create a new Apex Class - "HelloWorld" using developer console
+
+## **Additional references:**
+
+- [How to Setup Visual Studio Code for Salesforce](https://www.apexhours.com/how-to-setup-visual-studio-code-for-salesforce/) 
+
+<h3>Create Project with Manifest and Authorize an Org</h3>
 
 1. Open the command ctrl + shift + p (windows) or cmd + shift + p(macOS)
 2. type **SFDX:Create Project with Manifest**
@@ -25,14 +40,14 @@ We are focused on understanding Visual Studio Code and extensions we can use.
 5. Provide a user friendly org alias > new window to login to salesforce will open
 6. In your borwser, select the credential for org to be used and Allow
 
-### Retrieve the Source Code from connected Org
+<h3>Retrieve the Source Code from connected Org</h3>
 
-1. WIthin your project structure > navigate to "package.xml" inside manifest.
+1. Within your project structure > navigate to "package.xml" inside manifest.
 2. Validate the components to be retrieved.
 3. Right click and execute **SFDX: retrieve this source from Org**. **NOTE**: If your org has too much customization, number of components may slow down the retrieval. Unders these circumstances you can selectively retrieve.
 4. check the folders for the components.
 
-### Deploy the code from VS to Salesforce Org
+<h3>Deploy the code from VS to Salesforce Org</h3>
 
 1. Save the changes within VS Code using cmd + s (macOS) or ctrl +s (windows)
 2. Right click and execute **SFDX:Deploy this source to org**
