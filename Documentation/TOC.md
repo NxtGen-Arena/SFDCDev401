@@ -13,7 +13,9 @@
     * [Debugging Flows]
     * [Flow Configuration Settings]
   * [Apex](Documentation/Apex)
-    * [Apex introduction](Documentation/Apex/Apex-Introduction.md)
+    * [Apex Introduction](Apex/Apex-Introduction.md)
+    * [Apex Structure](Apex/Apex-Structure.md)
+    * [Apex Core Concepts](Apex/Apex-Core-Concepts.md)
   * [Apex Transaction](#apex-transaction)
   * [Assignment Rules](#assignment-rules)
   * [Asynchronous Apex](#asynchronous-apex)
