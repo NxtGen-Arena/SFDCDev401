@@ -1,4 +1,4 @@
-# Scheduled Triaggered Flows
+# Scheduled Triggered Flows
 
 ## What are Scheduled Trigeered flows
 Many a times we need operations to be executed in the background at a specified time and at a repeated frequency - daily, weekly, once. These operations are performed on the bulk records and do not need immediate execution. They can be delayed and performed later in the time. This approach helps to save time and minimize manual data upldate by automation. By scheduling actions we can also avoid conflicts with users daily operations and avoiding potential risks like record locking.
