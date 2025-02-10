@@ -51,6 +51,7 @@ Create all the required fields to build this automation.
 |Contact|Name|Text|
 |Contact|Email|Email|
 |Contact|Is VIP?|Checkbox|
+|Contact|Customer|Record Type|
 
 | Object|Field Name|Data Type|Comments|
 |-------|----------|---------|--------|
