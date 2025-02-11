@@ -1,6 +1,10 @@
 # Apex Classes,Variables & Methods
 
-## Apex Class:
+## Apex Class
+
+Apex classes are important for adding new features and customizing Salesforce to fit different business needs.
+
+Class: Blueprint defining properties and behaviors.
 
 - Apex classes are similar to object constructors used for creating custom objects and business logic within Salesforce. They serve as blueprints for creating instances of objects.
 - Unlike traditional programming languages, Apex classes are stored on Salesforce servers and executed in a cloud environment.
@@ -8,9 +12,9 @@
 - In Apex Classes are fundamental units of code that define the behavior of objects.They encapsulate data and methods to operate on that data. Apex classes are stored and executed on Salesforce servers. Class can implement Interfaces and can be extended.
 
 Classes Consists of:
+  * Class Body: Actual code of the class. Statements to be executed
   * Access Modifiers: Decides who can access the class
-  * Variables: Store the specific data temporary within class and method.used to specify state of an object, such as the object Name and Type. Since these variables are associated with a class and are       
-    members of it, they are commonly refered to as **member variables**.
+  * Variables: Store the specific data temporary within class and method.used to specify state of an object, such as the object Name and Type. Since these variables are associated with a class and are members of it, they are commonly refered to as **member variables**.
   * Methods: Process the business logic using I/P parameters and returns void or results.
   * Constructors: First entry intializers for classes.
 
@@ -24,11 +28,34 @@ Classes Consists of:
 
 ### How classes are defined in Apex
   ```
-  class Dog {
-    public Dog() {...} //Default constructor
-    String breed;      //Variable declaration
-    void bark(){...}   //Methods
-    static void dontBark() {..} // static method
+  public class Dog {
+    public static final Integer LEGS = 4; //constants
+    public static final Integer EYES = 2; //constants
+    String breed,name,color;      //Variable declaration
+
+    public Dog() //Default constructor
+    {
+        this.name = 'Tara';
+        this.color = 'Black and Brown';
+        this.breed = 'German Shephard';
+        system.debug(' Default constructor.');
+    }
+
+    public Dog(String name, String color, String breed)
+    {
+        this.name = name;
+        this.color = color;
+        this.breed = breed;
+        system.debug(' constructor with parameters called.');
+    }
+    void displayInfo()   //Method to display information
+    {
+      system.debug('Name: ' + this.name + ', breed: ' + this.breed);
+    }
+    static void dontBark()  // static method
+    {
+      system.debug('Don't bark '+ this.Name);
+    }
   }
   ```
 ### Class Access Modifiers who can perform what actions with the class. 
@@ -40,6 +67,23 @@ Classes Consists of:
 | Global                | can be accessed from anywhere within Apex. All webservice classes are global |
 | Virtual               | class allows extension and overrides.You cannot override a method with the override keyword unless the class has been defined as virtual. |
 | Abstract              | class contains abstract methods, that is, methods that only have their signature declared and no body defined.|
+
+## Objects
+
+> In object-oriented programming (OOP) concepts, an “object” refers to a specific instance of a class.
+> When we create objects from a class, they inherit the properties and behaviors defined by that class.
+> These objects have attributes (states) and methods (behaviors) associated with them.
+> objects are instances of classes that represent real-world entities and encapsulate both data and behavior.
+> Objects can invoke methods defined in classes they are part of.
+
+
+### objects Instantiation
+  ```
+ Dog tara = new Dog();
+ Dog jimmy = new Dog('Jimmy','White','Lab');
+ jimmy.displayInfo();
+ 
+  ```
 
 ## Declare a variable
 1. **Optional**: Modifiers, such as public or final, as well as static.
