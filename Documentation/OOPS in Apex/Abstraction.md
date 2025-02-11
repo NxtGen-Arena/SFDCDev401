@@ -15,6 +15,8 @@ Abstraction is a design pattern used in Apex programming to hide complexity and 
 It is useful when multiple classes have methods that share similar logic or when there is a possibility of adding new methods in the future. 
 The main advantage of using an abstract class is that it enables seamless updating of the logic for all its child classes (with the exception of overrides) - you only need to change the implementation in the abstract class. Using an abstract class also helps to keep code DRY (Don't Repeat Yourself) and easier to maintain.
 
+In Apex, abstraction is a fundamental concept that allows developers to hide complex implementation details while providing essential functionalities to users. It enables developers to focus on what an object does rather than how it does it, promoting clarity, simplicity, and maintainability in code.
+
 ## What is Abstract class?
 An abstract class is a class that contains at least one abstract method, which is a method without a body (implementation). 
 An abstract class cannot be instantiated on its own, but it can be inherited by other classes. 
@@ -31,9 +33,8 @@ When a class extends an abstract class, it must provide an implementation for al
 
 **Abstract classes can have final methods:** Abstract classes can also have final methods that cannot be overridden by the inheriting classes. This can be useful if the abstract class wants to enforce a specific behaviour that should not be changed by the inheriting classes.
 
-<Details>
-  <Summary> References and Further Reading </Summary>
-  - Refer Sample Class - /OOPS in Apex/Abstraction
-</Details>
+<h2> References and Further Reading </h2>
+1. Refer Sample Class - /OOPS in Apex/Abstraction
+
 
 
