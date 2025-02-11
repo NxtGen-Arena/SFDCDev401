@@ -16,7 +16,7 @@
 //The transaction is then rolled back and you can't perform any DML operations.
 
 //Governor limits: Total # of row that can be processed by DML in SIngle transaction - 10000
-public with sharing class DMLExample 
+public with sharing class DMLDemo 
 {
     //DML can be performed on single sObject or list of sObjects.
     //Insert - Adding new records
