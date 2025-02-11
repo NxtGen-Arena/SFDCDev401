@@ -2,6 +2,8 @@
 
 ## Apex Class:
 
+- Apex classes are similar to object constructors used for creating custom objects and business logic within Salesforce. They serve as blueprints for creating instances of objects.
+- Unlike traditional programming languages, Apex classes are stored on Salesforce servers and executed in a cloud environment.
 - A class can contain variables and methods.A class can contain other classes, exception types and initialization code.
 - In Apex Classes are fundamental units of code that define the behavior of objects.They encapsulate data and methods to operate on that data. Apex classes are stored and executed on Salesforce servers. Class can implement Interfaces and can be extended.
 
