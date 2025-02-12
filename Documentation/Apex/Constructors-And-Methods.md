@@ -66,10 +66,28 @@ Constructor can be overloaded which means you can create define more than one co
 
 <h2>Methods</h2>
 
-Methods are functions defined within a class that perform specific actions or provide functionality related to the class. They can access and manipulate the properties of the class. Methods in Apex can have access modifiers (public, private, global) to control their visibility and accessibility.
+Methods are functions defined within a class that perform specific actions or provide functionality related to the class. They can access and manipulate the properties of the class. Methods in Apex can have access modifiers (public, private, global) to control their visibility and accessibility, Can be recursive, can call other methods. Methods can be overloaded, Can have statements where the return values are run as a statement if their results aren’t assigned to another variable.
+
+![image](https://github.com/user-attachments/assets/5f1bbe32-f09b-4af5-8bb4-fd506147ef00)
+
+### Method Structure
+
+* Access Modifier (Optional): Modifiers, such as public or protected
+* Return Type (Required): Data type of value returned by method. Void in case method doesn’t return value.
+* Name (Required): The keyword class followed by the name of the method
+* Input Parameters (Optional): Comma separated list of input parameters. Max 32 params, if no params ()
+
+![image](https://github.com/user-attachments/assets/a640aed4-6909-4898-98f9-6c425baa3b56)
+
+### Class Methods
+Class can have static, instance methods.
+
+![image](https://github.com/user-attachments/assets/5dae6ead-1979-4a38-a475-4adbaaad013e)
+
+
+### Method Access Modifiers
 
 **Public Methods**
-
 Public methods are accessible from outside the class. They can be invoked by other classes or triggers. Public methods are typically used to expose functionality to other parts of the application
 
 ```
@@ -96,7 +114,6 @@ public class StaffRegistration {
 ```
 
 **Private Methods**
-
 Private methods are only accessible within the class in which they are defined. They cannot be invoked from outside the class. Private methods are useful for encapsulating logic that is internal to the class and not intended for external use.
 
 ```
@@ -124,6 +141,5 @@ public class StaffRegistration {
 ```
 
 **Global Methods**
-
 Global methods are accessible across different classes and namespaces within Salesforce. They are often used in managed packages or for integration purposes where external systems need to invoke Salesforce functionality. For Global access modifiers on methods, classes are also declared as Global.
 
