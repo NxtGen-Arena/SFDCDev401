@@ -156,9 +156,11 @@ public virtual class Dog {
             return dog1.name + ' and ' + dog2.name + ' are of the same age';
         }
     }
+}
 
-    /*
-   Dog labrador = new Dog('Buddy','Labrador',Date.newInstance(2018,5,10));
+/*
+//Execute Anonymous code
+Dog labrador = new Dog('Buddy','Labrador',Date.newInstance(2018,5,10));
 system.debug('labrador >> ' + labrador);
 system.debug('labrador age>> ' + labrador.age);
 
@@ -171,7 +173,4 @@ system.debug(labrador.getDogInfo(true));
 system.debug(beagle.getDogInfo(true));
 system.debug(bulldog.getDogInfo(false));
 
-
-    */
-
-}
+*/
