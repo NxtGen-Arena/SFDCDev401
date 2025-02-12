@@ -11,6 +11,11 @@ You do not need to write a constructor for every class. If a class doesn't have 
 
 >[!Important]
 >Construtor has same name as class and never has an explicit return type and it is not inherited by the object created from it.
+>When you define class you define a new data type like any other data types in Salesforce. So, you can use the class name in any place.
+
+
+<img width="276" alt="image" src="https://github.com/user-attachments/assets/deab985a-7ee5-43c6-9273-6601a7281cb9" />
+
 
 ## Things to note
 
@@ -21,8 +26,8 @@ You do not need to write a constructor for every class. If a class doesn't have 
 * Every constructor created for a class must have a different argument list.
 
 ## Default Constructor
+If a class does not have any constructors defined, Apex provides a default constructor with no parameters.Once you create a constructor for a class, you no longer have access to the default, no-argument public constructor. You need manually define the no-argument constructor explicitly in class.
 
-If a class does not have any constructors defined, Apex provides a default constructor with no parameters.
 ```
 public class CustomerRegistration {
  // Default constructor
@@ -33,7 +38,6 @@ public class CustomerRegistration {
 ```
 
 ## Parameterized Constructor
-
 A parameterized constructor accepts parameters to initialize the object’s state. It allows you to pass values during object creation. 
 
 ```
@@ -53,6 +57,13 @@ public class StaffRegistration {
   }
 }
 ```
+##  Constructor Overloading
+Constructor can be overloaded which means you can create define more than one constructor for a class, each having different parameters. 
+
+## Constructor in Action
+<img width="437" alt="image" src="https://github.com/user-attachments/assets/e2cef7a9-0c33-4842-a156-3a0e160d7c9f" />
+
+
 <h2>Methods</h2>
 
 Methods are functions defined within a class that perform specific actions or provide functionality related to the class. They can access and manipulate the properties of the class. Methods in Apex can have access modifiers (public, private, global) to control their visibility and accessibility.
