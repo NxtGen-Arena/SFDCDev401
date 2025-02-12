@@ -7,9 +7,10 @@
 * Salesforce has – Primitive (Passed by value) and Non-Primitive(Passed by reference) Data Types
 * If you declare a variable and don't initialize it with a value, it will be null.
 * A class can contain variables and methods, constructors. Primitiive Data types are all objects and allows to call methods from these objects.
+* In Apex, variables must be declared with a specific data type before they can be used. 
 
 > [!Tip]
-> At compile time strict type checking is enforced and class will failt to compile if mismatch occurred.
+> At compile time strict type checking is enforced and class will fail to compile if mismatch occurred.
 
 ### Declaring Variables
 
@@ -32,6 +33,27 @@
 | `static`|define static variables to store data that is shared within the class. Methods can be accessed without creating instance of a class.Static variables are not memory constants.All instances of the same class share a single copy of the static variable.This can be a technique used for setting flags to prevent recursive triggers.
 |`Final`| Final keyword is used to define constants – this indicates that the variable can only be assigned once, either in the declaration itself or with a static initializer method if the constant is defined in the class.
 |`Transient`|This keyword declares instance variables that cannot be saved, and should not be transmitted as part of the view state, in Visualforce controllers and extensions.
+
+<h3>Assigning Values to Variables</h3>
+Variables can be initialized with static values, expressions or results from SOQL and SOSL. An assignment means placing value in variable. 
+Apex allows to use different assignment operators:
+
+ | Operator | Description                         | Example                   |COmments|
+ |-----------|-------------------------------------|---------------------------|----------|
+ | = | Equals operator. Assign value from right side of operator in variable.| Integer iCount = 10;
+ | += | Increment value from variable |  iCount = iCount + 10 is similar to iCount += 10;| Use *= in similar way.
+ | ++ | Increment oprator with default increment step as 1| iCount++| Use -- in similar way
+
+<h3>Variable Initialization</h3>
+Variable initialization refers to the process of assigning an initial value to a variable at the time of declaration. This ensures that the variable is properly initialized and ready for use.
+
+You can initialize variables:
+1. While declaring variables
+2. In Constructors
+3. Dynamically based on runtime calculations and expressions.
+
+>[!Note]
+>Variables without initialization are assigned as _NULL_ and not blank. So, if you try to access these variables **NullPointerException**__ is thrown.
 
 ### Data Type for Variables
 
@@ -73,15 +95,6 @@ STATIC FINAL Integer No_OF_RETRIES = 4;
 The most common approach to resolve it is Constants class, which contains all final variables. You can create a metadata to define these or if there are too many approach is to define them in the apex class.
 </details>
 
-<h3>Assigning Values to Variables</h3>
-Variables can be initialized with static values, expressions or results from SOQL and SOSL. An assignment means placing value in variable. 
-Apex allows to use different assignment operators:
-
- | Operator | Description                         | Example                   |COmments|
- |-----------|-------------------------------------|---------------------------|----------|
- | = | Equals operator. Assign value from right side of operator in variable.| Integer iCount = 10;
- | += | Increment value from variable |  iCount = iCount + 10 is similar to iCount += 10;| Use *= in similar way.
- | ++ | Increment oprator with default increment step as 1| iCount++| Use -- in similar way
 
 
 <h2> References & Further Read</h2>
