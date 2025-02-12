@@ -14,9 +14,9 @@
     * [Flow Configuration Settings]
   * [Apex](Documentation/Apex)
     * [Apex Introduction](Apex/Apex-Introduction.md)
-    * [Apex Structure](Apex/Apex-Structure.md)
     * [Apex Core Concepts](Apex/Apex-Core-Concepts.md)
     * [Apex Data Types](Apex/Apex-Data-Types-and-Variables.md)
+    * [Constructors and Methods](Apex/Constructors-and-methods.md)
     * [Collections](#Collections.md)
     * [Control Structure](#Control-Structures.md)
     * [DML](#DML.md)
