@@ -147,3 +147,6 @@ public class StaffRegistration {
 **Global Methods**
 Global methods are accessible across different classes and namespaces within Salesforce. They are often used in managed packages or for integration purposes where external systems need to invoke Salesforce functionality. For Global access modifiers on methods, classes are also declared as Global.
 
+<h2>References and Further Read</h2>
+
+1. Reference Code - [Constructors.cls](/Codebase/Apex/Constructors.cls)
