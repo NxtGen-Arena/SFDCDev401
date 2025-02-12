@@ -53,6 +53,7 @@ Apex is strongly typed language. All avriables and expressions must have a data 
   |Blob       | Single object stores binary data    |                           |
   |String     | Characters set within single quotes | String name = 'Apex';     |
   |Boolean    | A value with true, false or null    | Boolean isValid = true;   |
+  |Id         |store Salesforce record identifiers. |Id accountId = ‘0012w00000XXXXX’;|
   
 
 <h2> Declaring Constants</h2> 
