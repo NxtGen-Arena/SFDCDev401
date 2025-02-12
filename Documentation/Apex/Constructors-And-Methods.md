@@ -1,5 +1,9 @@
 # Constructors and Methods
 
+Constructors and Methods helps initialize data and process calculations. Access modifiers for classes, methods and variables control the visibility and accessibility of classes, variables, and methods in Apex. They ensure encapsulation and help in enforcing data hiding and abstraction principles.
+
+Helps Break down complex functionalities into smaller, modular components (classes and methods) for better maintainability and reusability.
+
 <h2>Constructors</h2>
 A constructor is a special method that is invoked when an object of a class is created. It is used to initialize the object’s state. In Apex, constructors have the same name as the class and do not have a return type. There are two types of constructors: default constructor and parameterized constructor.
 
@@ -19,10 +23,96 @@ You do not need to write a constructor for every class. If a class doesn't have 
 ## Default Constructor
 
 If a class does not have any constructors defined, Apex provides a default constructor with no parameters.
+```
+public class CustomerRegistration {
+ // Default constructor
+ public CustomerRegistration() {
+ // Initialization code here
+ }
+}
+```
 
 ## Parameterized Constructor
 
 A parameterized constructor accepts parameters to initialize the object’s state. It allows you to pass values during object creation. 
 
+```
+public class StaffRegistration {
+  // Default constructor
+  public String firstName;
+  public String lastName;
+  public Account hotelName;
+  public String department;
+  public Boolean isActive = true;
+  public MyClass(String firstName, String lastName, Account hotel, String department) {
+    // Initialization code here
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.hotel = hotel;
+    this.department = department;
+  }
+}
+```
+<h2>Methods</h2>
 
+Methods are functions defined within a class that perform specific actions or provide functionality related to the class. They can access and manipulate the properties of the class. Methods in Apex can have access modifiers (public, private, global) to control their visibility and accessibility.
+
+**Public Methods**
+
+Public methods are accessible from outside the class. They can be invoked by other classes or triggers. Public methods are typically used to expose functionality to other parts of the application
+
+```
+public class StaffRegistration {
+  // Default constructor
+  public String firstName;
+  public String lastName;
+  public Account hotelName;
+  public String department;
+  public Boolean isActive = true;
+  public MyClass(String firstName, String lastName, Account hotel, String department) {
+    // Initialization code here
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.hotel = hotel;
+    this.department = department;
+  }
+
+  public boolean registerStaff()
+  {
+    //registration logic
+  }
+}
+```
+
+**Private Methods**
+
+Private methods are only accessible within the class in which they are defined. They cannot be invoked from outside the class. Private methods are useful for encapsulating logic that is internal to the class and not intended for external use.
+
+```
+public class StaffRegistration {
+  // Default constructor
+  public String firstName;
+  public String lastName;
+  public Account hotelName;
+  public String department;
+  public Boolean isActive = true;
+  
+  public MyClass(String firstName, String lastName, Account hotel, String department) {
+    // Initialization code here
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.hotel = hotel;
+    this.department = department;
+  }
+
+  private boolean registerStaff()
+  {
+    //registration logic
+  }
+}
+```
+
+**Global Methods**
+
+Global methods are accessible across different classes and namespaces within Salesforce. They are often used in managed packages or for integration purposes where external systems need to invoke Salesforce functionality. For Global access modifiers on methods, classes are also declared as Global.
 
