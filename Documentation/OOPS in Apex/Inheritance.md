@@ -1,4 +1,4 @@
-# What are Inheritance?
+# What is Inheritance?
 Inheritance is a fundamental concept in object-oriented programming (OOP) that allows a class (called a child or subclass) to inherit properties and methods from another class (called a parent or superclass). In Salesforce Apex, inheritance enables developers to create efficient, reusable code by defining common functionality in a parent class and extending or customizing it in child classes.
 
 In Salesforce Apex, inheritance allows one class to inherit the properties and methods of another class. This promotes code reuse, reduces redundancy, and supports the "DRY" (Don't Repeat Yourself) principle. 
@@ -7,6 +7,12 @@ Use inheritance when you have common functionality shared between multiple class
 
 Overriding a virtual method allows you to provide a different implementation for an existing method. Also referred as Runtime Polymorphism.
 This means that the behavior of a particular method is different based on the object you’re calling it on. Class can only Extend only one other class.
+
+> [!Note]
+> Apex supports only single inheritance in practice, though you can create class chains that resemble multi-level inheritance.
+
+![image](https://github.com/user-attachments/assets/f2645221-3ae7-45cc-86ef-387ab5783407)
+
 
 ## Inheritance is useful when:
 - You have common functionality in multiple classes.
@@ -94,5 +100,3 @@ public class Whale extends Mammal {
     }
 }
 ```
-> [!Note]
-> Salesforce Apex supports only single inheritance in practice, though you can create class chains that resemble multi-level inheritance.
