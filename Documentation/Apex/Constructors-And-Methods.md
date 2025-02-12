@@ -60,6 +60,10 @@ public class StaffRegistration {
 ##  Constructor Overloading
 Constructor can be overloaded which means you can create define more than one constructor for a class, each having different parameters. 
 
+##  Constructor Chaining
+One constructor calls another constructor using the this(...) syntax
+
+
 ## Constructor in Action
 <img width="437" alt="image" src="https://github.com/user-attachments/assets/e2cef7a9-0c33-4842-a156-3a0e160d7c9f" />
 
