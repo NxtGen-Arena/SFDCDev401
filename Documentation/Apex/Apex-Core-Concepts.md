@@ -85,27 +85,34 @@ Classes Consists of:
  
   ```
 
-## Declare a variable
-1. **Optional**: Modifiers, such as public or final, as well as static.
-2. **Required**: The data type of the variable, such as String or Boolean.
-3. **Required**: The name of the variable.
-4. **Optional**: The value of the variable.
+## Apex variables and Data Types
 
-  Variable Declaration:
-    ```
-     [public | private | protected | global] [final] [static] data_type variable_name [= value]
-     ```
-  
+- Apex supports various data types, including primitive types (e.g., Integer, Boolean), collections (e.g., List, Set, Map), and custom types (e.g., custom objects).
+- Variables must be declared with a specific data type before they can be used.
+
+ ### Variable Declaration:
+ ```
+    [public | private | protected | global] [final] [static] data_type variable_name [= value]
+ ```
+
+  1. **Optional**: Modifiers, such as public or final, as well as static.
+  2. **Required**: The data type of the variable, such as String or Boolean.
+  3. **Required**: The name of the variable.
+  4. **Optional**: The value of the variable.
+   
   ## Methods in Apex
   1. A method is a procedure associated with a class.
-  2. A method defines the behavior of the objects that are created from the class. Another way to say this is that a method is an action that an object is able to perform. 
+  2. A method defines the behavior of the objects that are created from the class. Another way to say this is that a method is an action that 
+     an object is able to perform. 
   3. You can use override to override methods only in classes that have been defined as virtual or abstract.
   4. methods that return values can also be run as a statement if their results are not assigned to another variable. Can be recursive.
   5. Can have side effects, such as DML insert statements that initialize sObject record IDs.
-  6. Can refer to themselves or to methods defined later in the same class or anonymous block. Apex parses methods in two phases, so forward declarations are not needed.
-  7. Can be polymorphic. For example, a method named example can be implemented in two ways, one with a single Integer parameter and one with two Integer parameters.
-  8. Depending on whether the method is called with one or two Integers, the Apex parser selects the appropriate implementation to execute. If the parser cannot find an exact match, it then seeks an
-      approximate match using type coercion rules.
+  6. Can refer to themselves or to methods defined later in the same class or anonymous block. Apex parses methods in two phases, so forward 
+     declarations are not needed.
+  7. Can be polymorphic. For example, a method named example can be implemented in two ways, one with a single Integer parameter and one with 
+     two Integer parameters.
+  8. Depending on whether the method is called with one or two Integers, the Apex parser selects the appropriate implementation to execute. If 
+     the parser cannot find an exact match, it then seeks an approximate match using type coercion rules.
   9. If the parser finds multiple approximate matches, a parse-time exception is generated.
   10. Methods with a void return type are typically invoked as a stand-alone statement in Apex code.
 
