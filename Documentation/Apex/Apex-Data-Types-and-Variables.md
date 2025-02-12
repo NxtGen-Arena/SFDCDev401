@@ -84,5 +84,7 @@ Apex allows to use different assignment operators:
 
 
 <h2> References & Further Read</h2>
-[Constants in Apex](https://beyondthecloud.dev/blog/constants-in-apex)
+
+1. [Constants in Apex](https://beyondthecloud.dev/blog/constants-in-apex)
+2. [Reference Code](/CodeBase/Apex/ApexDataTypes.cls)
 
