@@ -25,7 +25,7 @@
     * [Custom Settings](#custom-settings)
     * [Getter and Setter Methods](#getter-and-setter-methods)
     * [Exception Handling](#getter-and-setter-methods)
-  * [OOP in Apex](Documentation/OOPS-In-Apex)
+  * [OOP in Apex](Documentation/OOPS-In-Apex/Overview.md)
     * [Abstraction](/OOPS-In-Apex/Abstraction.md)
     * [Inheritance](/OOPS-In-Apex/Inheritance.md)
     * [Polymorphism](/OOPS-In-Apex/Polymorphism.md)
