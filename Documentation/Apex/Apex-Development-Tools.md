@@ -6,19 +6,36 @@ You can write Apex code using multiple tools:
 2. CLI - Command Line interface allowing to write code and create component using command line interface.
 3. Visual Studio - Based on CLI. Provided User interface for Salesforce development and deployment. Efficient and provides many extensions for produtivity improvements. Install locally and retrieve the code from Salesforce. Helps parallel development and enables to retain changes locally.
 4. Code Builder - Browser based Visual Studio tool. Can be enabled for sandboxes from setup > code builder. No need to locally install visual studio.
-5. Third Party 
+5. Third Party
+
+<h2>Setting up Salesforce Developer Environment</h2>
+
+Before diving into Apex development, it’s essential to set up your Salesforce developer environment. Salesforce offers a variety of tools and resources to facilitate this process:
+
+1. Sign up for a Developer Edition account: Developer Edition accounts are free and provide access to a fully functional Salesforce environment for development purposes, [click here to sign up free](https://developer.salesforce.com/signup).
+
+2. Install Salesforce Extensions for Visual Studio Code (VS Code): VS Code is a powerful code editor that integrates seamlessly with Salesforce development. Install the Salesforce Extensions to leverage features like code completion, syntax highlighting, and Salesforce-specific extensions. [Click here to download the VS code](https://code.visualstudio.com/).
+
+3. Enable Dev Hub: Dev Hub is a set of Salesforce features that enable you to create and manage Salesforce environments, known as Salesforce DX (Developer Experience) orgs. [Enable Dev Hub](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_setup_enable_devhub.htm) in your Developer Edition account to access these features.
+
+4. Install Salesforce CLI: The Salesforce [Command Line Interface (CLI)](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_install_cli.htm) is a powerful tool for interacting with Salesforce orgs from the command line. Install it to perform various tasks such as creating scratch orgs, deploying metadata, and running Apex tests.
 
 <h1>Developer Console</h1>
-<p>
-  
+
+Developer Console is a web-based integrated development environment (IDE) provided by Salesforce.
 Developer Console allows to perform operations such as:
-* Code writing and compilation of code: create an apex class, trigger, lightning component or visualforce page, etc using the source code editor and as soon as you save your code it will automatically be compiled on the force.com server. Use “Execute Anonymous Window” from Debug menu to create executing apex code.
-* Explore the Components:**  Explore  Salesforce components like – Aura, Apex Class, Objects, Triggers from Console directly. 
-* Debugging: Using the Developer Console and the debug logs, you can debug Apex code, set checkpoints to make debugging easier.
-* Testing: build and execute test cases for a specific apex class and inspect the code coverage.
-* SOQL/SOSL  queries: perform both SOQL and SOSL queries.
-* Color coding and autocomplete: In addition to auto-completion for class and method names, the editor uses a color scheme to make code elements easier to read.
-</p>
+* **Code writing and compilation of code:** create an apex class, trigger, lightning component or visualforce page, etc using the source code editor and as soon as you save your code it will automatically be compiled on the force.com server. Use “Execute Anonymous Window” from Debug menu to create executing apex code.
+* **Explore the Components: ** Explore  Salesforce components like – Aura, Apex Class, Objects, Triggers from Console directly. 
+* **Debugging**: Using the Developer Console and the debug logs, you can debug Apex code, set checkpoints to make debugging easier.
+* **Testing**: build and execute test cases for a specific apex class and inspect the code coverage.
+* **SOQL/SOSL  queries**: perform both SOQL and SOSL queries.
+* **Color coding and autocomplete**: In addition to auto-completion for class and method names, the editor uses a color scheme to make code elements easier to read.
+
+<h1>Salesforce CLI</h1>
+
+- Salesforce CLI is a command-line interface that provides a more flexible and efficient way to interact with Salesforce orgs.
+- It allows you to perform various development tasks, such as creating and managing orgs, deploying code, and running tests.
+- Salesforce CLI is particularly useful for automating repetitive tasks and integrating with other development tools and processes.
 
 <h1>Code Builder</h1>
 <p>
