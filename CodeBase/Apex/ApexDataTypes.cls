@@ -1,7 +1,7 @@
-/*
-Description: This class is used to demonstrate the various data types in Apex
-Author: Sheetal Chougule
-Version History:
+/**
+* @Description: This class is used to demonstrate the various data types in Apex
+* @Author: Sheetal Chougule
+* @Version History:
     Modified by | Changes Made  | US #
     Sheetal Chougule | Updated the comments to reflect the changes made to the class. | WBS-1*/
 
