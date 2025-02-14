@@ -1,4 +1,4 @@
-# Polymorphism (One name many forms)
+# Polymorphism (One name many forms) - Method Overloading (Compile Time Polymorphism)
 
 Polymorphism is a key concept in object-oriented programming (OOP), where a single method can perform different tasks depending on the inputs. 
 In Salesforce Apex, polymorphism enables you to write generic code that can work with different types of objects, providing flexibility and reusability in your code.
