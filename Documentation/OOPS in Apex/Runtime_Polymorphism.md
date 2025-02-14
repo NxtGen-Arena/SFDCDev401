@@ -1,4 +1,4 @@
-# Runtime Polymorphism in Salesforce
+# Runtime Polymorphism (Method Overriding) in Salesforce
 
 In Apex (and object-oriented programming in general), runtime polymorphism is achieved through method overriding, where a subclass provides a specific implementation of a method that is already defined in its parent class.
 This allows for dynamic method dispatch, where the method that gets executed depends on the actual type of the object at runtime, not the compile-time type.
