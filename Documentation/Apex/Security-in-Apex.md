@@ -27,8 +27,91 @@ Salesforce allows to control the access to the Apex classes from Profiles. Enabl
 Apex generally runs in system context; that is, the current user's permissions and field-level security aren’t taken into account during code execution. Sharing rules, however, are not always bypassed: the class must be declared with the without sharing keyword in order to ensure that sharing rules are not enforced.
 
 >[!Note]
->Apex code that is executed with the executeAnonymous call and Connect in Apex always execute using the sharing rules of the current user. 
+>Apex code that is executed with the executeAnonymous call and Connect in Apex always execute using the sharing rules of the current user.
 
+<h3> Sharing Keywords in Apex </h3>
 
+|Sharing mode| Description|
+|-------------|-----------|
+|With Sharing| Enforces the sharing rules of the current user. The class respects the user’s sharing settings and limits access to data accordingly.
+|Without Sharing| Ignores the sharing rules, allowing the code to run with system privileges. This can access all records, regardless of the user’s sharing rules.
+|Inherited Sharing|Inherits the sharing rules from the class that called it, providing flexibility and ensuring consistency in security enforcement. 
 
+<h2> 3. Enforcing Object and Field Level Security in Apex </h2>
 
+Use the Schema.DescribeSObjectResult to check if a user has access to read, create, update, or delete the object. 
+
+```
+public void checkObjectPermissions() {
+    if (!Schema.sObjectType.Contact.isCreateable()) {
+        throw new AuthorizationException('Insufficient permissions to create Contact records.');
+    }
+    Contact newContact = new Contact(LastName='Smith');
+    insert newContact;
+}
+
+public void checkFieldPermissions() {
+    if (!Schema.sObjectType.Contact.fields.Email.isAccessible()) {
+        throw new AuthorizationException('Insufficient permissions to access Contact Email field.');
+    }
+    Contact contact = [SELECT Email FROM Contact LIMIT 1];
+    System.debug(contact.Email);
+}
+```
+
+<h2> 4. Security-Enforced Queries </h2>
+
+Apex code runs in system mode by default, which means that it runs with substantially elevated permissions over the user running the code. To enhance the security context of Apex, you can specify user-mode access for database operations. Field-level security (FLS) and object permissions of the running user are respected in user mode, unlike in system mode.
+
+**USER_MODE in SOQL:** USER_MODE is a security feature that enforces user permissions and sharing rules directly in SOQL queries.
+**WITH SECURITY_ENFORCED:** Automatically enforces field and object permissions in SOQL queries.
+
+```
+List<Account> accounts = [SELECT Id, Name FROM Account USING USER_MODE];
+public List<Account> getSecuredAccounts() {
+    return [SELECT Id, Name FROM Account WITH SECURITY_ENFORCED];
+}
+```
+
+In Salesforce, prioritizing Field-Level Security (FLS) enforcement with WITH USER_MODE over WITH SECURITY_ENFORCED offers distinct advantages:
+
+* User mode meticulously handles polymorphic fields like Owner and Task.WhatId, processing all SOQL clauses, including the where clause.
+* It also identifies SOQL query errors effectively using the getInaccessibleFields() method on Query Exception.
+* The AccessLevel class enables user mode enforcement in key database methods including Database.query, Database.getQueryLocator, Database.countQuery, Search.query, and Database DML methods.
+
+<h2> 5. DML Security Enforced</h2>
+
+When Database DML methods are run with AccessLevel.USER_MODE, you can access errors via SaveResult.getErrors().getFields(). With insert as user, you can use the DMLException method getFieldNames() to obtain the fields with FLS errors.
+
+```
+Database.SaveResult[] results = Database.insert(records, AccessLevel.USER_MODE);
+```
+
+<h2>6. Enforce Security with stripInaccessbile Method</h2>
+
+Use the stripInaccessible method to enforce field-level and object-level data protection. This method can be used to strip the fields and relationship fields from query and subquery results that the user can’t access. The method can also be used to remove inaccessible sObject fields before DML operations to avoid exceptions and to sanitize sObjects that have been deserialized from an untrusted source.
+
+```
+List<Account> accountsWithContacts =
+	[SELECT Id, Name, Phone,
+	    (SELECT Id, LastName, Phone FROM Account.Contacts)
+	FROM Account];
+  
+   // Strip fields that are not readable
+   SObjectAccessDecision decision = Security.stripInaccessible(
+	                                   AccessType.READABLE,
+	                                   accountsWithContacts);
+ 
+// Print stripped records
+   for (Integer i = 0; i < accountsWithContacts.size(); i++) 
+  {
+      System.debug('Insecure record access: '+accountsWithContacts[i]);
+      System.debug('Secure record access: '+decision.getRecords()[i]);
+   }
+ 
+// Print modified indexes
+   System.debug('Records modified by stripInaccessible: '+decision.getModifiedIndexes());
+ 
+// Print removed fields
+   System.debug('Fields removed by stripInaccessible: '+decision.getRemovedFields());
+```
