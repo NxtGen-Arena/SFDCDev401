@@ -37,7 +37,11 @@ When a class extends an abstract class, it must provide an implementation for al
 * class can extend only one abstract class.
 
 <h2> References and Further Reading </h2>
-1. Refer Sample Class - /OOPS in Apex/Abstraction
+
+1. Refer Sample Class -
+  1.1. [HotelRegistration.cls](/CodeBase/Abstraction/HotelRegistration.cls)
+  1.2. [LuxuryHotel.cls](/CodeBase/Abstraction/LuxuryHotel.cls)
+  1.3. [BudgetHotel.cls](/CodeBase/Abstraction/BudgetHotel.cls)
 
 
 
