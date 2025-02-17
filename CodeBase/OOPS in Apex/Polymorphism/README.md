@@ -6,8 +6,8 @@ Classes to understand Compile Time (Method Overloading) and Run Time Polymorphis
 ## Table of contents
 
 1. [Hotel Registration](#HotelRegistration.cls) - This is a parent class containing base functionality for registration
-2. [RegularCustomerRegistration](#RegularCustomerRegistration.cls) - (inherits from HotelRegistration and overrides discount logic
-3. [CorporateCustomerRegistration](#CorporateCustomerRegistration.cls) - (inherits from HotelRegistration and applies a corporate discount).
+2. [RegularCustomerRegistration](#RegularCustomerRegistration.cls) - Inherits from HotelRegistration and overrides discount logic
+3. [CorporateCustomerRegistration](#CorporateCustomerRegistration.cls) - Inherits from HotelRegistration and applies a corporate discount).
 
 # Detailed Explanation
 
