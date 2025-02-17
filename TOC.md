@@ -22,7 +22,7 @@
         * [Method Overloading](Documentation/OOPS-In-Apex/Polymorphism/Method-Overloading.md)
         * [Method Overriding](Documentation/OOPS-In-Apex/Polymorphism/Method-Overriding.md)
         * [Inheritance](Documentation/OOPS-In-Apex/Polymorphism/Inheritance.md)
-      * [Interface](Documentation/OOPS-In-Apex/Interface.md)
+      * [Interface](Documentation/OOPS-In-Apex/Interfaces.md)
       * [Abstraction](Documentation/OOPS-In-Apex/Abstraction.md)
       * [Encapsulation](Documentation/OOPS-In-Apex/Encapsulation.md)
     * [Operators and Expressions in Apex](Apex/Constructors-And-Expressions.md)
