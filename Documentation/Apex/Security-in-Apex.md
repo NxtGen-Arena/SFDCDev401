@@ -118,5 +118,5 @@ List<Account> accountsWithContacts =
 
 <h2>Further Read</h2>
 
-1. Trailhead- [Apex Security](https://trailhead.salesforce.com/content/learn/modules/secure-serverside-development/write-secure-apex-controllers)
+1. [Apex Security](https://trailhead.salesforce.com/content/learn/modules/secure-serverside-development/write-secure-apex-controllers)
 2. [Apex sharing and security](https://medium.com/@sfdcspecialist5/enhance-data-protection-apex-security-and-sharing-insights-1eca57b3a454)
