@@ -3,7 +3,7 @@
 *@Invoked from: Account Trigger
 *
 **/
-public without sharing class SharingRulesApex {
+public without sharing class SecurityDemo {
     
     public static void enforceSharingRules(List<Account> lstAccounts) 
     {
