@@ -16,6 +16,10 @@ An abstract class is a class that contains at least one abstract method, which i
 An abstract class cannot be instantiated on its own, but it can be inherited by other classes. 
 When a class extends an abstract class, it must provide an implementation for all the abstract methods that are defined in the abstract class, otherwise, it should also be declared as an abstract class.
 
+✅ Abstraction hides complex logic but enforces specific functionality in subclasses. <br/>
+✅ Abstract classes provide common behavior while forcing subclasses to implement core methods.<br/>
+✅ Apex supports both abstract classes and interfaces to enforce structure across related classes.<br/>
+
 ## Considerations for Abstract
 **Abstract classes can have both abstract and non-abstract methods:** In addition to abstract methods, abstract classes can also have non-abstract methods with an implementation. These methods can be called from the inheriting classes without any modifications.
 
@@ -36,12 +40,51 @@ When a class extends an abstract class, it must provide an implementation for al
 * cannot be initialized.
 * class can extend only one abstract class.
 
+
+<h2> Business Case </h2>
+
+### Business Problem
+Currently, hotel registrations involve repetitive and inconsistent processes, leading to: 
+* Redundant code for different hotel types
+* Increased maintenance costs due to lack of a standard structure
+* Difficulty in integrating new hotel categories without rewriting significant portions of the code
+* Limited scalability for future expansion
+
+### Proposed Solution
+
+Managing hotel registrations efficiently is crucial for hospitality businesses. By implementing abstraction in Salesforce using Apex, we can standardize the hotel registration process while allowing different hotel types (Luxury, Budget) to have customized behaviors. This approach enhances code reusability, maintainability, and scalability, reducing manual effort and improving system efficiency.
+
+By implementing abstraction using an Apex abstract class, we define a standard framework for hotel registrations while allowing different hotel types (Luxury, Budget) to implement their specific registration logic. The approach involves:
+
+* A base abstract class (HotelRegistration) with common attributes and methods.
+* Subclasses (LuxuryHotel, BudgetHotel) that implement the core registration logic tailored to their category.
+* A structured execution class (HotelDemo) to demonstrate real-world usage.
+
+### Implementation Approach
+
+- Step 1: Define the Abstract Class
+  - [HotelRegistration](/CodeBase/Abstraction/HotelRegistration.cls) with common attributes (hotelName, location) and methods (displayHotelDetails(), registerHotel()).
+- Step 2: Create Concrete Subclasses
+  - [LuxuryHotel](/CodeBase/Abstraction/LuxuryHotel.cls) and [BudgetHotel](/CodeBase/Abstraction/BudgetHotel.cls) implementing registerHotel() according to their category’s specific needs.
+- Test the code :
+  ```
+  // Create a Luxury Hotel
+  HotelRegistration luxuryHotel = new LuxuryHotel('Grand Palace', 'New York');
+  luxuryHotel.displayHotelDetails();
+  luxuryHotel.registerHotel();
+
+  // Create a Budget Hotel
+  HotelRegistration budgetHotel = new BudgetHotel('Easy Stay', 'Los Angeles');
+  budgetHotel.displayHotelDetails();
+  budgetHotel.registerHotel();
+  ```
+
+### Use Cases & Scenarios
+
+| Use Case|Description|
+|---------|------------|
+| New hotel registration| Standardized process for all hotels while allowing category-specific customization.
+|Expanding to new hotel types|Easily integrate BoutiqueHotel, ResortHotel, etc., without modifying the existing framework.
+
+
 <h2> References and Further Reading </h2>
-
-1. Refer Sample Class -
-  1.1. [HotelRegistration.cls](/CodeBase/Abstraction/HotelRegistration.cls)
-  1.2. [LuxuryHotel.cls](/CodeBase/Abstraction/LuxuryHotel.cls)
-  1.3. [BudgetHotel.cls](/CodeBase/Abstraction/BudgetHotel.cls)
-
-
-
