@@ -1,16 +1,10 @@
 
 # Abstraction in Apex
 
-## Summary
-* Define: public abstract class MyAbstractClass {}.
-* Use: public class MyChildClass extends MyAbstractClass {}.
-* child classes inherit all the methods and properties of the extended class.
-* can contain virtual and abstract methods.
-* abstract class is child super-type.
-* cannot be initialized.
-* class can extend only one abstract class.
-
 ## Why Abstraction?
+
+Abstraction is a principle of Object-Oriented Programming (OOP) where we hide implementation details and expose only relevant functionalities. In Apex, we achieve abstraction using abstract classes and interfaces.
+
 Abstraction is a design pattern used in Apex programming to hide complexity and provide functionality for a class. 
 It is useful when multiple classes have methods that share similar logic or when there is a possibility of adding new methods in the future. 
 The main advantage of using an abstract class is that it enables seamless updating of the logic for all its child classes (with the exception of overrides) - you only need to change the implementation in the abstract class. Using an abstract class also helps to keep code DRY (Don't Repeat Yourself) and easier to maintain.
@@ -32,6 +26,15 @@ When a class extends an abstract class, it must provide an implementation for al
 **Abstract classes can provide default implementations for methods:** Since Java 8, abstract classes can provide default implementations for methods. These methods can be overridden by the inheriting classes, but they provide a default behaviour that can be used if no overriding is needed.
 
 **Abstract classes can have final methods:** Abstract classes can also have final methods that cannot be overridden by the inheriting classes. This can be useful if the abstract class wants to enforce a specific behaviour that should not be changed by the inheriting classes.
+
+## Summary
+* Define: public abstract class MyAbstractClass {}.
+* Use: public class MyChildClass extends MyAbstractClass {}.
+* child classes inherit all the methods and properties of the extended class.
+* can contain virtual and abstract methods.
+* abstract class is child super-type.
+* cannot be initialized.
+* class can extend only one abstract class.
 
 <h2> References and Further Reading </h2>
 1. Refer Sample Class - /OOPS in Apex/Abstraction
