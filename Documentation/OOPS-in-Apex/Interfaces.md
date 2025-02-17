@@ -18,14 +18,37 @@ Use interfaces when you need multiple classes to implement similar behavior or w
 
 ## Syntax
 
-``
+```
 public interface InterfaceName {
   void method1();
   void method2();
 }
-``
+```
 
 <h3>Business Case</h3>
 
 A hotel registration system needs different types of registration processes for various customer categories. Some customers might book online, some via phone, and VIP customers may have a special reservation process.
 
+### Implementation
+
+* Step 1: Define the [IHotelRegistration](/CodeBase/Interface/IHotelRegistration.cls) interface with method signatures.
+* Steps 2-4: Implement this interface in different classes
+  * [OnlineBooking](/CodeBase/Interface/OnlineBooking.cls) 
+  * [PhoneBooking](/CodeBase/Interface/PhoneBooking.cls) 
+  * [VIPBooking](/CodeBase/Interface/VIPBooking.cls) 
+* Step 5: Create a [HotelRegistrationSystem](/CodeBase/Interface/HotelRegistrationSystem.cls) class that processes bookings dynamically.
+
+### Testing
+
+```
+IHotelRegistration online = new OnlineBooking();
+IHotelRegistration phone = new PhoneBooking();
+IHotelRegistration vip = new VIPBooking();
+
+HotelRegistrationSystem.processBooking(online, 'John Doe', 'Deluxe Room', 3);
+HotelRegistrationSystem.processBooking(phone, 'Jane Smith', 'Suite', 2);
+HotelRegistrationSystem.processBooking(vip, 'Alice Brown', 'Penthouse', 5);
+
+HotelRegistrationSystem.cancelGuestBooking(online, 'John Doe');
+HotelRegistrationSystem.fetchBookingDetails(phone, 'Jane Smith');
+```
