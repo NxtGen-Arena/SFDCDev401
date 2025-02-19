@@ -2,12 +2,7 @@
 //Apex throws runtime expections if limit exceeded
 //APX CPU time limit may exceed because of too many elements ot nested collections
 
-public with sharing class Collections {
-    
-    //default no parameter constructor
-    public Collections() {
-
-    }
+public with sharing class CollectionsHandler {
 
     //Naming convetion: Methods and variables should follow camelCase
     //1. ordered collection of elements
