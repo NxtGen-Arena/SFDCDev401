@@ -24,18 +24,73 @@ Executes a block of code based on a condition. If the condition is true, it exec
 
 <img src="https://github.com/user-attachments/assets/bddfde11-8150-4dcc-92c6-057a7c224807" alt="alt text" width="550" height="400" />
 
-<h3> Loops </h3>
+<h3> Procedural Loops </h3>
 
-To iterate over collection of data, Apex offers multiple loop statements. Apex supports procedural loops:
+To iterate over collection of data, Apex offers multiple loop statements. 
 
-* do {statement} while (Boolean_condition);
-* while (Boolean_condition) statement;
-* Traditional For Loop: for (initialization; Boolean_exit_condition; increment) statement;
-* List or Set Iteration for Loops : for (variable : array_or_set) statement;
-* SOQL For Loops: for (variable : [inline_soql_query]) statement;
+### do-while
+Execute code block and then the expression is validated. Code block is always executed once in the execution; then based on the expression result may stop.
+
+```
+do {
+statement block to be executed
+} while (Boolean_condition);
+```
+
+### while
+Executes clode block only if the expression evalutes true.
+
+```
+while (Boolean_condition)
+{
+  statement block to be executed
+}
+```
+
+### Traditional For Loop
+
+When executing this type of for loop, the Apex runtime engine performs the following steps, in order:
+
+1. Execute the init_stmt component of the loop. Note that multiple variables can be declared and/or initialized in this statement, separated by commas.
+2. Perform the exit_condition check. If true, the loop continues. If false, the loop exits.
+3. Execute the code_block.
+4. Execute the increment_stmt statement.
+5. Return to Step 2.
+
+```
+for (initialization; Boolean_exit_condition; increment)
+{
+  statement block to be executed
+}
+```
+
+### List or Set Iteration for Loops 
+
+Iterate over the collections stored in List, Maps or Sets. This is also referred as For-Each loop. We do not need to incerment index in these types of loops.
+
+```
+for (declare variable : array_or_set)
+{
+  statement block to be executed
+}
+```
+### SOQL for Loops 
+
+SOQL for loops iterate over all of the sObject records returned by a SOQL query.SOQL queries returns 50k records in single execution. This loop internally divides the SOQL results in multiple batches and is capable to handle more records. 
+
+>[!Note]
+> SOQL for loops retrieve all sObjects, using efficient chunking with calls to the query and queryMore methods of SOAP API. Developers can avoid the limit on heap size by using a SOQL for loop to process query results that return multiple records. However, this approach can result in more CPU cycles being used.
+
+```
+for (declare variable : array_or_set)
+{
+  statement block to be executed
+}
+```
 
 Also, Apex supports loop controls like -
 
 * break; exits the entire loop
 * continue; skips to the next iteration of the loop
   
+<h2>  </h2>
