@@ -31,8 +31,8 @@ To iterate over collection of data, Apex offers multiple loop statements. Apex s
 * do {statement} while (Boolean_condition);
 * while (Boolean_condition) statement;
 * Traditional For Loop: for (initialization; Boolean_exit_condition; increment) statement;
-* For Each Loop for Collections: for (variable : array_or_set) statement;
-* For Each Loop for SOQL resulrs: for (variable : [inline_soql_query]) statement;
+* List or Set Iteration for Loops : for (variable : array_or_set) statement;
+* SOQL For Loops: for (variable : [inline_soql_query]) statement;
 
 Also, Apex supports loop controls like -
 
