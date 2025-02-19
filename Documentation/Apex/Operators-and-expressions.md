@@ -101,5 +101,5 @@ System.debug('Null safe operator example: ' + (str?.length())); // Returns null 
         
 <h2>Further Read</h2>
 
-1. [Expressions and Operators](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/langCon_apex_expressions.htm)
-2. [ExpressionsAndOperators](Codebase/Apex/Expressions-and-operators.cls)
+1. Developer Guide - [Expressions and Operators](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/langCon_apex_expressions.htm)
+2. Sample Code - [ExpressionsAndOperators](Codebase/Apex/Expressions-and-operators.cls)
