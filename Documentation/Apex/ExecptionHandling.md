@@ -1,4 +1,16 @@
 # Excepion handling in Apex
 
-1. Standard - Try, Catch and Finally
-2. Custom Exception
+## What is an Exception?
+An exception is an event that occurs during the execution of a program, indicating that something unexpected or erroneous has happened. Exceptions can be caught and handled by the code, allowing the program to continue executing or to gracefully exit.
+
+There are several built-in exception classes in Apex, such as System.Exception, System.DmlException, System.QueryException, and more. These built-in exception classes cover most common scenarios, but sometimes you need to create custom exceptions to handle specific situations or to provide more meaningful error messages.
+
+You can also create your own execption class. To use a custom exception, you can create an instance of the custom exception class and use the throw keyword to throw the exception. 
+
+>[!note]
+>Governor limits exceptions are runtime exceptions and are not caught through Try Catch block
+
+## Exception Handling using Try,Catch and Finally
+
+
+## Custom Exception Declaration and Handling
