@@ -1,7 +1,9 @@
 # DML in Apex
 
 ## What is DML?
-Apex is tightly integrated with the Lightning Platform persistence layer. Records in the database can be inserted and manipulated through Apex directly using simple statements. The language in Apex that allows you to add and manage records in the database is the Data Manipulation Language (DML). In contrast to the SOQL language, which is used for read operations (querying records), DML is used for write operations.
+Apex is tightly integrated with the Lightning Platform persistence layer. Records in the database can be inserted and manipulated through Apex directly using simple statements. Database Manipulation Language (DML) operations in Apex are fundamental for interacting with data within Salesforce. 
+
+In contrast to the SOQL language, which is used for read operations (querying records), DML is used for write operations.
 
 ## DML Operations in Apex:
 
@@ -32,6 +34,13 @@ Apex is tightly integrated with the Lightning Platform persistence layer. Record
 2. Database Methods
    Allows to partially perform DML on records. Developers can track success and failures of the records. Partial processing only processed when 
    the AllOrNone falg is set as false.
+
+## Transaction Boundaries
+
+* In Apex, each DML operation is executed within a transaction boundary.
+* A transaction represents a series of operations that are executed as a single unit of work.
+* Transactions ensure that either all DML operations within the transaction are completed successfully or none of them are.
+* This atomicity guarantees data consistency and prevents partial data modifications.
 
 > [!IMPORTANT]
 > After a successful insert, the variable that holds the SObject instance is updated with Id.
