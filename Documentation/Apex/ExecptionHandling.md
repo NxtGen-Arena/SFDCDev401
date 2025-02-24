@@ -13,4 +13,12 @@ You can also create your own execption class. To use a custom exception, you can
 ## Exception Handling using Try,Catch and Finally
 
 
+
 ## Custom Exception Declaration and Handling
+
+
+<h2>Best Practices</h2>
+
+- Specific Exception Handling: Catch specific exceptions whenever possible to handle them appropriately.
+- Avoid Empty Catch Blocks: Always include code to handle exceptions; empty catch blocks can lead to silent failures.
+- Logging: Use system debug logs or custom logging mechanisms to log exception details for debugging purposes.
