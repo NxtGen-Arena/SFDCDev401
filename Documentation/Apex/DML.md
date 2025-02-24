@@ -36,13 +36,14 @@ Apex is tightly integrated with the Lightning Platform persistence layer. Record
 > [!IMPORTANT]
 > After a successful insert, the variable that holds the SObject instance is updated with Id.
 
-<Details>
-   <Summary>Best Practices</Summary>
+<h2> Best Practices</h2>
    
    1. Ensure all the required fields are populated.
-   2. Don't run DML statements on null elements
-   3. Watch out for governor limits.
-   4. Look for the field lengths and data types.
+   2. Don't run DML statements on null elements. Always check using _.isEmpty_ on collections to check if the list contains elements
+   3. Look for the field lengths and data types.
+   4. Bulkification: Perform DML operations on collections of records to optimize performance and avoid hitting governor limits.
+   5. Error Handling: Surround DML operations with try-catch blocks to handle exceptions gracefully.
+   6. Governor Limits: Be mindful of Salesforce governor limits and design your code to stay within those limits
       
 </Details>
 
