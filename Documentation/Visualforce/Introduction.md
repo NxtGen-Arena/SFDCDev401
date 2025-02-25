@@ -2,6 +2,8 @@
 
 Visualforce is a markup language used by Salesforce developers for designing custom user interfaces in their CRM platform. It provides a set of tags, components, and controllers, allowing developers to create customized pages integrating with Salesforce's back-end database. Visualforce offers a wide range of design capabilities focusing on delivering a highly interactive UX.
 
+Visualforce is nothing but one of the framework of Force.com which is component-based user interface. A tag based language more similar to HTML is used by visualforce.  Each tag corresponds to user interface component. It also has 100 built-in components with custom build component development support.
+
 ## How Visualforce is used in Salesforce
 
 Visualforce allows developers to create page layouts using HTML, CSS, and JavaScript, which can be rendered dynamically based on user input and other factors. This means that developers can develop custom pages with a high degree of flexibility, enabling them to tailor the user experience to the specific needs of their application.
@@ -10,16 +12,43 @@ Visualforce pages can be tested using standard Salesforce testing tools, which e
 
 Developers can use Visualforce’s variety of standard and custom components, such as input fields, lists, and buttons, or utilize standard styling and layout options, as well as custom CSS and JavaScript, to create rich and interactive user interfaces.
 
-# Anatomy of Visualforce
 
-The Visualforce framework has a set of tags fixed on the server-side. These tags work well with standard or custom controllers to make the database and other operations easier to implement.
+<h3> Salesforce MVC Architecture </h3>
 
-Classification of Visualforce pages are:
+The Model-View-Controller (MVC) architecture is a widely used design pattern that separates an application into three core components:
 
-1. Visualforce Page – A mark-up language similar to HTML which is leveraged in designing page layouts.
+1. Model – Represents the data and business logic (e.g., Standard and Custom Objects in Salesforce).
+2. View – Handles the user interface and presentation (e.g., Visualforce Pages).
+3. Controller – Manages user interactions and business logic execution (e.g., Apex Controllers).
 
-2. Controller – Apex code can easily handle server-side implementations at the Visualforce page. Use standard and custom controllers for binding server side apex to pages. Extensions can help to provide functionality which is not possible to be delviered through standard and custom controllers. Salesfore also has Listcontrollers to act on set of records.
+<h3> Visualforce and MVC Implementation </h3>
 
-3. JavaScript – JavaScript can manage client-side processes and can be used with CSS to customize the UI.
+Salesforce supports the MVC pattern through Visualforce, which enables developers to build applications efficiently in the cloud.Visualforce executes on server side.
 
-4. Apex Extensions – Apex Extensions can easily manage optional logical operations that are not accessible using standard controllers.
+* Model: Standard and Custom Objects store and manage data.
+* View: Visualforce pages provide the front-end interface, similar to JSP or ASP pages, and enable dynamic UI rendering based on user needs.
+* Controller: Apex Controllers (Standard, Custom, or Extension Controllers) handle user interactions and business logic execution.
+
+### Key Features of MVC in Visualforce
+
+* Supports Standard and Custom Objects for data management.
+* Uses Apex to write custom controllers or extend standard controllers.
+* Leverages Standard AJAX Components for dynamic UI interactions.
+* Incorporates Formula Expressions for binding data and actions to UI components.
+* Provides Auto-Generated Controllers to simplify database interactions.
+
+### Salesforce-Specific MVC Enhancements
+
+Salesforce also introduces three specialized components to enhance MVC implementation:
+
+1. Visualforce Pages – Define the UI structure and presentation.
+2. Visualforce Components – Reusable UI elements for modular development.
+3. Controllers – Apex-based logic handlers that control application behavior.
+
+By following the MVC pattern in Salesforce, developers can build scalable, maintainable, and efficient applications that align with industry best practices.
+
+![image](https://github.com/user-attachments/assets/78e191f2-ea02-4c52-9cf4-662db13df591)
+
+<h2> Designing Visualforce Pages</h2>
+
+Visualforce pages are created by composing components, HTML, and optional styling elements available in Force.com platform. To make animation or rich user interface, visualforce can integrate with any standard web technology like JavaScript.
