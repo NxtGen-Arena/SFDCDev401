@@ -52,3 +52,10 @@ By following the MVC pattern in Salesforce, developers can build scalable, maint
 <h2> Designing Visualforce Pages</h2>
 
 Visualforce pages are created by composing components, HTML, and optional styling elements available in Force.com platform. To make animation or rich user interface, visualforce can integrate with any standard web technology like JavaScript.
+
+### Creating Visualforce Pages
+
+You can create Visualforce pages using -
+1. Developer Console
+2. Setup>Visualforce Pages
+3. Visual Studio IDE
