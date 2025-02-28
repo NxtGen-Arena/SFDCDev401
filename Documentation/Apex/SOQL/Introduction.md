@@ -38,8 +38,20 @@ FROM object
 [Other options, such as GROUP BY]
 ```
 
+<img width="610" alt="image" src="https://github.com/user-attachments/assets/bdd38fd5-ec0f-4d36-ba00-8323841bff54" />
+
+
+## Where can we execute SOQL?
+
+1. Developer Console
+2. Reports
+3. Data Export Tools - Data Loader, Workbench
+4. Visual Studio - SOQL Builder
+5. Apex Classes
+
 <h2> SELECT Clause</h2>
-Reserved keyword used for SOQL. Mention the API names of the fields to be retrieved Comma separated.
+
+Reserved keyword used for SOQL. Mention the API names of the fields to be retrieved Comma separated. This is Required clause in SOQL.
 
 | To Retrieve | Format | Example | Comments
 |-------------|---------|-------|----|
@@ -65,3 +77,36 @@ Filter the queries to fetch only records to be processes. Selective queries impr
 | date literals. | No single quotes required. | ... WHERE ClosedDate !- LAST_N DAYS:365
 | Boolean values| Can be used directly |... WHERE IsClosed = TRUE
 | Multi-picklists| Use Includes/Excludes for contains. Use Equals for exact match | WHERE Supported_Regions__c INCLUDES ('EMEA')
+
+# Operators for Filtering Data
+
+|Type | Operator | Comments|
+|------|---------|-------|
+|Arithemtic Operator| Equals (=) | 
+|| Not Equals (!=) | 
+|| Less Than (<) | 
+|| Greater Than (>) | 
+|| Less Than or Equal to (<=) | 
+|| Greater Than or Equal to(>=) | 
+|Logical Operators| AND|
+||OR|
+||NOT|
+|String Operators| LIKE - Starts With (%)| SELECT Id, Name FROM Account where Name LIKE '% test'
+||LIKE - End with (%)|SELECT Id, Name FROM Account where Name LIKE 'test %'
+||LIKE - contains (%txt%)| SELECT Id, Name FROM Account where Name LIKE '% test %'
+||IN('','')|
+||NOT IN ('','')|
+|Multi-Picklist Operators|Includes/Excludes('','')
+
+# Date Literals
+
+We can filter by Date/DateTime fields using either:
+* Exact dates (e.g., 2015-04-15 and 2015-04-15T08:40:15-08:00)
+* Date Literals (e.g., TODAY, THIS_WEEK, NEXT_MONTH)
+  
+![image](https://github.com/user-attachments/assets/4a76de30-e11d-4d33-b462-b7bca16af63d)
+
+
+<img width="516" alt="image" src="https://github.com/user-attachments/assets/68dbe107-add2-4e0e-98c0-0208f4467e9a" />
+
+
