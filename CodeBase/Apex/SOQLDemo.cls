@@ -362,6 +362,7 @@ public with sharing class SOQLDemo {
 
         //Query to group by Lead Source
         //Aggregate Result - Group By
+        //Alias works only in apex. if you execute this query in developer console or workbench may not not work.
         List<AggregateResult> agrAccountList = [SELECT Type, COUNT(Id) totalCount
                                                 FROM Account
                                                 GROUP BY Type
