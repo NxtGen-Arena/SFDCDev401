@@ -44,7 +44,7 @@ Course will cover below topics:
     * [Control Structure](Documentation/Apex/control-structures.md)
     * [Collections](Documentation/Apex/Collections.md)
     * [Retrieve Data from Salesforce (SOQL)](Documentation/Apex/soql)
-      * [Basic SOQL)](Documentation/Apex/SOQL/Introduction.md)
+      * [Basic SOQL](Documentation/Apex/SOQL/Introduction.md)
       * [Relationship Queries)](Documentation/Apex/SOQL/Relationship-Queries.md)
       * [Aggregate SOQL)](Documentation/Apex/SOQL/AggregateQueries.md)
     * [DML](Documentation/Apex/DML.md)
