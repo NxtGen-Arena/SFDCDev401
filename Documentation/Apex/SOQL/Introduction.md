@@ -1,5 +1,7 @@
 # SOQL in Salesforce
 
+We need to retrive data for mulitple reasons - Data Backup, Data Validation, Data Cleanups, Analytics and many more. Data is heart of your business and in order to build the applications which can support this data and process it efficiently we need equally strong way to retrieve this data.
+
 SOQL query enclosed in [] is an expression. Two possible return types are sobject and List<sObject>. The sObject and field names in a SOQL query use the same names you use in Apex.
 
 SOQL allows developers to query (using user-defined selection criteria) data in the Salesforce database. SOQL queries can be performed:
