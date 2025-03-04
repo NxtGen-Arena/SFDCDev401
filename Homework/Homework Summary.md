@@ -34,3 +34,12 @@
 | Superbadge | [Scheduled Flow and Subflow Superbadge Unit](https://trailhead.salesforce.com/content/learn/superbadges/superbadge_scheduled_and_subflows_sbu) |
 | Trailhead | [Flow Builder Logic](https://trailhead.salesforce.com/content/learn/modules/flow-build-logic)
 </Details>
+
+<Details>
+  <Summary> SOQL </Summary>
+
+| Type  | Module Ref. |Comments/Notes |
+| ------------- | ------------- |------------- |
+|Salesforce Help|[Improve Performance of SOQL Queries using a Custom Index](https://help.salesforce.com/s/articleView?id=000385213&type=1)|
+
+</Details>
