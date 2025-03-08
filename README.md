@@ -60,6 +60,21 @@ Course will cover below topics:
     * [Execution Cycle]() 
    * [Triggers](#triggers)
    * [Visualforce](#visualforce)
+     * [Introduction]()
+     * [Standard Controllers]()
+       * Create Detail ad Edit Pages
+       * Adding Related Records list
+       * Display Table - PageblockTable, DataTable,Repeat
+     * [List Controllers]()
+     * [Custom Controllers]()
+       * Input data with form
+       * Ajax in Visualforce
+       * Display Warning and Error Messages
+       * Using static resources
+       * Action Methods in Visualforce
+       * Inner Classes in an Apex classes
+     * [Extensions]()
+     * 
   * [Asynchronous Apex](#asynchronous-apex)
     * [Batch Apex](#batch-apex)
     * [Platform Events](#platform-events)
