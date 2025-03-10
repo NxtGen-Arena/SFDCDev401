@@ -10,11 +10,16 @@ You can also create your own execption class. To use a custom exception, you can
 >[!note]
 >Governor limits exceptions are runtime exceptions and are not caught through Try Catch block
 
-## Exception Handling using Try,Catch and Finally
+<h2>Types of Exceptions in Salesforce</h2>
 
+1. **System Exceptions: ** Built-in exceptions thrown by Salesforce when a governor limit is exceeded or a Salesforce-specific error occurs. Examples include NullPointerException, DMLException, QueryException, etc.
+2. **Custom Exceptions:** User-defined exceptions that allow developers to handle application-specific errors in a custom way.
 
+<h2>Exception Handling Mechanisms</h2>
 
-## Custom Exception Declaration and Handling
+* Try-Catch Block: Used to catch exceptions and handle them.
+* Throw Statement: Used to explicitly throw exceptions.
+* Finally Block: Used to execute code regardless of whether an exception was thrown or not.
 
 
 <h2>Best Practices</h2>
