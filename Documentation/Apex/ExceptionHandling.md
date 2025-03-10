@@ -1,4 +1,4 @@
-# Excepion handling in Apex
+# Exception handling in Apex
 
 ## What is an Exception?
 An exception is an event that occurs during the execution of a program, indicating that something unexpected or erroneous has happened. Exceptions can be caught and handled by the code, allowing the program to continue executing or to gracefully exit.
