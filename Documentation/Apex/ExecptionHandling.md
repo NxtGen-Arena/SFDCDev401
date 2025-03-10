@@ -29,11 +29,24 @@ You can also create your own execption class. To use a custom exception, you can
 1. **System Exceptions:** Built-in exceptions thrown by Salesforce when a governor limit is exceeded or a Salesforce-specific error occurs. Examples include NullPointerException, DMLException, QueryException, etc.
 2. **Custom Exceptions:** User-defined exceptions that allow developers to handle application-specific errors in a custom way.
 
+|Type|Description|Execption Category|Details|
+|----|----------|---------------|--------|
+|DML Exception|These occur during insert, update, delete, or undelete operations.| DMLException|DML Fails due to required field missing or similar reasons.
+|||MixedDmlOperationException| Occurs when you try to mix setup and non-setup objects in the same transaction.
+|Governor Limit Exceptions |These occur when Salesforce limits are exceeded.|LimitException|Triggered when execution limits allocated (e.g., SOQL queries, CPU time) are exceeded.
+|System Exceptions|These are runtime exceptions due to system-level errors.|NullPointerException|Attempting to access a null variable.
+|||QueryException|Issues with SOQL queries, such as retrieving multiple records when only one is expected.
+|||TypeException|Occurs when incompatible data types are used.
+|Callout Exceptions|These occur when external system integrations fail.|CalloutException| Raised when an HTTP request fails or times out.
+|Custom Exceptions|These are custom-defined exceptions that enforce specific business rules.|BookingException|enforce constraints in the booking system.
+
+
 <h2>Exception Handling Mechanisms</h2>
 
 * Try-Catch Block: Used to catch exceptions and handle them.
 * Throw Statement: Used to explicitly throw exceptions.
 * Finally Block: Used to execute code regardless of whether an exception was thrown or not.
+
 
 <h2>Demo</h2>
 
