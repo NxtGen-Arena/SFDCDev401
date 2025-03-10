@@ -47,6 +47,32 @@ You can also create your own execption class. To use a custom exception, you can
 * Throw Statement: Used to explicitly throw exceptions.
 * Finally Block: Used to execute code regardless of whether an exception was thrown or not.
 
+<h2>Try-Catch-Finally</h2>
+
+Apex provides the standard try-catch-finally block to handle exceptions. Handle specific exceptions and then add a generic exception block to cature any errors which are not caught by other catch blocks.
+
+* try: Contains the main business logic that may throw an exception.
+* catch: Handles the exception and defines actions to take when an error occurs.
+* finally: Contains code that executes regardless of whether an exception occurred.The finally block is useful for cleanup activities like closing resources, logging, or resetting variables.
+
+
+```
+try {
+    // Fetching booking details
+    Booking__c booking = [SELECT Id FROM Booking__c WHERE Guest_Name__c = 'John Doe' LIMIT 1];
+    booking.Room_Type__c = null;
+    update booking;
+} catch (QueryException qe) {
+    System.debug('SOQL Query failed: ' + qe.getMessage());
+} catch (DmlException de) {
+    System.debug('DML Operation failed: ' + de.getMessage());
+} catch (Exception e) {
+    System.debug('Unexpected error: ' + e.getMessage());
+} finally {
+    System.debug('Booking operation completed.');
+}
+```
+
 
 <h2>Demo</h2>
 
@@ -58,9 +84,9 @@ public class ExceptionHandlingDemo {
         try {
             // Intentional divide by zero to throw an exception
             Integer result = 10 / 0;
-        } catch (ArithmeticException e) {
+        } catch (MathException e) {
             // Log the exception and display a message
-            System.debug('ArithmeticException caught: ' + e.getMessage());
+            System.debug('Math Exception caught: ' + e.getMessage());
         } finally {
             System.debug('Finally block executed: System Exception Demo');
         }
