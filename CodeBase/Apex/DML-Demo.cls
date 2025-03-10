@@ -63,41 +63,6 @@ public with sharing class DMLDemo
         System.debug('Inserted Accounts: '+accList);
     }
 
-    //Operation: Database DML Statemens
-    //Error Handling - Allows partial success and failures and returns result object.
-    //allOrNone - Parital or full rollbacks allowed
-    //Providing more flecxibility in error handling, rollbacks and partial success.
-    public static void databaseDMLOperations()
-    {
-        // Insert a list of Accounts
-        List<Account> lstAccounts = new List<Account>();
-        //add two accounts in the list
-        Account acc1 = new Account(Name = 'Test Account 1');
-        Account acc2 = new Account(Name = 'Test Account 2');
-
-        lstAccounts.add(acc1);
-        lstAccounts.add(acc2);
-
-        // DML Statement
-        //Return type = Database.SaveResult
-        //Param: List<sObject> - List of sObjects to be updated or inserted
-        //AllorNone Flag = false: partial processing allowed. Continue with remaining records in case of failure
-        //true:If any record fails, the entire transaction rolls back
-        Database.SaveResult[] srList = Database.insert(lstAccounts, false);
-        for(Database.SaveResult result : srList)
-        {
-            if(result.isSuccess())
-            {
-                System.debug('Successfully inserted account. Account ID: ' + result.getID()); //retrieves ID for successful record
-            } else {
-                for(Database.Error err : result.getErrors()) //collection of errors
-                {
-                    System.debug('The Error is: ' + err.getMessage());
-                }
-            }
-        }
-    }
-
     public static void updateRecords()
     {
         //retrieve the single record
@@ -172,5 +137,117 @@ public with sharing class DMLDemo
         upsert accList;
 
         //merge acc1 acc2; 
+    }
+
+
+    //Operation: Database DML Statemens
+    //Error Handling - Allows partial success and failures and returns result object.
+    //allOrNone - Parital or full rollbacks allowed
+    //Providing more flecxibility in error handling, rollbacks and partial success.
+    public static void databaseDMLOperations()
+    {
+        //insert recrod using database.insert
+        List<Account> lstAccounts = new List<Account>();
+        Account accnt1 = new Account(Name = 'DatabaseInsert Account 1');  //new account
+        lstAccounts.add(accnt1); 
+
+        Account accnt2 = new Account(Name = 'DatabaseInsert Account 2');  //new account
+        lstAccounts.add(accnt2);
+
+        Account accnt3 = new Account(Active__c ='true');  //new account
+        lstAccounts.add(accnt3);
+
+        //allOrNone : false means partial insert, else all or none
+        List<Database.SaveResult> lstDsrAcc = database.insert(lstAccounts,false);
+
+        for(Database.SaveResult dsr : lstDsrAcc)
+        {
+            if(dsr.isSuccess())
+            {
+                system.debug('Record successfully inserted>>>>>'+ dsr.getId());
+            }  
+            else
+            {
+                //Operation failed
+                List<Database.Error> lstErrors = dsr.getErrors();
+                for(Database.Error err : lstErrors)
+                {
+                    system.debug(err.getStatusCode()+ '>>>>>>>>>>>>>>>>>'+ err.getMessage());
+                    system.debug('Error occured>>>>>'+ err.getFields());
+                }
+            }
+        }
+
+        //Database.update for update
+        Integer iCount = 0;
+        for(Account acc: lstAccounts)
+        {
+            acc.Name = 'DatabaseUpdate Account new '+ iCount;
+            iCount++;
+            system.debug('Accounts>>><><>'+acc.Name);
+        }
+
+        //datbase.update to update the records
+        List<Database.SaveResult> lstDsrAccUpdate = database.update(lstAccounts, false);
+        
+        for(Database.SaveResult dsr : lstDsrAccUpdate)  
+        {
+            if(dsr.isSuccess())
+            {
+                system.debug('Record successfully inserted>>>>>'+ dsr.getId()); 
+            } 
+            else
+            {
+                //Operation failed  
+                for(Database.Error err : dsr.getErrors())
+                {
+                    system.debug(err.getStatusCode()+ '>>>>>>>>>>>>>>>>>'+ err.getMessage());
+                    system.debug('Error occured>>>>>'+ err.getFields());
+                }
+            }
+        }
+
+        //database.DeletedRecord
+        List<Account> lstAccDelete = [SELECT id,Name FROM Account WHERE Name LIKE 'DatabaseUpdate Account new%'];
+        
+        List<Database.DeleteResult> lstDsrAccDelete = database.delete(lstAccDelete, false); 
+        for(Database.DeleteResult dsr : lstDsrAccDelete)    
+        {
+            if(dsr.isSuccess())
+            {
+                system.debug('Record successfully deleted>>>>>'+ dsr.getId());                          
+            }
+            else
+            {
+                //Operation failed  
+                for(Database.Error err : dsr.getErrors())
+                {
+                    system.debug(err.getStatusCode()+ '>>>>>>>>>>>>>>>>>'+ err.getMessage()); 
+                    system.debug('Error occured>>>>>'+ err.getFields());
+                }
+            } 
+        }
+
+        //database.UndeleteRecord
+        lstAccDelete = [SELECT Id,Name FROM Account WHERE Name LIKE 'DatabaseUpdate Account new%' ALL ROWS];
+        List<Database.UndeleteResult> lstDsrAccunDelete = database.undelete(lstAccDelete, false); 
+
+        for(Database.UndeleteResult dsr : lstDsrAccunDelete)    
+        {
+            if(dsr.isSuccess())
+            {
+                system.debug('Record successfully undeleted>>>>>'+ dsr.getId());
+
+            }
+            else
+            {
+                //Operation failed  
+                for(Database.Error err : dsr.getErrors())
+                {
+                    system.debug(err.getStatusCode()+ '>>>>>>>>>>>>>>>>>'+ err.getMessage()); 
+                    system.debug('Error occured>>>>>'+ err.getFields());
+                }
+            }
+        }
     }
 }
