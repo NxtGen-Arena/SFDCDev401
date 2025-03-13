@@ -48,13 +48,15 @@ Course will cover below topics:
       * [Relationship Queries](Documentation/Apex/SOQL/Relationship-Queries.md)
       * [Aggregate SOQL](Documentation/Apex/SOQL/AggregateQueries.md)
     * [DML](Documentation/Apex/DML.md)
+    * [Exception Handling in Apex]
+      * [Standard Exception Handling - Try,Catch,Finally]
+      * [Custom Exception Handling]
+    * [Security in Apex]()
     * [Search Data in Salesforce](Documentation/Apex/sosl)
     * [Custom Labels](#custom-labels)
     * [Custom Metadata](#custom-metadata)
     * [Custom Settings](#custom-settings)
     * [Getter and Setter Methods](#getter-and-setter-methods)
-    * [Exception Handling](#getter-and-setter-methods)
-    * [Security in Apex]()
   * [Apex Transaction Control](#apex-transaction)
     * [Governor Limits](#governor-limits)
     * [Execution Cycle]() 
