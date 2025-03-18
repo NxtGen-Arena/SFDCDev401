@@ -1,3 +1,7 @@
+/**
+*@Description: Trigger to demonstrate basic trigger structure
+**
+/
 trigger AccountBeforeInsert on Account (before insert,before update, after insert,after update, before delete, after delete, after undelete) {
 
     //DMl is not required in before insert.
