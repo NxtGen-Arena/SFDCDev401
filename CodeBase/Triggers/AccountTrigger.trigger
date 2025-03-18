@@ -1,4 +1,4 @@
-trigger AccountTrigger on Account (before insert,before update, after insert,after update, before delete, after delete, after undelete) {
+trigger AccountTrigger on Account (before insert) {
 
     //DMl is not required in before insert.
     //As such we can do a simple for loop with no need for list iteration or indexing.
