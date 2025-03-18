@@ -61,7 +61,7 @@ Course will cover below topics:
     * [Governor Limits](#governor-limits)
     * [Execution Cycle]() 
    * [Triggers](#triggers)
-    * [What are Triggers](Documentation/Triggers/1.What-are-Triggers.md)
+     * [What are Triggers](Documentation/Triggers/1.What-are-Triggers.md)
    * [Visualforce](#visualforce)
      * [Introduction]()
      * [Standard Controllers]()
