@@ -13,7 +13,7 @@
       convention reduces confusion and facilitates logical understanding.
   4. Maintainability – Modifications are easier to make in code we understand. Even if the code is not working, but you can understand it, you can also fix it.
      
-
+![image](https://github.com/user-attachments/assets/9f524f4c-2e8c-4657-9de0-474911c537b7)
 
 ## Best Practice
 1. Use Intention-Revealing Name – Ensure that each name answers critical questions: why does it exist, what is its purpose, and how is it utilized?
@@ -33,7 +33,7 @@
 ![image](https://github.com/user-attachments/assets/a1b16f1b-b43a-435b-8229-dfa4e986cc16)
 
 
-![image](https://github.com/user-attachments/assets/9f524f4c-2e8c-4657-9de0-474911c537b7)
+
 
 
 # References for further study
