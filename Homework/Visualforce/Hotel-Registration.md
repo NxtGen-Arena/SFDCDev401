@@ -1,6 +1,6 @@
 # Hotel Registration Use Case
 
-<h2> **Introduction**</h2>
+<h2> Introduction</h2>
 
 ## Scenario: Hotel Registration System
 
@@ -10,7 +10,7 @@ Imagine you are building a Hotel Registration System for a hotel chain. This sys
 - Search functionality for reservations.
 - Lightning integration for seamless experience.
 
-<h3>Exercise 1: Creating a Basic Hotel Registration Page</h3>
+<h3> Exercise 1: Creating a Basic Hotel Registration Page</h3>
 
 **Objective**: Create a Visualforce page that allows guests to enter their details and book a room.
 
