@@ -59,3 +59,6 @@ You can create Visualforce pages using -
 1. Developer Console
 2. Setup>Visualforce Pages
 3. Visual Studio IDE
+
+![image](https://github.com/user-attachments/assets/6bd04566-35be-412f-8a28-0bc73acdf6c3)
+
