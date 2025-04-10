@@ -1,23 +1,26 @@
-<apex:page standardController="Account" recordSetVar="accounts" tabStyle="Account"> 
+<apex:page standardController="Account" recordSetVar="accounts">
+    <!-- Add a page title -->
+    <apex:sectionHeader title="Hotel Information" subtitle="Hotel Reservation Management"/>
     <!-- Page Title -->
     <apex:sectionHeader title="Standard Controller Demonstration" subtitle="Account Management"/>
     
     <!-- Tab Panel to organize different sections -->
     <apex:tabPanel switchType="client" selectedTab="tabDetails">
+   
         
         <!-- Tab for Account Details -->
         <apex:tab label="Account Details" name="tabDetails">
-            <apex:form>
-                <apex:pageBlock title="Edit Account Information">
+            <apex:form >
+                <apex:pageBlock title="Edit Account Information"> <!-- group related fields and UI elements into sections -->
                     <!-- Section to display input fields for editing an account -->
-                    <apex:pageBlockSection columns="2">
+                    <apex:pageBlockSection columns="2"> <!-- Create section for organizing fields -->
                         <apex:inputField value="{!Account.Name}"/> <!-- Account Name Field -->
                         <apex:inputField value="{!Account.Industry}"/> <!-- Industry Field -->
                         <apex:inputField value="{!Account.Type}"/> <!-- Type Field -->
                         <apex:inputField value="{!Account.Phone}"/> <!-- Phone Field -->
                     </apex:pageBlockSection>
                     <!-- Action Buttons for Save, Quick Save, Delete, and Cancel -->
-                    <apex:pageBlockButtons>
+                    <apex:pageBlockButtons >
                         <apex:commandButton value="Save" action="{!save}"/> <!-- Save changes -->
                         <apex:commandButton value="Quick Save" action="{!save}" immediate="true"/> <!-- Quick Save without validation -->
                         <apex:commandButton value="Delete" action="{!delete}" onclick="return confirm('Are you sure you want to delete this account?');"/> <!-- Delete confirmation -->
@@ -25,34 +28,25 @@
                     </apex:pageBlockButtons>
                 </apex:pageBlock>
             </apex:form>
-        </apex:tab>
+        </apex:tab> 
         
-        <!-- Tab for Account List with Bulk Actions -->
-        <apex:tab label="Account List" name="tabList">
-            <apex:form>
-                <apex:pageBlock title="List of Accounts">
-                    <!-- Bulk Action Buttons -->
-                    <apex:pageBlockButtons>
-                        <apex:commandButton value="Delete Selected" action="{!delete}" onclick="return confirm('Are you sure you want to delete selected accounts?');"/> <!-- Bulk Delete -->
-                        <apex:commandButton value="Update Selected" action="{!save}"/> <!-- Bulk Update -->
+        <!-- Tab for New Account Creation -->
+        <apex:tab label="Create New Account" name="tabCreate">
+            <apex:form >
+                <apex:pageBlock title="Create New Account">
+                    <!-- Section to input new account details -->
+                    <apex:pageBlockSection columns="2">
+                        <apex:inputField value="{!Account.Name}"/> <!-- Account Name -->
+                        <apex:inputField value="{!Account.Industry}"/> <!-- Industry -->
+                        <apex:inputField value="{!Account.Type}"/> <!-- Type -->
+                        <apex:inputField value="{!Account.Phone}"/> <!-- Phone -->
+                    </apex:pageBlockSection>
+                    <!-- Action Buttons for Creating, Quick Save, and Canceling -->
+                    <apex:pageBlockButtons >
+                        <apex:commandButton value="Create" action="{!save}"/> <!-- Create new account -->
+                        <apex:commandButton value="Quick Save" action="{!save}" immediate="true"/> <!-- Quick Save -->
+                        <apex:commandButton value="Cancel" action="{!cancel}"/> <!-- Cancel action -->
                     </apex:pageBlockButtons>
-                    
-                    <!-- Table displaying account records with selection for bulk actions -->
-                    <apex:pageBlockTable value="{!accounts}" var="acc">
-                        <apex:column>
-                            <apex:inputCheckbox value="false"/> <!-- Checkbox for selection -->
-                        </apex:column>
-                        <apex:column headerValue="Account Name">
-                            <apex:outputLink value="/{!acc.Id}">{!acc.Name}</apex:outputLink> <!-- Link to Account Record -->
-                        </apex:column>
-                        <apex:column value="{!acc.Industry}" headerValue="Industry"/> <!-- Industry Column -->
-                        <apex:column value="{!acc.Phone}" headerValue="Phone"/> <!-- Phone Column -->
-                        <apex:column headerValue="Actions"> <!-- Column for action links -->
-                            <apex:commandLink value="Edit" action="/{!acc.Id}/e" target="_blank"/> <!-- Edit link -->
-                            &nbsp;|&nbsp;
-                            <apex:commandLink value="Delete" action="{!delete}" immediate="true" onclick="return confirm('Are you sure you want to delete this account?');"/> <!-- Delete confirmation -->
-                        </apex:column>
-                    </apex:pageBlockTable>
                 </apex:pageBlock>
             </apex:form>
         </apex:tab>
@@ -67,25 +61,66 @@
             </apex:pageBlock>
         </apex:tab>
         
-        <!-- Tab for New Account Creation -->
-        <apex:tab label="Create New Account" name="tabCreate">
-            <apex:form>
-                <apex:pageBlock title="Create New Account">
-                    <!-- Section to input new account details -->
-                    <apex:pageBlockSection columns="2">
-                        <apex:inputField value="{!Account.Name}"/> <!-- Account Name -->
-                        <apex:inputField value="{!Account.Industry}"/> <!-- Industry -->
-                        <apex:inputField value="{!Account.Type}"/> <!-- Type -->
-                        <apex:inputField value="{!Account.Phone}"/> <!-- Phone -->
-                    </apex:pageBlockSection>
-                    <!-- Action Buttons for Creating, Quick Save, and Canceling -->
-                    <apex:pageBlockButtons>
-                        <apex:commandButton value="Create" action="{!save}"/> <!-- Create new account -->
-                        <apex:commandButton value="Quick Save" action="{!save}" immediate="true"/> <!-- Quick Save -->
-                        <apex:commandButton value="Cancel" action="{!cancel}"/> <!-- Cancel action -->
-                    </apex:pageBlockButtons>
-                </apex:pageBlock>
+        <!-- Tab for Lists -->
+        <apex:tab label="Hotel Records" name="tablistHotels">
+            <apex:form >
+                <apex:pageblock >
+                
+                       <b> <apex:outputLabel value=" Account Name | Industry| Phone" style="color: red;"/></b> <br/>
+                    <apex:repeat value="{!accounts}" var="acc">
+                        <apex:outputText value=" {!acc.Name} | {!acc.Industry} |  {!acc.Phone}"/>
+                        <br/>
+                    </apex:repeat>
+                </apex:pageblock>
+                <apex:pageblock title="Hotels List">
+                    <!-- Using datatable to display list of records. It does not automatically format the tables. Best suited when you need custom styling -->
+                    <apex:dataTable value="{!accounts}" var="varAcc">
+                        <apex:column headerValue="Name" value="{!varAcc.Name}" />
+                        <apex:column headerValue="Industry" value="{!varAcc.Industry}" />
+                        <apex:column headerValue="Phone" value="{!varAcc.Phone}" />
+                    </apex:dataTable>
+                </apex:pageblock>
+            
+               
+                 <apex:pageblock title="Hotels List">
+                 
+                     <apex:pageBlockButtons >
+                         <apex:commandButton value="Save" action="{!save}"/>
+                     </apex:pageBlockButtons>
+                    <!-- Using pageblock to display list of records. It  automatically format the tables based on salesforce styling.-->
+                    <apex:pageBlockTable value="{!accounts}" var="varAcc">
+                         <apex:column headerValue="Account Name">
+                            <apex:outputLink value="/{!varAcc.Id}">{!varAcc.Name}</apex:outputLink>
+                        </apex:column>
+                        <apex:column headerValue="Industry" >
+                            <apex:inputField value="{!varAcc.Industry}"/>
+                        </apex:column>
+                        <apex:column headerValue="Phone" value="{!varAcc.Phone}" />
+                    </apex:pageBlockTable>
+                    
+                    <!-- StdSetcontrollers are typically best suited for native pagination. -->
+                    <apex:panelGrid columns="4" style="margin-top:10px;">
+                        <apex:commandLink value="First" action="{!first}" />
+                        <apex:commandLink value="Previous" action="{!previous}" rendered="{!hasPrevious}"/>
+                        <apex:commandLink value="Next" action="{!next}" rendered="{!hasNext}"/>
+                        <apex:commandLink value="Last" action="{!last}" />
+                    </apex:panelGrid>
+                    
+                </apex:pageblock>
             </apex:form>
         </apex:tab>
+        
+        <apex:tab label="Select List" name="tabSelectList">
+        <apex:form >
+            <!-- Display list of List Views for Account in dropdown-->
+           <!-- value in selectList is selected default value from dropdown-->
+            <apex:selectList value="{!filterId}" size="1">
+                <!-- individual item in the list. This is collection of values-->
+                <apex:selectOptions value="{!listviewoptions}" />
+            </apex:selectList>
+            <apex:commandButton value="Go" action="{!list}"/>
+        </apex:form>
+        </apex:tab>
+        
     </apex:tabPanel>
 </apex:page>
