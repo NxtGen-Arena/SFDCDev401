@@ -1,0 +1,78 @@
+<apex:page controller="ReservationSearchController">
+ <!-- -Enables form submission and ajax support -->
+  <apex:form >
+    <!-- Filters Section -->
+    <apex:pageBlock title="Search Reservations">
+    
+      <apex:pageMessages id="messagePanel" />
+      
+      <apex:pageBlockSection columns="2">
+        <apex:inputText value="{!searchKeyword}" label="Guest Name" />
+        
+        <!-- Creating dropendown menu-->
+        <apex:selectList value="{!selectedStatus}" label="Status" size="1">
+          <apex:selectOption itemLabel="--All--" itemValue="" />
+          <apex:selectOption itemLabel="Confirmed" itemValue="Booked" />
+          <apex:selectOption itemLabel="Checked-in" itemValue="Checked-in" />
+          <apex:selectOption itemLabel="Checked-out" itemValue="Checked-out" />
+          <apex:selectOption itemLabel="Cancelled" itemValue="Cancelled" />
+        </apex:selectList>
+        
+        <apex:inputText value="{!fromDate}" label="From Date (yyyy-mm-dd)" />
+        <apex:inputText value="{!toDate}" label="To Date (yyyy-mm-dd)" />
+        
+        <!-- rerender - allows the partial refresh without full reload of page. Ajax support -->
+        <apex:commandButton value="Search" action="{!searchReservations}" rerender="resultsPanel,messagePanel" />
+      </apex:pageBlockSection>
+      
+    </apex:pageBlock>
+    
+    <!-- Results Table -->
+        <apex:outputPanel id="resultsPanel">
+            <apex:pageBlock title="Reservations Found" rendered="{!NOT(ISNULL(reservations))}">
+            <apex:pageMessages id="messagePanelReservations" />
+                <apex:pageBlockTable value="{!reservations}" var="resv">
+                    <apex:column >
+                        <apex:facet name="header">Guest Name</apex:facet>
+                        <apex:inputField value="{!resv.Guest_Name__c}" />
+                    </apex:column>
+
+                    <apex:column value="{!resv.Check_in_Date__c}">
+                        <apex:facet name="header">
+                            <apex:commandLink value="Check-In Date" action="{!sortBy}" rerender="resultsPanel">
+                                <apex:param name="field" value="Check_in_Date__c" assignTo="{!sortField}" />
+                            </apex:commandLink>
+                        </apex:facet>
+                    </apex:column>
+
+                    <apex:column value="{!resv.Check_out_Date__c}">
+                        <apex:facet name="header">
+                            <apex:commandLink value="Check-Out Date" action="{!sortBy}" rerender="resultsPanel">
+                                <apex:param name="field" value="Check_out_Date__c" assignTo="{!sortField}" />
+                            </apex:commandLink>
+                        </apex:facet>
+                    </apex:column>
+
+                    <apex:column value="{!resv.Status__c}">
+                        <apex:facet name="header">
+                            <apex:commandLink value="Status" action="{!sortBy}" rerender="resultsPanel">
+                                <apex:param name="field" value="Status__c" assignTo="{!sortField}" />
+                            </apex:commandLink>
+                        </apex:facet>
+                    </apex:column>
+
+                    <apex:column value="{!resv.Total_Amount__c}">
+                        <apex:facet name="header">
+                            <apex:commandLink value="Amount" action="{!sortBy}" rerender="resultsPanel">
+                                <apex:param name="field" value="Total_Amount__c" assignTo="{!sortField}" />
+                            </apex:commandLink>
+                        </apex:facet>
+                    </apex:column>
+                </apex:pageBlockTable>
+
+               <apex:commandButton value="Update Reservations" action="{!saveChanges}" rerender="resultsPanel,messagePanelReservations"/>
+            </apex:pageBlock>
+        </apex:outputPanel>
+    
+  </apex:form>
+</apex:page>
