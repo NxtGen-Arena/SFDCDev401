@@ -13,3 +13,4 @@ To build a simple Visualforce page that displays static content along with dynam
    * User's Profile Name → $Profile.Name
 4. Use some inline CSS to style the page (optional for extra credit).
 5. Save and preview the page in Salesforce.
+6. Create a new button and launch this page.
