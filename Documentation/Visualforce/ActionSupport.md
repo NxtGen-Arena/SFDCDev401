@@ -1,4 +1,4 @@
-# Understanding Using ActionSupport in AJAX Calls
+# Understanding ActionSupport in AJAX Calls
 
 ✅ Scenario:
 Auto-populate a "Room Rate" when the user selects a "Room Type" from a dropdown on the Registration__c form — without refreshing the page.
