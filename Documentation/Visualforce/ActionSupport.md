@@ -24,8 +24,6 @@ Use <apex:actionFunction> :
 
 ✨ Visualforce Page Code:
 
-``
-
     <apex:page controller="HotelRegistrationController">
         <apex:form >
             <apex:pageBlock title="Create Reservation">
@@ -47,11 +45,9 @@ Use <apex:actionFunction> :
             </apex:pageBlock>
         </apex:form>
     </apex:page>
-``
+
 
 👨‍💻 Apex Controller: HotelRegistrationController
-
-``
 
     public with sharing class HotelRegistrationController 
     {
@@ -109,9 +105,9 @@ Use <apex:actionFunction> :
             return null;
         }
     }
-``
 
-💡 How it Works (Narrative Explanation)
+
+💡 How it Works 
 
 * The Room_Type__c field uses <apex:actionSupport> to listen for changes.
 * When a new room type is selected, updateRoomRate() is called without refreshing the page.
