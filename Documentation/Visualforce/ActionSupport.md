@@ -9,7 +9,7 @@ Auto-populate a "Room Rate" when the user selects a "Room Type" from a dropdown 
 
 ActionFunction creates Javascript in backend and we do not need to write any code for tha
 
-🔧 Use Case: Hotel Registration System
+ <h2>🔧Use Case: Hotel Registration System</h2>
 
 Object: Room__c
 Field: Room_Type__c (Picklist: Single, Double, Suite)
@@ -17,7 +17,7 @@ Field 2: Room_Rate__c (Currency - auto-filled based on Room Type)
 
 Object: Room_Type__c
 
-🧠 When to Use <apex:actionFunction>?
+<h2> 🧠 When to Use <apex:actionFunction>? </h2>
 
 Use <apex:actionFunction> :
 * to trigger Apex logic from a client-side event (like onchange, onclick).
