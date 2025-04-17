@@ -112,8 +112,8 @@ Use <apex:actionFunction> :
 ``
 
 💡 How it Works (Narrative Explanation)
-The Room_Type__c field uses <apex:actionSupport> to listen for changes.
 
+* The Room_Type__c field uses <apex:actionSupport> to listen for changes.
 * When a new room type is selected, updateRoomRate() is called without refreshing the page.
 * The controller logic sets the correct Room_Rate__c based on the selected type.
 * The rateBlock (containing the Room Rate output) is partially refreshed using reRender.
