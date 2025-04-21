@@ -1,0 +1,21 @@
+<apex:page standardController="Account" extensions="AccountControllerExtension">
+    <apex:form>
+        <apex:pageblock>
+            <apex:pageBlockButtons>
+                <apex:commandButton action="{!save}" value="save" />
+            </apex:pageBlockButtons>
+
+            <apex:pageBlockSection columns="2">
+                <apex:outputField value="{!Account.Name}" />
+                <apex:inputField value="{!Account.Rating}" label="Rating" />
+            </apex:pageBlockSection>
+
+            <apex:pageBlockTable value="{!childOpps}" var="opp">
+                <apex:column value="{!opp.Name}" />
+                <apex:column value="{!opp.Amount}" />
+                <apex:column value="{!opp.StageName}" />
+                <apex:column value="{!opp.CloseDate}" />
+            </apex:pageBlockTable>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>
