@@ -35,3 +35,10 @@ AJAX enables web pages to send and receive data asynchronously, without requirin
 * Once the HTML page loads, data is read from a web server.
 * Without the need to reload the webpage, the data can be updated.
 * Data transfer happens to the web server in the background.
+
+<h2>🔹 Benefits of Ajax </h2>
+
+- It creates responsive and interactive web applications.
+- It supports the development of patterns and frameworks that decrease the development time.
+- It makes the best use of existing technology and feature instead of using some new technology.
+- It makes an asynchronous call to the web server which means the client doesn't have to wait for the data to arrive before starting rendering.
