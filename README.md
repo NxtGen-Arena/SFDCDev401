@@ -70,8 +70,8 @@ Course will cover below topics:
    * [Visualforce](#visualforce)
      * [Introduction]()
      * [Standard Controllers]()
-       * Create Detail ad Edit Pages
-       * Adding Related Records list
+       * Create Detail and Edit Pages
+       * Adding Related Records list,Detail Section
        * Display Table - PageblockTable, DataTable,Repeat
      * [List Controllers]()
      * [Custom Controllers]()
@@ -82,7 +82,11 @@ Course will cover below topics:
        * Action Methods in Visualforce
        * Inner Classes in an Apex classes
      * [Extensions]()
-     * 
+     * [Wizards]()
+       * [Multi-Page Wizards]
+       * [Shared Controller Wizards]
+     * [Ajax in Visualforce]()
+       * [Rerender components Dynamically]
   * [Asynchronous Apex](#asynchronous-apex)
     * [Batch Apex](#batch-apex)
     * [Platform Events](#platform-events)
