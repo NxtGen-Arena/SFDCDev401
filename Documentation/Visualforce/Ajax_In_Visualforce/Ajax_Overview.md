@@ -42,3 +42,36 @@ AJAX enables web pages to send and receive data asynchronously, without requirin
 - It supports the development of patterns and frameworks that decrease the development time.
 - It makes the best use of existing technology and feature instead of using some new technology.
 - It makes an asynchronous call to the web server which means the client doesn't have to wait for the data to arrive before starting rendering.
+
+<h2>🔹 Ajax in Visualforce 🔄 How it works: </h2>
+
+* Salesforce provides Built-in support for AJAX implementation in Salesforce —no custom JS needed.
+* Visualforce lets you use Ajax effects, such as partial page updates, without requiring you to implement any complex JavaScript logic.
+* The key element is identifying what needs to be dynamically updated, and then using the rerender attribute to dynamically update that region of the page.
+
+### 1. Identify the Region to be updated
+
+A common technique when using Ajax in Visualforce is to group and identify the region to be dynamically updated. The <apex:outputPanel> component is often used for this, together with an **id** attribute for identifying the region. 
+
+### 2.Add dynamic re-rendering
+
+Use the componenents from which the action needs to be invoked and region needs to be dynamically refreshed. Use the ID attribute to reference the output panel you created earlier. This tells Visualforce to do a partial page update of that region when the name of the contact is clicked.
+You can also use the <apex:param> component to pass a parameter.
+
+## Big Picture:
+
+### How it Works
+1. User clicks an element (<apex:commandLink>)
+2. A specific component (<apex:outputPanel>) is refreshed (rerender) based on (id in COmponent)
+3. Apex processes backend logic
+4. Salesforce returns only the updated component markup
+
+<h2>🔹 Componenets for Ajax </h2>
+There are mulitple ways to implement AJAX in visualforce.
+
+1. re-render - Dynamically rendering or reloading specific region on the VF
+2. <apex:actionStatus> lets you display the status of an Ajax request—displaying different values depending on whether it’s in-progress or completed.
+3. <apex:actionSupport> lets you specify the user behavior that triggers an Ajax action for a component. Instead of waiting for an <apex:commandLink> component to be clicked, for example, the Ajax action can be triggered by a simple mouse rollover of a label.
+4. <apex:actionPoller> specifies a timer that sends an Ajax update request to Force.com according to a time interval that you specify.
+5. <apex:actionFunction> provides support for invoking controller action methods directly from JavaScript code using an Ajax request.
+6. <apex:actionRegion> demarcates the components processed by Force.com when generating an Ajax request.
