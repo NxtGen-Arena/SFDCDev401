@@ -1,0 +1,48 @@
+<apex:page controller="CaseSearchController">
+    <apex:form id="caseForm">
+        <apex:pageBlock title="Search Cases">
+            <apex:pageBlockSection columns="2">
+
+                <!-- Region Picklist -->
+                <apex:outputLabel value="Region" />
+                <apex:selectList value="{!selectedRegion}" size="1">
+                    <apex:selectOptions value="{!regionOptions}" />
+                    <apex:actionSupport event="onchange" action="{!loadSubRegions}" reRender="subregionPanel" />
+                </apex:selectList>
+
+                <!-- Subregion Picklist -->
+                <apex:outputLabel value="Subregion" />
+                <apex:outputPanel id="subregionPanel">
+                    <apex:selectList value="{!selectedSubRegion}" size="1">
+                        <apex:selectOptions value="{!subRegionOptions}" />
+                    </apex:selectList>
+                </apex:outputPanel>
+
+                <!-- Status Picklist -->
+                <apex:outputLabel value="Case Status" />
+                <apex:selectList value="{!selectedStatus}" size="1">
+                    <apex:selectOptions value="{!statusOptions}" />
+                </apex:selectList>
+            </apex:pageBlockSection>
+
+            <!-- Search Button -->
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Search" action="{!searchCases}" reRender="resultsPanel" />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+
+        <!-- Case Results -->
+        <apex:outputPanel id="resultsPanel">
+            <apex:pageBlock title="Search Results">
+                <apex:pageBlockTable value="{!caseResults}" var="c">
+                    <apex:column value="{!c.CaseNumber}" />
+                    <apex:column value="{!c.Subject}" />
+                    <apex:column value="{!c.Status}" />
+                </apex:pageBlockTable>
+                <!-- Pagination -->
+                <apex:commandButton value="Previous" action="{!previousPage}" reRender="resultsPanel" disabled="{!pageNumber == 0}" />
+                <apex:commandButton value="Next" action="{!nextPage}" reRender="resultsPanel" />
+            </apex:pageBlock>
+        </apex:outputPanel>
+    </apex:form>
+</apex:page>
