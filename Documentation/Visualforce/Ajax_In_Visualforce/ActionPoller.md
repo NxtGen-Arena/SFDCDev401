@@ -17,7 +17,7 @@ The <apex:actionPoller> is a Visualforce component that repeatedly calls a contr
 - action: The method in the Apex controller to invoke.
 - rerender: The ID of the component to update.
 
-✅ Simple Example: Refresh Order Status Every 5 Seconds: OrderStatusPolling
+✅ Simple Example: Refresh Order Status Every 5 Seconds: [ActionPollerDemo](Documentation/Visualforce/Ajax_In_Visualforce/ActionPoller)
 
 
 
