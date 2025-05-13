@@ -1,0 +1,34 @@
+<apex:page controller="ActionPollerDemo">
+    <apex:form >
+        <apex:pageblock >
+            <apex:pageBlockSection id="orderStatusPolling">
+                <apex:actionStatus startText="Polling.." stopText="stopped" id="statusMsg" />
+                <h2>
+                    Order Status:
+                    <apex:outputText value="{!orderStatus}" id="statusText" />
+                </h2>
+
+                <!-- This polls every 5 seconds and updates the status of order without a full page refresh -->
+                <apex:actionPoller interval="5" action="{!checkStatus}" reRender="statusText,pollControl" rendered="{!NOT(stopPolling)}"
+                    id="statusPoller" />
+
+                <!-- once completed display confirmation message -->
+                <apex:outputPanel id="pollControl">
+                    <apex:outputText value="Polling...." rendered="{!NOT(stopPolling)}" />
+                    <apex:outputText value="Polling Stopped...Order Placed Succesfully" rendered="{!stopPolling}" />
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+
+
+            <apex:pageBlockSection id="openSupportTicketsPolling">
+                <h2>Unassigned Cases:{!unassignedCases}</h2>
+
+                <apex:actionPoller interval="10" action="{!refreshCaseQueue}" rerender="caseCount" />
+
+                <apex:outputPanel id="caseCount">
+                    <h3>{!unassignedCases}</h3>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>
