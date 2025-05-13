@@ -76,17 +76,20 @@ Course will cover below topics:
      * [List Controllers]()
      * [Custom Controllers]()
        * Input data with form
-       * Ajax in Visualforce
        * Display Warning and Error Messages
        * Using static resources
-       * Action Methods in Visualforce
-       * Inner Classes in an Apex classes
+       * Wrapper Classes in an Apex classes
      * [Extensions]()
      * [Wizards]()
        * [Multi-Page Wizards]
        * [Shared Controller Wizards]
-     * [Ajax in Visualforce]()
-       * [Rerender components Dynamically]
+     * Ajax in Visualforce
+       * [Ajax Overview](Documentation/Visualforce/Ajax_In_Visualforce/Ajax_Overview.md)
+       * [Action Status](Documentation/Visualforce/Ajax_In_Visualforce/ActionStatus.md)
+       * [Action Support](Documentation/Visualforce/Ajax_In_Visualforce/ActionSupport.md)
+       * [Action Function](Documentation/Visualforce/Ajax_In_Visualforce/ActionFunction.md)
+       * [Action Poller](Documentation/Visualforce/Ajax_In_Visualforce/ActionPoller.md)
+       * [Action Region]
   * [Asynchronous Apex](#asynchronous-apex)
     * [Batch Apex](#batch-apex)
     * [Platform Events](#platform-events)
