@@ -114,4 +114,4 @@ In conclusion, <apex:actionRegion> is a valuable tool in your Visualforce arsena
 
 [!Reference]
 
-1. Codebase - GuestLotaltyController - Using ActionFunction,ActionRegion for efficient processing
+1. Codebase - [GuestLotaltyController](CodeBase/Visualforce/AJAX_in_Action/ActionRegion) - Using ActionFunction,ActionRegion for efficient processing
