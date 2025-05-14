@@ -27,6 +27,9 @@
                 <apex:inputText label="Guest Email" value="{!email}" required="true" />
             </apex:pageBlockSection>
 
+            <!-- optional update that should not validate guest info. Even if guestinfo is not populated, Loyalty section should not have impact
+                use <apex:actionRegion> to allow the loyalty section to work independently.][==
+]\\-->
             <apex:actionRegion>
                 <apex:outputPanel rendered="{!loyaltyPanelDisplayed}" layout="block" style="margin-bottom: 20px;">
                     <apex:pageBlockSection columns="1" title="Loyalty Points Update">
@@ -39,6 +42,7 @@
             </apex:actionRegion>
 
             <!--actionFunction to invoke server side method in JS-->
+            <!--The Add Points button calls callAddPoints() — an apex:actionFunction. Once the server method runs (addPoints), the client-side callback showModal() is triggered.-->
             <apex:actionFunction name="callAddPoints" action="{!addLoyaltyPoints}" reRender="msgPanel" oncomplete="showModal();" />
 
             <!--Modeal popup-->
@@ -63,8 +67,9 @@
             </apex:outputPanel>
 
             <!--submit action for form -->
-            <apex:commandButton value="Submit All" action="{!submitAll}" reRender="panelMsg,successPanel" style="margin-top: 20px;" />
+            <!--After Submit All, loyalty panel disappears, and guest info is shown as submitted.-->
 
+            <apex:commandButton value="Submit All" action="{!submitAll}" reRender="panelMsg,successPanel" style="margin-top: 20px;" />
 
             <!-- Javascript to control Modal-->
              <script>
