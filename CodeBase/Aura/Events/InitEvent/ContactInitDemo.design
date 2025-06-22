@@ -1,0 +1,3 @@
+<design:component>
+    <design:supports lightning__RecordPage="true"/>
+</design:component>
