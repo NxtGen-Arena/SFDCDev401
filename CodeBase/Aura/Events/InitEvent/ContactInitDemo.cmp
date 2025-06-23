@@ -9,6 +9,7 @@
     <aura:attribute name="errorMessage" type="String"/>
 
     <!-- Runs automatically on component load -->
+    <!--name of the controller function that handles the init event should always be named doInit-->
     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
 
     <!-- Lightning Card UI -->
