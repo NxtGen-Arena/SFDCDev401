@@ -16,6 +16,11 @@
 * Use of <aura:if> and <aura:set> creates dynamic UX: loading placeholder until data appears.
 * Separation between data (JS/Apex) and presentation (markup) for clarity.
 
+<h2>Code Walkthrough</h2>
+
+- cmp.get("v.attributeName") returns the value of the attributeName attribute.
+- cmp.set("v.attributeName", "attribute value") sets the value of the attributeName attribute.
+
 <h2>Key Concepts</h2>
 
 |Code|	Purpose|
