@@ -1,0 +1,16 @@
+<aura:component controller="TrainingCourse_cont" 
+                implements="force:appHostable,flexipage:availableForAllPageTypes">
+
+    <aura:attribute name="courseList" access="private" type="Course__c[]" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <lightning:card title="Course Browser">
+        <aura:if isTrue="{!not(empty(v.courseList))}">
+            <c:CourseTiles trainingCourses="{!v.courseList}" />
+        <aura:set attribute="else">
+            <p class="slds-var-p-around_small">No courses found.</p>
+        </aura:set>
+        </aura:if>
+    </lightning:card>
+</aura:component>
