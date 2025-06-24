@@ -28,7 +28,5 @@
 |action = component.get("c.methodName") | References the Apex method getContactDetails.|
 |setParams()| Passes data to the Apex method.
 |setCallback(this, callbackFn)| Registers asynchronous return handler.
-|state = "SUCCESS", "ERROR", "INCOMPLETE": | Handling States:|
-|                                           | SUCCESS: assign data to component attribute.
-|                                            |ERROR: extract error message and set errorMessage.
+|Hnadling States| state = "SUCCESS", "ERROR", "INCOMPLETE": SUCCESS: assign data to component attribute. ERROR: extract error message and set errorMessage.
 |$A.enqueueAction(action)|Queues request in Aura’s action queue for server execution. Always required to send the action.|
