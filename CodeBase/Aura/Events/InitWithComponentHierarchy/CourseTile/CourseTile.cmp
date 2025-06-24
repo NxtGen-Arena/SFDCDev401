@@ -1,0 +1,16 @@
+<!-- Render individual tile -->
+<aura:component>
+    <aura:attribute name="course" access="public" type="Course__c" />
+    <aura:attribute name="selected" type="boolean" access="public" default="false" />
+
+    <lightning:button onclick="{!c.onCourseClick}" variant="neutral" 
+                        class="{!v.selected ? 'tile selected' : 'tile'}">
+    
+        <div class="slds-box slds-var-m-around_small" >
+            <div class="lower-third">
+                <h1 class="truncate">{!v.course.Name}</h1>
+                <p class="slds-text-body_small">{!v.course.Details__c}</p>
+            </div>
+        </div>
+    </lightning:button>
+</aura:component>
