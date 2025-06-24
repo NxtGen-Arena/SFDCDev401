@@ -1,0 +1,8 @@
+<aura:component>
+    <!--This component doesn’t need a controller — it’s just a layout renderer.-->
+    <aura:attribute name="trainingCourses" access="public" type="Course__c[]" required="true"/>
+
+    <aura:iteration items="{!v.trainingCourses}" var="course" >
+        <c:CourseTile course="{!course}" />
+    </aura:iteration>
+</aura:component>
