@@ -1,0 +1,39 @@
+<aura:component 
+    implements="force:hasRecordId,flexipage:availableForRecordHome,force:appHostable"
+    controller="ContactInitDemoController"
+    access="global">
+    
+    <!-- Attributes to hold recordId and fields -->
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute name="contact" type="Object"/>
+    <aura:attribute name="errorMessage" type="String"/>
+
+    <!-- Runs automatically on component load -->
+    <!--name of the controller function that handles the init event should always be named doInit-->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <!-- Lightning Card UI -->
+    <lightning:card title="Contact Overview" iconName="standard:contact">
+        <aura:if isTrue="{!not(empty(v.contact))}">
+            <div class="slds-p-around_medium">
+                <p class="slds-text-heading_medium">Hello, {!v.contact.FirstName} {!v.contact.LastName}!</p>
+                <p class="slds-text-body_regular"><strong>Email:</strong> {!v.contact.Email}</p>
+                <p class="slds-text-body_regular"><strong>Phone:</strong> {!v.contact.Phone}</p>
+                <p class="slds-text-body_regular"><strong>Account:</strong> {!v.contact.Account.Name}</p>
+                <p class="slds-text-color_weak">Record Id: {!v.recordId}</p>
+            </div>
+        <aura:set attribute="else">
+            <div class="slds-p-around_medium">
+                <lightning:formattedText value="Loading contact data..." />
+            </div>
+        </aura:set>
+        </aura:if>
+
+        <!-- Error Message if any -->
+        <aura:if isTrue="{!not(empty(v.errorMessage))}">
+            <div class="slds-text-color_error slds-p-around_small">
+                {!v.errorMessage}
+            </div>
+        </aura:if>
+    </lightning:card>
+</aura:component>
