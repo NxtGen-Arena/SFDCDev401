@@ -1,0 +1,23 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes">
+
+    <!-- handle the cusotm event -->
+    <aura:handler name="onTraineeRegister" 
+                event="c:traineeRegisterEvent"
+                action="{!c.handleTraineeRegistration}" />
+
+    <!-- store the registered student info-->
+    <aura:attribute name="registeredList" type="List" default="[]" />
+
+    <!-- SLDS Styles are declard using: BEM (block-element-modifier)-->
+    <h2 class="slds-text-heading_medium">Registered Trainees</h2>
+
+    <!--display registered trainees-->
+    <aura:iteration items="{!v.registeredList}" var="trainee">
+        <p>{!trainee}</p>
+    </aura:iteration>
+
+    <c:traineeTile traineeName="John Hopkins" traineeEmail="john@example.com" courseId="Admin101" />
+    <c:traineeTile traineeName="Barbara Robbins" traineeEmail="barbara@example.com" courseId="Admin101" />
+    <c:traineeTile traineeName="Adam Logan" traineeEmail="adam@example.com" courseId="SalesCloud501" />
+
+</aura:component>
