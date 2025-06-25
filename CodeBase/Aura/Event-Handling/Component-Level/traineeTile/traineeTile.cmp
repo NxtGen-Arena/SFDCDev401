@@ -1,0 +1,20 @@
+<aura:component>
+    <!-- name is a lable used in controller. While the typemust match the .evt file we created-->
+    <aura:registerEvent name="onTraineeRegister" type="c:traineeRegisterEvent" />
+
+    <!-- Define the attributes-->
+    <aura:attribute name="traineeName" type="String" />
+    <aura:attribute name="traineeEmail" type="String" />
+    <aura:attribute name="courseId" type="String" />
+
+    <div class="slds-box">
+        <p><strong>Name:</strong> {!v.traineeName}</p>
+        <p><strong>Email:</strong> {!v.traineeEmail}</p>
+        <p><strong>Course:</strong> {!v.courseId}</p>
+
+        <!--button to fire an event-->
+        <lightning:button label="Register"
+                          onclick="{!c.fireRegistrationEvent}"
+                          variant="brand" />
+    </div>
+</aura:component>
