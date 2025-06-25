@@ -1,6 +1,0 @@
-<aura:event type="COMPONENT" description="Event fired when a Trainee register" >
-    <!-- Define the attributes acting as a payload-->
-    <aura:attribute name="traineeName" type="String" />
-    <aura:attribute name="traineeEmail" type="String" />
-    <aura:attribute name="courseId" type="String" />
-</aura:event>
