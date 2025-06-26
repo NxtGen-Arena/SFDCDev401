@@ -1,0 +1,32 @@
+<aura:component controller="EnrollmentController"
+                implements="force:appHostable,flexipage:availableForAllPageTypes">
+
+    <aura:attribute name="traineeId" type="Id" />
+    <aura:attribute name="enrollments" type="Enrollment__c[]" />
+
+    <aura:handler event="c:traineeSelectedAppEvent" action="{!c.handleTraineeSelected}" />
+    
+    <div class="slds-box slds-theme_shade">
+        <h2 class="slds-text-heading_small slds-var-m-bottom_medium">Enrollment Summary</h2>
+    
+        <aura:if isTrue="{!not(empty(v.traineeId))}">
+            <aura:if isTrue="{!empty(v.enrollments)}">
+                <p>No enrollments found for selected trainee.</p>
+                <aura:set attribute="else">
+                    <lightning:layout multipleRows="true">
+                        <aura:iteration items="{!v.enrollments}" var="e">
+                            <lightning:layoutItem size="12" class="slds-box slds-var-m-bottom_small">
+                                <p><strong>Trainee:</strong> {!e.Trainee__r.Name}</p>
+                                <p><strong>Course:</strong> {!e.Course__r.Name}</p>
+                                <p><strong>Status:</strong> {!e.Status__c}</p>
+                            </lightning:layoutItem>
+                        </aura:iteration>
+                    </lightning:layout>
+                </aura:set>
+            </aura:if>
+            <aura:set attribute="else">
+                <p>Select a trainee to view enrollments.</p>
+            </aura:set>
+        </aura:if>
+    </div>
+</aura:component>
