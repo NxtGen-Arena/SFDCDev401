@@ -3,6 +3,7 @@
 
     <!--Store trainees list-->
     <aura:attribute name="trainees" type="Contact[]" />
+    <aura:attribute name="accountId" type="Id" />
 
     <!--Load trainees on component intialization-->
     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
