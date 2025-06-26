@@ -1,5 +1,5 @@
 <aura:component controller="TraineeController"
-                implements="force:appHostable,flexipage:availableForAllPageTypes">
+                implements="force:hasRecordId,force:appHostable,flexipage:availableForAllPageTypes">
 
     <!--Store trainees list-->
     <aura:attribute name="trainees" type="Contact[]" />
