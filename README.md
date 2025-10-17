@@ -28,10 +28,10 @@ Course will cover below topics:
     * [Debugging Flows]
     * [Flow Configuration Settings]
   * [Apex](Documentation/Apex)
-    * [Apex Introduction](Apex/Apex-Introduction.md)
-    * [Apex Core Concepts](Apex/Apex-Core-Concepts.md)
-    * [Apex Data Types](Apex/Apex-Data-Types-and-Variables.md)
-    * [Constructors and Methods](Apex/Constructors-And-Methods.md)
+    * [Apex Introduction](Documentation/Apex/Apex-Introduction.md)
+    * [Apex Core Concepts](Documentation/Apex/Apex-Core-Concepts.md)
+    * [Apex Data Types](Documentation/Apex/Apex-Data-Types-and-Variables.md)
+    * [Constructors and Methods](Documentation/Apex/Constructors-And-Methods.md)
     * [OOPs in Apex](Documentation/OOPS-In-Apex/Overview.md)
       * [Polymorphism](Documentation/OOPS-In-Apex/Overview.md)
         * [Method Overloading](Documentation/OOPS-In-Apex/Polymorphism/Method-Overloading.md)
