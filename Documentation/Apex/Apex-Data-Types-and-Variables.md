@@ -100,5 +100,5 @@ The most common approach to resolve it is Constants class, which contains all fi
 <h2> References & Further Read</h2>
 
 1. [Constants in Apex](https://beyondthecloud.dev/blog/constants-in-apex)
-2. [Reference Code](/CodeBase/Apex/ApexDataTypes.cls)
+2. [Reference Code](/CodeBase/Apex/Classes/ApexDataTypes.cls)
 
