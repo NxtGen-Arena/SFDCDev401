@@ -34,7 +34,7 @@ Why?
     Method does not exist or incorrect signature: fly() from the type Animal.
 
 ---------------------------------------------------------------------------------
-🧩 2️⃣ Downcasting
+🧩 2️⃣ Direct Reference
 ~~~ Apex Execute Anonymous
 Bird newBird = new Bird();
 newBird.displayAnimalInfo();
@@ -52,6 +52,7 @@ newBird.fly();               // ✅ Works perfectly
 ~~~
 
 --------------------------------------------------------------------------------
+🧩 2️⃣ Downcasting
 
 ~~~ Apex Execute Anonymous
 // --- Optional: Downcasting ---
