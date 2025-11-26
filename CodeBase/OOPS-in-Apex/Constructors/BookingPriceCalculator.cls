@@ -74,6 +74,7 @@ public with sharing class BookingPriceCalculator
         }
 
         totalBookingAmount = calculateDiscount(totalBookingAmount);
+        totalBookingAmount = applyTax(totalBookingAmount);
 
         return totalBookingAmount; 
     }
@@ -93,4 +94,7 @@ public with sharing class BookingPriceCalculator
         return amount;
      }
 
+    private Decimal applyTax(Decimal amount) {
+        return amount + (amount * TAX_RATE);
+    }
 }
