@@ -10,6 +10,11 @@
 
 This leads to code duplication, inconsistency, and tight coupling.
 So we introduce a clean architectural pattern using Abstract Classes.
+
+<img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/fde06610-ac95-453c-99c3-f1803802d282" />
+
+
+
 </p>
 
 <h2>WITHOUT ABSTRACT CLASS</h2>
