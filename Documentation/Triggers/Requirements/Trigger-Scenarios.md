@@ -1,4 +1,4 @@
-<img width="764" height="182" alt="image" src="https://github.com/user-attachments/assets/7f012009-849c-4416-a86f-6d78d02e609e" />
+
 ### Create an Apex trigger for Account that checks if Account Industry is blank and set the “Technology” as default.
 
 ### If the Vendor Account has open opportunities, account should not be deactivated.
