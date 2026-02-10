@@ -16,4 +16,7 @@ D) If the value from “Primary Contact” field on the Account is cleared, unch
 ### Rollup Contacts on Accounts 
 If new contact is added/removed on the Account, count should be updated.
 
+### Rollup Opportunity Amount from all Opportunities on Account.
 
+### Write a Trigger on Opportunity When ever the opportunity Stage is changed to closed won share the opportunity with User-A with read 
+   access
