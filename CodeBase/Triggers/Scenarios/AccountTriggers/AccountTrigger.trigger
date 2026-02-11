@@ -1,14 +1,22 @@
 /**
  * Trigger Name : AccountTrigger
  * Object       : Account
- * Event        : After Update
- * Purpose      : If Account Phone is updated, sync it to related Contacts
+ * Events       : After Update, Before Delete
  */
-trigger AccountTrigger on Account (after update) {
+trigger AccountTrigger on Account (after update, before delete) {
 
-    // Call handler class method
-    AccountTriggerHandler.syncContactPhone(
-        Trigger.new,
-        Trigger.oldMap
-    );
+    // Scenario 1: Sync Contact Phone when Account Phone changes
+    if (Trigger.isAfter && Trigger.isUpdate) {
+        AccountTriggerHandler.syncContactPhone(
+            Trigger.new,
+            Trigger.oldMap
+        );
+    }
+
+    // Scenario 2: Prevent Account deletion if Contacts exist
+    if (Trigger.isBefore && Trigger.isDelete) {
+        AccountTriggerHandler.preventAccountDeletion(
+            Trigger.old
+        );
+    }
 }
