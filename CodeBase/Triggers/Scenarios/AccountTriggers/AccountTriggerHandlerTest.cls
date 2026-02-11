@@ -45,4 +45,31 @@ public class AccountTriggerHandlerTest {
             );
         }
     }
+@IsTest
+    static void testAccountDeletionBlocked() {
+
+        // Create Account
+        Account acc = new Account(Name = 'Delete Test Account');
+        insert acc;
+
+        // Create Contact under Account
+        Contact con = new Contact(
+            LastName = 'Test Contact',
+            AccountId = acc.Id
+        );
+        insert con;
+
+        // Attempt to delete Account
+        Test.startTest();
+        try {
+            delete acc;
+            System.assert(false, 'Account deletion should have failed');
+        } catch (DmlException e) {
+            System.assert(
+                e.getMessage().contains('cannot be deleted'),
+                'Expected deletion error message'
+            );
+        }
+        Test.stopTest();
+    }
 }
