@@ -88,12 +88,14 @@ FROM Opportunity
 GROUP BY Account.Name
 
 1️⃣8️⃣ Opportunities closing in next 14 days (ascending)
+Solution: Use the related date filters
 SELECT Name, CloseDate
 FROM Opportunity
 WHERE CloseDate = NEXT_N_DAYS:14
 ORDER BY CloseDate ASC
 
 1️⃣9️⃣ Contacts linked to Opportunities > Average Amount
+Solution: Contacts are related to Opportunities through OpportunityContactRole
 SELECT Contact.Name
 FROM OpportunityContactRole
 WHERE Opportunity.Amount >
