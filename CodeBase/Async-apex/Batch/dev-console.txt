@@ -8,3 +8,7 @@ Database.executeBatch(leadBatchInstance, 2000);
 
 // calling with default batch size 200
 Database.executeBatch(leadBatchInstance);
+
+//UpdateAccountIndustryBatch batch = new UpdateAccountIndustryBatch();
+Database.executeBatch(batch, 200); // 200 is batch size
+
