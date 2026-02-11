@@ -1,50 +1,52 @@
 /**
  * Class Name : AccountTriggerHandler
- * Purpose    : Contains business logic for Account Trigger
+ * Purpose    : Business logic for Account trigger
  */
 public class AccountTriggerHandler {
 
     /**
-     * Sync Contact Phone with Account Phone
+     * Sync Contact Phone with updated Account Phone
      *
-     * @param newAccounts - List of updated Account records
-     * @param oldAccountMap - Map of old Account records
+     * @param newAccounts   List of updated Account records
+     * @param oldAccountMap Old values of Account records
      */
     public static void syncContactPhone(
         List<Account> newAccounts,
         Map<Id, Account> oldAccountMap
     ) {
 
-        // Collect Account Ids where Phone has changed
-        Set<Id> accountIdsWithPhoneChange = new Set<Id>();
+        // Store Account Ids where Phone has changed
+        Set<Id> accountIdsToProcess = new Set<Id>();
+        Map<Id, String> accountIdToNewPhone = new Map<Id, String>();
 
         for (Account acc : newAccounts) {
             Account oldAcc = oldAccountMap.get(acc.Id);
 
-            // Check if Phone value is changed
+            // Compare old vs new Phone (null-safe)
             if (acc.Phone != oldAcc.Phone) {
-                accountIdsWithPhoneChange.add(acc.Id);
+                accountIdsToProcess.add(acc.Id);
+                accountIdToNewPhone.put(acc.Id, acc.Phone);
             }
         }
 
-        // Exit early if no relevant changes
-        if (accountIdsWithPhoneChange.isEmpty()) {
+        // Exit if no Account phone changes
+        if (accountIdsToProcess.isEmpty()) {
             return;
         }
 
-        // Query related Contacts
+        // Fetch related Contacts
         List<Contact> contactsToUpdate = [
             SELECT Id, Phone, AccountId
             FROM Contact
-            WHERE AccountId IN :accountIdsWithPhoneChange
+            WHERE AccountId IN :accountIdsToProcess
         ];
 
-        // Update Contact Phone to Account Phone
+        // Update Contact Phone using NEW Account Phone
         for (Contact con : contactsToUpdate) {
-            con.Phone = oldAccountMap.get(con.AccountId).Phone;
+            con.Phone = accountIdToNewPhone.get(con.AccountId);
         }
 
-        // Perform single DML operation
+        // Single DML operation
         if (!contactsToUpdate.isEmpty()) {
             update contactsToUpdate;
         }
