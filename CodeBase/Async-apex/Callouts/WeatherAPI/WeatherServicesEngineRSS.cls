@@ -23,7 +23,7 @@ public class WeatherServicesEngineRSS
         try
         {
             //while using remote site settings
-            req.setEndPoint('callout:Weather_API/data/2.5/weather?q='+city+'&appid=775521cd8ce711fd3c581c12c9243f0c');
+            req.setEndPoint('callout:Weather_API/data/2.5/weather?q='+city+'&appid=<<API-KEY>>');
             
             //make a request
             req.setMethod('GET');
