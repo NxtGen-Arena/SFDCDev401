@@ -1,0 +1,35 @@
+<aura:component controller="TraineeController"
+                implements="force:hasRecordId,force:appHostable,flexipage:availableForAllPageTypes">
+
+    <!--Store trainees list-->
+    <aura:attribute name="trainees" type="Contact[]" />
+    <aura:attribute name="accountId" type="Id" />
+
+    <!--Load trainees on component intialization-->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <div class="slds-box slds-theme_default">
+        <h2 class="slds-text-heading_small slds-var-m-bottom_medium">Available Trainees</h2>
+    
+        <!-- Conditional rendering if no trainees -->
+        <aura:if isTrue="{!empty(v.trainees)}">
+            <p>No trainees found.</p>
+            <aura:set attribute="else">
+                <div class="slds-grid slds-wrap">
+                    <!-- Iterate over list of trainees-->
+                    <aura:iteration items="{!v.trainees}" var="t">
+                        <div class="slds-col slds-size_1-of-2 slds-var-p-around_small">
+                            <lightning:card title="{!t.Name}">
+                                <p class="slds-var-p-horizontal_small">Email: {!t.Email}</p>
+                                <div class="slds-var-p-horizontal_small slds-var-p-top_small">
+                                    <!-- Button to fire app event -->
+                                    <lightning:button label="Select" variant="brand" onclick="{!c.selectTrainee}"
+                                        value="{!t.Id}" />
+                                </div>
+                            </lightning:card>
+                        </div>
+                    </aura:iteration>
+                </div>
+            </aura:set>
+        </aura:if>
+    </div>
+</aura:component>

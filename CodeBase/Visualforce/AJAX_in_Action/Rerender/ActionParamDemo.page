@@ -1,0 +1,26 @@
+<apex:page controller="ActionParamController">
+    <apex:form>
+        <apex:pageBlock id="opps_pb">
+
+            <!-- action status to inform users about the asynchronous processing - request in progress-->
+            <apex:actionStatus startText="Please wait...." id="actionStatusmsg" />
+
+            <apex:pageBlockTable value="{!Opps}" var="opp">
+                <!-- Merge field synatx - {!}-->
+                <apex:column value="{!opp.Name}" />
+                <apex:column value="{!opp.Amount}" />
+                <apex:column value="{!opp.CloseDate}" />
+                <apex:column value="{!opp.StageName}" />
+                <apex:column headerValue="Action">
+                    <!-- button to update the opp stage to closed won- passes the selected oppId to Controller-->
+                    <apex:commandButton value="Mark Close" action="{!updateOpp}" rerender="opps_pb" rendered="{!opp.StageName != 'Closed Won'}"
+                        status="actionStatusmsg">
+                        <!-- VF runs in classic mode and accepts 15 digit id. So we need to convert 18 digit id to 15 digit id and then pass it.
+                         else this give an error. Either you can use .to15() method or the formula field to trim the last 3 chars -->
+                        <apex:param name="oppIdToWin" value="{!opp.CaseSafe_Opp_Id__c}" assignTo="{!selectedOppId}" />
+                    </apex:commandButton>
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

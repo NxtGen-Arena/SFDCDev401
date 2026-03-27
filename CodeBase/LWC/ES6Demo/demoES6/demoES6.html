@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="ES6 Demo App">
+        <div class="slds-var-m-around_medium">
+            <p>This is a demo app for the ES6 features</p>
+            <!-- loop dsplaying course tiles-->
+            <template for:each={courses} for:item="course">
+                <c-course-tile-lwc key={course.id} course-name={course.name}></c-course-tile-lwc>
+            </template>
+
+            <lightning-button variant="brand" label="Add New Course" onclick={addCourse}></lightning-button>
+            <lightning-button variant="neutral" label="Highlight Section" onclick={highlight}></lightning-button>
+
+            <!-- dive that is styled using querySelector-->
+            <div class="highlight-box slds-box slds-var-m-top_medium">Click 'Highlight Section' to change my color</div>
+
+            <!-- COmponent using slot to show projected content-->
+            <c-slot-card>
+                <span slot="Header">This is my Header</span>
+                <p>This content is injected into slot from the parent component.</p>
+                <span slot="Footer">This is my Footer</span>
+            </c-slot-card>
+        </div>
+    </lightning-card>
+</template>

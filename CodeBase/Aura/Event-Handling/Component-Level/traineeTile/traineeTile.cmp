@@ -1,0 +1,56 @@
+<aura:component>
+    <!-- Register the custom event -->
+    <aura:registerEvent name="onTraineeRegister" type="c:traineeRegisterEvent" />
+
+    <!-- Define component attributes -->
+    <aura:attribute name="traineeName" type="String" />
+    <aura:attribute name="traineeEmail" type="String" />
+    <aura:attribute name="courseId" type="String" />
+
+    <!-- SLDS Card Layout -->
+    <div class="slds-card slds-var-p-around_medium">
+        <header class="slds-card__header slds-grid">
+            <div class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__figure">
+                    <lightning:icon iconName="standard:contact" size="small" alternativeText="Trainee" />
+                </div>
+                <div class="slds-media__body">
+                    <h2 class="slds-card__header-title slds-truncate" title="Trainee Info">
+                        Trainee Registration
+                    </h2>
+                </div>
+            </div>
+        </header>
+
+        <div class="slds-card__body slds-card__body_inner">
+            <div class="slds-form slds-form_stacked">
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label">Name</label>
+                    <div class="slds-form-element__control">
+                        <lightning:input value="{!v.traineeName}" label="Name" variant="label-hidden" disabled="true" />
+                    </div>
+                </div>
+
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label">Email</label>
+                    <div class="slds-form-element__control">
+                        <lightning:input value="{!v.traineeEmail}" label="Email" variant="label-hidden"
+                            disabled="true" />
+                    </div>
+                </div>
+
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label">Course</label>
+                    <div class="slds-form-element__control">
+                        <lightning:input value="{!v.courseId}" label="Course" variant="label-hidden" disabled="true" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="slds-card__footer">
+            <lightning:button label="Register" onclick="{!c.fireRegistrationEvent}" variant="brand"
+                class="slds-var-m-top_small" />
+        </footer>
+    </div>
+</aura:component>

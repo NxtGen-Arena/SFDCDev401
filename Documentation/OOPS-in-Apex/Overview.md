@@ -1,0 +1,55 @@
+# OOPs Concept in Salesforce
+
+Apex is a statically types, object-oriented language. It means that all constructs we create extend from an abstract tye, Object. 
+
+Object-Oriented Programming (OOPs) concepts in Salesforce Apex refer to the principles of organizing code around objects, which are like blueprints for creating instances of data. 
+
+Salesforce Apex is a powerful tool for building flexible solutions within Salesforce. and Apex is really good at following the principles of OOP. It’s important to understand these principles because they help us write code that works well and is easy to change. Knowing how OOP works in Salesforce Apex is key for making programs that are efficient and easy to work with. These concepts are the building blocks of modern software development on the Salesforce platform. They let developers create programs that are smart and can grow with the needs of the business.
+
+OOPs concepts in Apex include classes, objects, inheritance, encapsulation, and polymorphism, which help in creating modular, reusable, and maintainable code.
+
+![image](https://github.com/user-attachments/assets/21bba9ce-1eae-45ac-b356-65226fcdddf5)
+
+
+## Classes
+- Blueprints for making objects. Defines what information an object can hold and what it can do.
+- fundamental units of code that define the behavior of objects, encapsulating data and methods to operate on.
+- Apex classes are similar to object constructors used for creating custom objects and business logic within Salesforce.
+
+## Objects
+- Container that holds information and is instanceOf Class.
+- Methods and data from Class can be accessed by creating instance of the class.
+- Static methods can be accessed without the instance.
+- In object-oriented languages, you create (or initialize, or instantiate) objects through the use of the keyword new — this “calls” (or invokes) the constructor of an object. If a constructor is not defined for an object, the object uses a default constructor to create itself.
+```
+Dog myDog = new Dog();  //creating instance of class = object creation
+myDog.bark();    //non-static method
+
+Dog.dontBark();   //static method
+```
+
+## [Polymorphism](Polymorphism.md)
+Polymorphism is about having different forms. In Salesforce Apex, it means methods or objects can do different things in different situations. For example, a method to draw shapes might draw circles differently than squares. Polymorphism is achieved through Method overloading and overriding.
+
+## [Inheritance](Inheritance.md)
+Inheritance is like passing down traits in a family. In Salesforce Apex, it means a new class can inherit characteristics from an existing class. For instance, an electric car can inherit traits from a regular car, like having wheels and doors. 
+
+Inheritance is through extension and virtual class and methods.
+
+## [Abstraction](Abstraction.md)
+Abstraction is about simplifying things. In Salesforce Apex, it means focusing on what something does, rather than how it does it. So, instead of worrying about how a car moves, we just care that it can move. We leave the details for later.
+
+## [Encapsulation](Encapsulation.md)
+Bundling data and methods together and protecting them. So, you can’t mess with a car’s speed directly you have to use methods like accelerate or brake. This helps keep things organized and safe.
+
+
+<h2> References and Further Reads</h2>
+  
+1. [Design Patterns in Apex](https://www.youtube.com/watch?v=g-6FXdnwX6g&list=TLPQMTgxMjIwMjTGS1DMu2qUIw&index=2)
+2. [OOP in Salesforce - What it is?](https://www.youtube.com/watch?v=VNVlTpFDsnU)
+
+
+
+
+
+

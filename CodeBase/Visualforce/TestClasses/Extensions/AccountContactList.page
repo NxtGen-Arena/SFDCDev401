@@ -1,0 +1,23 @@
+<apex:page standardController="Account" extensions="AccountContactListExtension">
+    <apex:form>
+        <h2>Contacts for Account: {!account.Name}</h2>
+
+        <apex:pageBlock title="Contacts">
+            <apex:pageBlockButtons>
+                <apex:commandButton value="Mark All as Reviewed" action="{!markAllReviewed}" rerender="contactTable" />
+            </apex:pageBlockButtons>
+
+            <apex:pageBlockTable value="{!contacts}" var="c" id="contactTable">
+                <apex:column value="{!c.Name}" />
+                <apex:column value="{!c.Email}" />
+                <apex:column value="{!c.Reviewed__c}" />
+            </apex:pageBlockTable>
+
+            <apex:panelGrid columns="4">
+                <apex:commandLink action="{!previous}" value="Previous" rendered="{!hasPrevious}" rerender="contactTable" />
+                <apex:outputText value=" Page {!pageNumber} " />
+                <apex:commandLink action="{!next}" value="Next" rendered="{!hasNext}" rerender="contactTable" />
+            </apex:panelGrid>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

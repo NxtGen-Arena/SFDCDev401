@@ -1,0 +1,286 @@
+1️⃣ Retrieve all Account names and their corresponding Industry
+SELECT Name, Industry
+FROM Account
+
+2️⃣ Find the total number of Opportunities for each Account
+SELECT AccountId, COUNT(Id)
+FROM Opportunity
+GROUP BY AccountId
+
+3️⃣ List all Closed Won Opportunities along with their Amounts
+SELECT Name, Amount
+FROM Opportunity
+WHERE StageName = 'Closed Won'
+
+4️⃣ Identify the five most recently created Leads
+SELECT Name, CreatedDate
+FROM Lead
+ORDER BY CreatedDate DESC
+LIMIT 5
+
+5️⃣ Accounts and Opportunities where Amount > $50,000
+SELECT Name,
+       (SELECT Name, Amount FROM Opportunities WHERE Amount > 50000)
+FROM Account
+
+6️⃣ Find the average Amount of all Closed Won Opportunities
+SELECT AVG(Amount)
+FROM Opportunity
+WHERE StageName = 'Closed Won'
+
+7️⃣ Opportunities closing in the next 7 days
+SELECT Name, CloseDate
+FROM Opportunity
+WHERE CloseDate = NEXT_N_DAYS:7
+
+8️⃣ Contacts related to Opportunities in “Proposal” stage
+SELECT Contact.Name, Contact.Email
+FROM OpportunityContactRole
+WHERE Opportunity.StageName = 'Proposal'
+
+9️⃣ Account with the maximum number of Opportunities
+SELECT AccountId, COUNT(Id)
+FROM Opportunity
+GROUP BY AccountId
+ORDER BY COUNT(Id) DESC
+LIMIT 1
+
+🔟 Opportunities closing in the current month
+SELECT Name, CloseDate
+FROM Opportunity
+WHERE CloseDate = THIS_MONTH
+
+1️⃣1️⃣ Accounts that have both Opportunities and Cases
+SELECT Name
+FROM Account
+WHERE Id IN (SELECT AccountId FROM Opportunity)
+AND Id IN (SELECT AccountId FROM Case)
+
+1️⃣2️⃣ Opportunities not updated in the last 30 days
+SELECT Name, LastModifiedDate
+FROM Opportunity
+WHERE LastModifiedDate < LAST_N_DAYS:30
+
+1️⃣3️⃣ Total number of Leads by Lead Source
+SELECT LeadSource, COUNT(Id)
+FROM Lead
+GROUP BY LeadSource
+
+1️⃣4️⃣ Accounts with Billing Postal Code starting with “9”
+SELECT Name, BillingPostalCode
+FROM Account
+WHERE BillingPostalCode LIKE '9%'
+
+1️⃣5️⃣ Contacts where Mailing State ≠ Account Billing State
+SELECT Name, MailingState, Account.BillingState
+FROM Contact
+WHERE MailingState != Account.BillingState
+
+1️⃣6️⃣ Opportunities in “Negotiation” with Amount > $100,000
+SELECT Name, Amount
+FROM Opportunity
+WHERE StageName = 'Negotiation'
+AND Amount > 100000
+
+1️⃣7️⃣ Account names with total Opportunity Amount
+SELECT Account.Name, SUM(Amount)
+FROM Opportunity
+GROUP BY Account.Name
+
+1️⃣8️⃣ Opportunities closing in next 14 days (ascending)
+Solution: Use the related date filters
+SELECT Name, CloseDate
+FROM Opportunity
+WHERE CloseDate = NEXT_N_DAYS:14
+ORDER BY CloseDate ASC
+
+1️⃣9️⃣ Contacts linked to Opportunities > Average Amount
+Solution: Contacts are related to Opportunities through OpportunityContactRole
+SELECT Contact.Name
+FROM OpportunityContactRole
+WHERE Opportunity.Amount >
+      (SELECT AVG(Amount) FROM Opportunity)
+
+2️⃣0️⃣ Top 3 Opportunities per Account
+
+⚠️ SOQL limitation – achievable via subquery
+
+SELECT Name,
+       (SELECT Name, Amount
+        FROM Opportunities
+        ORDER BY Amount DESC
+        LIMIT 3)
+FROM Account
+
+2️⃣1️⃣ Opportunities with Approval_Status__c = “Pending”
+SELECT Name
+FROM Opportunity
+WHERE Approval_Status__c = 'Pending'
+
+2️⃣2️⃣ Accounts not modified in last 60 days
+SELECT Name, LastModifiedDate
+FROM Account
+WHERE LastModifiedDate < LAST_N_DAYS:60
+
+2️⃣3️⃣ Closed Won Opportunities in last quarter
+SELECT Name, CloseDate
+FROM Opportunity
+WHERE StageName = 'Closed Won'
+AND CloseDate = LAST_QUARTER
+
+2️⃣4️⃣ Accounts with total Contacts count
+SELECT Account.Name, COUNT(Id)
+FROM Contact
+GROUP BY Account.Name
+
+2️⃣5️⃣ Opportunities created by a specific User
+SELECT Name
+FROM Opportunity
+WHERE CreatedById = '005XXXXXXXXXXXX'
+
+2️⃣6️⃣ High Priority Opportunities > $50,000
+SELECT Name, Amount
+FROM Opportunity
+WHERE Priority__c = 'High'
+AND Amount > 50000
+
+2️⃣7️⃣ Accounts with at least one “Prospecting” Opportunity
+SELECT Name
+FROM Account
+WHERE Id IN (
+    SELECT AccountId
+    FROM Opportunity
+    WHERE StageName = 'Prospecting'
+)
+
+2️⃣8️⃣ Contacts linked to Closed Won Opps, not contacted in 30 days
+SELECT Name, LastActivityDate
+FROM Contact
+WHERE Id IN (
+    SELECT ContactId
+    FROM OpportunityContactRole
+    WHERE Opportunity.StageName = 'Closed Won'
+)
+AND LastActivityDate < LAST_N_DAYS:30
+
+2️⃣9️⃣ New Business Opportunities > $75,000
+SELECT Name, Amount
+FROM Opportunity
+WHERE Type__c = 'New Business'
+AND Amount > 75000
+
+3️⃣0️⃣ Accounts grouped by Industry with Opportunity count
+SELECT Account.Industry, COUNT(Id)
+FROM Opportunity
+GROUP BY Account.Industry
+
+3️⃣1️⃣ Opps closing in next 30 days & Amount > $100k
+SELECT Name, Amount
+FROM Opportunity
+WHERE CloseDate = NEXT_N_DAYS:30
+AND Amount > 100000
+ORDER BY Amount DESC
+
+3️⃣2️⃣ Contacts linked to Negotiation Opps not updated in 15 days
+SELECT Contact.Name
+FROM OpportunityContactRole
+WHERE Opportunity.StageName = 'Negotiation'
+AND Opportunity.LastModifiedDate < LAST_N_DAYS:15
+
+3️⃣3️⃣ Opportunities with Products (Quantity > 10)
+SELECT OpportunityId
+FROM OpportunityLineItem
+WHERE Quantity > 10
+
+3️⃣4️⃣ US Accounts with Revenue > $1M
+SELECT Name
+FROM Account
+WHERE BillingCountry = 'United States'
+AND AnnualRevenue > 1000000
+
+3️⃣5️⃣ Approved Opportunities closing in next 60 days
+SELECT Name, CloseDate
+FROM Opportunity
+WHERE Approval_Status__c = 'Approved'
+AND CloseDate = NEXT_N_DAYS:60
+
+3️⃣6️⃣ Closed Lost Opportunities lost due to Price
+SELECT Name
+FROM Opportunity
+WHERE StageName = 'Closed Lost'
+AND Reason_for_Loss__c = 'Price'
+
+3️⃣7️⃣ Contacts linked to multiple Opportunities
+SELECT ContactId, COUNT(OpportunityId)
+FROM OpportunityContactRole
+GROUP BY ContactId
+HAVING COUNT(OpportunityId) > 1
+
+3️⃣8️⃣ Proposal Opportunities above average Amount
+SELECT Name, Amount
+FROM Opportunity
+WHERE StageName = 'Proposal'
+AND Amount > (SELECT AVG(Amount) FROM Opportunity)
+
+3️⃣9️⃣ Opportunities with completed Tasks
+SELECT WhatId
+FROM Task
+WHERE Status = 'Completed'
+AND WhatId IN (SELECT Id FROM Opportunity)
+
+4️⃣0️⃣ Accounts without Contacts
+SELECT Name
+FROM Account
+WHERE Id NOT IN (SELECT AccountId FROM Contact)
+
+4️⃣1️⃣ Opportunities in current fiscal quarter
+SELECT Name, CloseDate
+FROM Opportunity
+WHERE CloseDate = THIS_FISCAL_QUARTER
+
+4️⃣2️⃣ High Priority + Pending Approval Opportunities
+SELECT Name
+FROM Opportunity
+WHERE Priority__c = 'High'
+AND Approval_Status__c = 'Pending'
+
+4️⃣3️⃣ Opportunities created in last 7 days > $50k
+SELECT Name, Amount
+FROM Opportunity
+WHERE CreatedDate = LAST_N_DAYS:7
+AND Amount > 50000
+
+4️⃣4️⃣ Accounts with Billing City containing “Tech”
+SELECT Name
+FROM Account
+WHERE BillingCity LIKE '%Tech%'
+
+4️⃣5️⃣ Opportunities with Forecast Category Commit or Omitted
+SELECT Name
+FROM Opportunity
+WHERE Forecast_Category__c IN ('Commit', 'Omitted')
+
+4️⃣6️⃣ Accounts with more than 5 Closed Won Opportunities
+SELECT AccountId, COUNT(Id)
+FROM Opportunity
+WHERE StageName = 'Closed Won'
+GROUP BY AccountId
+HAVING COUNT(Id) > 5
+
+4️⃣7️⃣ Contacts linked to Renewal Opportunities
+SELECT Contact.Name
+FROM OpportunityContactRole
+WHERE Opportunity.Renewal_Opportunity__c = true
+
+4️⃣8️⃣ Opportunities closing in next 90 days, Amount between $50k–$100k
+SELECT Name, Amount
+FROM Opportunity
+WHERE CloseDate = NEXT_N_DAYS:90
+AND Amount >= 50000
+AND Amount <= 100000
+
+4️⃣9️⃣ Prospecting Opportunities not modified in last 15 days
+SELECT Name, LastModifiedDate
+FROM Opportunity
+WHERE StageName = 'Prospecting'
+AND LastModifiedDate < LAST_N_DAYS:15

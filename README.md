@@ -1,1 +1,103 @@
-# SFDCDev401
+# Customizing Salesforce Platform
+
+Salesforce offers OOTB (out of the box) features to support bulding applications using point and click. Native features referred as Standard functionality sometimes is not solve the Business Chanllenges. We need the tailored solutions built to extend the native Salesforce Platform Features.
+
+This course will help you to understand different ways to customize the Salesforce Platform, how to choose the features to be used and understanding impact of selection of feature and customization approach.
+
+The Directory is organized into folder structure:
+
+- [Case Study] : Case Study data model and requirements to be built.
+- [CodeBase] : Sample Code used during training.
+- [Documentation]: Details about the Topics coverered
+- [Frameworks] : Reusable templates and frameworks which can be leveraged.
+- [Homework] : Additional Hands on Assignments.
+
+Course will cover below topics:
+
+## Table of Content
+
+  * [Lightning Flows](Documentation/Flows/Readme.md)
+    * [Introduction](Documentation/Flows/Introduction.pdf)
+    * [Record-Triggered Flows](Documentation/Flows/Introduction.pdf)
+    * [Scheduled Triggered Flows](Documentation/Flows/Auto-Launched-Flows.md)
+    * [Platform Triggered Flows](Documentation/Flows/Auto-Launched-Flows.md)
+    * [Screen Flows](Documentation/Flows/Screen-Flows.md)
+    * [Screen Flow Resources](Documentation/Flows/Flow-Resources.md)
+    * [Auto-Launched & Sub Flows](Documentation/Flows/Auto-Launched-Flows.md)
+    * [Flow Orchaestrator]
+    * [Debugging Flows]
+    * [Flow Configuration Settings]
+  * [Apex](Documentation/Apex)
+    * [Apex Introduction](Documentation/Apex/Apex-Introduction.md)
+    * [Apex Core Concepts](Documentation/Apex/Apex-Core-Concepts.md)
+    * [Apex Data Types](Documentation/Apex/Apex-Data-Types-and-Variables.md)
+    * [Constructors and Methods](Documentation/Apex/Constructors-And-Methods.md)
+    * [OOPs in Apex](Documentation/OOPS-In-Apex/Overview.md)
+      * [Polymorphism](Documentation/OOPS-In-Apex/Overview.md)
+        * [Method Overloading](Documentation/OOPS-In-Apex/Polymorphism/Method-Overloading.md)
+        * [Method Overriding](Documentation/OOPS-In-Apex/Polymorphism/Method-Overriding.md)
+        * [Inheritance](Documentation/OOPS-In-Apex/Polymorphism/Inheritance.md)
+      * [Interface](Documentation/OOPS-In-Apex/Interfaces.md)
+      * [Abstraction](Documentation/OOPS-In-Apex/Abstraction.md)
+      * [Encapsulation](Documentation/OOPS-In-Apex/Encapsulation.md)
+    * [Operators and Expressions in Apex](Documentation/Apex/Constructors-And-Expressions.md)
+    * [Control Structure](Documentation/Apex/control-structures.md)
+    * [Collections](Documentation/Apex/Collections.md)
+    * [Retrieve Data from Salesforce (SOQL)](Documentation/Apex/soql)
+      * [Basic SOQL](Documentation/Apex/SOQL/Introduction.md)
+      * [Relationship Queries](Documentation/Apex/SOQL/Relationship-Queries.md)
+      * [Aggregate SOQL](Documentation/Apex/SOQL/AggregateQueries.md)
+    * [DML](Documentation/Apex/DML.md)
+    * [Exception Handling in Apex]
+      * [Standard Exception Handling - Try,Catch,Finally]
+      * [Custom Exception Handling]
+    * [Security in Apex]()
+   * [Triggers](#triggers)
+     * [What are Triggers](Documentation/Triggers/1.What-are-Triggers.md)
+     * [Trigger Context Variables](Documentation/Triggers/2.Trigger-Context-Variables.md)
+     * [Add Errors in Triggers](Documentation/Triggers/3.AddError-in-Trigger.md)
+     * [Purpose of Frameworks in Software](Documentation/Triggers/4.Frameworks-in-Software.md)
+     * [Trigger Framework](Documentation/Triggers/5.Trigger-Framework.md)
+  * [Apex Transaction Control](#apex-transaction)
+    * [Governor Limits](#governor-limits)
+    * [Execution Cycle]()
+  * Other Apex Constructs
+    * [Search Data in Salesforce](Documentation/Apex/sosl)
+    * [Custom Labels](#custom-labels)
+    * [Custom Metadata](#custom-metadata)
+    * [Custom Settings](#custom-settings)
+    * [Getter and Setter Methods](#getter-and-setter-methods)
+   * [Visualforce](#visualforce)
+     * [Introduction]()
+     * [Standard Controllers]()
+       * Create Detail and Edit Pages
+       * Adding Related Records list,Detail Section
+       * Display Table - PageblockTable, DataTable,Repeat
+     * [List Controllers]()
+     * [Custom Controllers]()
+       * Input data with form
+       * Display Warning and Error Messages
+       * Using static resources
+       * Wrapper Classes in an Apex classes
+     * [Extensions]()
+     * [Wizards]()
+       * [Multi-Page Wizards]
+       * [Shared Controller Wizards]
+     * Ajax in Visualforce
+       * [Ajax Overview](Documentation/Visualforce/Ajax_In_Visualforce/Ajax_Overview.md)
+       * [Action Status](Documentation/Visualforce/Ajax_In_Visualforce/ActionStatus.md)
+       * [Action Support](Documentation/Visualforce/Ajax_In_Visualforce/ActionSupport.md)
+       * [Action Function](Documentation/Visualforce/Ajax_In_Visualforce/ActionFunction.md)
+       * [Action Poller](Documentation/Visualforce/Ajax_In_Visualforce/ActionPoller.md)
+       * [Action Region](Documentation/Visualforce/Ajax_In_Visualforce/ActionRegion.md)
+  * [Asynchronous Apex](#asynchronous-apex)
+    * [Batch Apex](#batch-apex)
+    * [Platform Events](#platform-events)
+      * [Components of Event-Driven Systems](#components-of-event-driven-systems)
+      * [Platform Events and sObjects](#platform-events-and-sobjects)
+      * [Subscribe to Platform Event Notifications with Apex Triggers](#subscribe-to-platform-event-notifications-with-apex-triggers)
+      * [Using Platform Events in Native and External Apps](#using-platform-driven-events-in-native-and-external-apps)
+    * [Change Data Capture](#change-data-capture)
+      * [Subscribing to an Event Channel](#subscribing-to-an-event-channel)
+      * [Subscription Channels](#subscription-channels)
+

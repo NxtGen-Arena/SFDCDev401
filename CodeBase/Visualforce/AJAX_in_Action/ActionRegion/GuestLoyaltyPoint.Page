@@ -1,0 +1,90 @@
+<apex:page controller="GuestLoyaltyController">
+    <apex:form>
+        <style>
+            .modalBackground {
+                display: none;
+                position: fixed;
+                top: 0; left: 0;
+                width: 100%; height: 100%;
+                background-color: rgba(0,0,0,0.5);
+                z-index: 9999;
+            }
+            .modalBox {
+                background: white;
+                width: 300px;
+                margin: 15% auto;
+                padding: 20px;
+                border-radius: 10px;
+                text-align: center;
+                box-shadow: 0 0 10px #333;
+            }
+        </style>
+        <apex:pageblock>
+            <h2>Guest Information</h2>
+            <apex:pageBlockSection columns="1">
+                <!-- Inputfield/outputfield component's value attribute can only be binded with sObjects or objects. -->
+                <apex:inputText label="Guest Name" value="{!guestName}" required="true" />
+                <apex:inputText label="Guest Email" value="{!email}" required="true" />
+            </apex:pageBlockSection>
+
+            <!-- optional update that should not validate guest info. Even if guestinfo is not populated, Loyalty section should not have impact
+                use <apex:actionRegion> to allow the loyalty section to work independently.][==
+]\\-->
+            <apex:actionRegion>
+                <apex:outputPanel rendered="{!loyaltyPanelDisplayed}" layout="block" style="margin-bottom: 20px;">
+                    <apex:pageBlockSection columns="1" title="Loyalty Points Update">
+                        <apex:inputtext label="Points to add" value="{!pointsToAdd}" />
+                       <!-- <apex:commandButton value="Add Points" action="{!addLoyaltyPoints}" reRender="panelMsg,successPanel" />-->
+                        <!-- actionfunction via javascript -->
+                        <apex:commandButton value="Add Points" onclick="callAddPoints(); return false;"  />
+                    </apex:pageBlockSection>
+                </apex:outputPanel>
+            </apex:actionRegion>
+
+            <!--actionFunction to invoke server side method in JS-->
+            <!--The Add Points button calls callAddPoints() — an apex:actionFunction. Once the server method runs (addPoints), the client-side callback showModal() is triggered.-->
+            <apex:actionFunction name="callAddPoints" action="{!addLoyaltyPoints}" reRender="msgPanel" oncomplete="showModal();" />
+
+            <!--Modeal popup-->
+            <div id="modalPopup" class="modalBackground">
+                <div class="modalBox">
+                    <h3>Points Added Successfully.</h3>
+                    <p>Your Loyalty Points update was successful!!</p>
+                    <button onclick="hideModal();">OK</button>
+                </div>
+            </div>
+
+            <!-- For AJax, rerendering use the apex:outputpanel -->
+            <apex:outputPanel id="panelMsg" style="margin-top: 10px;color=darkblue;">
+                <apex:outputText value="{!message}" />
+            </apex:outputPanel>
+
+            <!--Loyalty oanel for success-->
+            <apex:outputPanel id="successPanel">
+                <apex:outputPanel rendered="{!showLoyaltySuccess}" styleClass="success" style="background: #e0ffe0; padding: 10px; margin-top: 10px;">
+                    🎉 Loyalty update successful!
+                </apex:outputPanel>
+            </apex:outputPanel>
+
+            <!--submit action for form -->
+            <!--After Submit All, loyalty panel disappears, and guest info is shown as submitted.-->
+
+            <apex:commandButton value="Submit All" action="{!submitAll}" reRender="panelMsg,successPanel" style="margin-top: 20px;" />
+
+            <!-- Javascript to control Modal-->
+             <script>
+                function showModal()
+                {
+                    document.getElementById('modalPopup').style.display = 'block';
+
+                }
+                function hideModal() {
+                    document.getElementById('modalPopup').style.display = 'none';
+
+                }
+            </script>
+
+
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

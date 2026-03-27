@@ -1,0 +1,50 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes">
+
+    <!-- Handle the custom event -->
+    <aura:handler name="onTraineeRegister" event="c:traineeRegisterEvent" action="{!c.handleTraineeRegistration}" />
+
+    <!-- Store the registered student info -->
+    <aura:attribute name="registeredList" type="List" default="[]" />
+
+    <div class="slds-box slds-var-p-around_medium slds-card slds-var-p-around_medium">
+        <header class="slds-card__header slds-grid">
+            <div class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__body">
+                    <h2 class="slds-text-heading_medium slds-var-m-bottom_medium">
+                        <lightning:icon iconName="standard:people" size="small" class="slds-var-m-right_small" alternativeText="Trainees" />
+                        Registered Trainees       
+                    </h2>
+                </div>
+            </div>
+        </header>
+
+        <!-- Conditional display if no trainees -->
+        <aura:if isTrue="{!empty(v.registeredList)}">
+            <div class="slds-text-color_weak slds-var-m-bottom_small">No trainees have registered yet.</div>
+            <aura:set attribute="else">
+                <ul class="slds-has-dividers_bottom-space">
+                    <aura:iteration items="{!v.registeredList}" var="trainee" indexVar="index">
+                        <li class="slds-item slds-var-p-vertical_x-small">
+                            <lightning:icon iconName="utility:user" size="xx-small" class="slds-var-m-right_x-small" />
+                            {!trainee}
+                        </li>
+                    </aura:iteration>
+                </ul>
+            </aura:set>
+        </aura:if>
+    </div>
+
+    <!-- Sample trainee tiles (reusable component) -->
+    <div class="slds-grid slds-wrap slds-var-m-top_large">
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3 slds-var-p-around_small">
+            <c:traineeTile traineeName="John Hopkins" traineeEmail="john@example.com" courseId="Admin101" />
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3 slds-var-p-around_small">
+            <c:traineeTile traineeName="Barbara Robbins" traineeEmail="barbara@example.com" courseId="Admin101" />
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3 slds-var-p-around_small">
+            <c:traineeTile traineeName="Adam Logan" traineeEmail="adam@example.com" courseId="SalesCloud501" />
+        </div>
+    </div>
+
+</aura:component>
