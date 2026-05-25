@@ -127,7 +127,7 @@ But OpenWeather mainly expects:
 appid=API_KEY
 
 
-### Step 3 – Queueable Apex Callout & Wrppaer Class
+### Step 3 – Queueable Apex Callout & Wrapper Class
 
 Queueable is recommended because triggers should not perform synchronous callouts.
 
