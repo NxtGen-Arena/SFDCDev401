@@ -45,19 +45,87 @@ These fields will store API data.
 
 ### Step 2 – Create Named Credential
 
+Step 1: Create an External Credential
+
 Go to:
-Setup → Named Credentials → New
 
-Example:
+Setup → External Credentials
 
-Label | Weather API
-|---|--|
-Name| Weather_API
-URL| https://api.openweathermap.org
-Identity Type| Named Principal
-Authentication| No Authentication (demo)
+Click New
 
-Save.
+Fill Details
+Field	Value
+Label	OpenWeather External Credential
+Name	OpenWeather_External_Cred
+Authentication Protocol	No Authentication
+
+Since OpenWeather API uses an API key in the URL, no OAuth is needed.
+
+Click Save
+
+Step 2: Create Named Credential
+
+Go to:
+
+Setup → Named Credentials
+
+Click New
+
+Fill Basic Information
+Field	|Value
+|--|---|
+Label	|OpenWeather API
+Name	|OpenWeather_API
+URL	|https://api.openweathermap.org
+
+Step 3: Configure Identity Type
+
+In the same screen:
+Field	|Value|
+|--|--|
+External Credential|	OpenWeather External Credential
+Identity Type	|Named Principal
+Authentication Protocol	|No Authentication
+
+Step 4: Enable Required Options
+
+Check:
+
+✅ Generate Authorization Header → Unchecked
+✅ Allow Formulas in HTTP Header → Optional
+✅ Allow Merge Fields in HTTP Body → Optional
+
+Click save
+
+```
+
+String apiKey = Weather_Config__mdt.getInstance('Default').API_Key__c;
+
+req.setEndpoint(
+    'callout:OpenWeather_API/data/2.5/weather?q='
+    + EncodingUtil.urlEncode(city, 'UTF-8')
+    + '&appid=' + apiKey
+);
+```
+
+
+nstead of hardcoding the API key in Apex:
+
+Add API Key as Custom Header
+
+In Named Credential:
+
+Go To:
+
+Named Credential → Custom Headers → New
+
+Header Name	Value
+x-api-key	YOUR_API_KEY
+
+But OpenWeather mainly expects:
+
+appid=API_KEY
+
 
 ### Step 3 – Queueable Apex Callout & Wrppaer Class
 
