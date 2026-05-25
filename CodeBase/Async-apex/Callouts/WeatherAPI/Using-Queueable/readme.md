@@ -59,26 +59,23 @@ Authentication| No Authentication (demo)
 
 Save.
 
-Step 3 – Queueable Apex Callout
+### Step 3 – Queueable Apex Callout & Wrppaer Class
 
 Queueable is recommended because triggers should not perform synchronous callouts.
 
-WeatherQueueable.cls
+|Queuable class| WeatherQueueable.cls|
+|---|---|
+|Wrapper class|WeatherResponse.cls|
 
 
 ### Step 4 – Account Trigger
 AccountTrigger.trigger
-trigger AccountTrigger on A
-
 
 ### Step 5 – Mock Callout Class
 WeatherMock.cls
 
-
-
 ### Step 6 – Test Class
 WeatherQueueableTest.cls
-
 
 
 ## Process:
