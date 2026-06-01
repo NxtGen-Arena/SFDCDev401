@@ -62,7 +62,7 @@
         </apex:tab>
         
         <!-- Tab for Lists -->
-        <apex:tab label="Hotel Records" name="tablistHotels">
+        <apex:tab label="Account Records" name="tablistHotels">
             <apex:form >
                 <apex:pageblock >
                 
@@ -82,7 +82,7 @@
                 </apex:pageblock>
             
                
-                 <apex:pageblock title="Hotels List">
+                 <apex:pageblock title="Accounts List">
                  
                      <apex:pageBlockButtons >
                          <apex:commandButton value="Save" action="{!save}"/>
