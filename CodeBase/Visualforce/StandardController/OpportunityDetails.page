@@ -1,0 +1,20 @@
+<apex:page standardController="Opportunity">
+
+    <apex:pageblock title="Opportunity Details">
+        <apex:pageBlockSection showHeader="true" title="Opportunity Information">
+            <apex:outputField value="{!Opportunity.OwnerId}" />
+            <apex:outputField value="{!Opportunity.AccountId}" />
+            <apex:outputField value="{!Opportunity.Amount}" />
+            <apex:outputField value="{!Opportunity.ExpectedRevenue}" />
+            <apex:outputField value="{!Opportunity.CloseDate}" />
+            <apex:outputField value="{!Opportunity.Type}" />
+        </apex:pageBlockSection>
+
+        <apex:pageBlockSection showHeader="true" title="Other Information">
+            <apex:outputField value="{!Opportunity.StageName}" />
+            <apex:outputField value="{!Opportunity.Probability}" />
+            <apex:outputField value="{!Opportunity.Lost_Reason__c}" />
+        </apex:pageBlockSection>
+    </apex:pageblock>
+
+</apex:page>
