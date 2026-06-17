@@ -39,3 +39,63 @@ Only needed for external HTTP callouts.For internal Salesforce URLs (like callou
 
 
 <img width="1366" height="1020" alt="image" src="https://github.com/user-attachments/assets/5e703cab-4571-47dd-b63f-8ae52d783d12" />
+
+##Step 5: Implement schedulable class
+
+```
+global class CountryBatchScheduler
+implements Schedulable {
+
+    global void execute(
+        SchedulableContext sc
+    ) {
+
+        Database.executeBatch(
+            new CountryAPICalloutBatch(),
+            50
+        );
+    }
+}
+```
+
+##step 6: schedule a class
+
+### Schedule From UI
+Setup
+ → Apex Classes
+ → Schedule Apex
+
+Select:
+
+Job Name: Country API Sync
+
+Class: CountryBatchScheduler
+
+Frequency: Daily
+
+Time:01:00 AM
+
+### Schedule Using Apex
+
+```
+String cronExp =
+'0 0 1 * * ?';
+
+System.schedule(
+    'Country API Sync',
+    cronExp,
+    new CountryBatchScheduler()
+);
+```
+
+### Execute Manually
+
+Anonymous Apex:
+
+```
+Database.executeBatch(
+    new CountryAPICalloutBatch(),
+    50
+);
+```
+
