@@ -1,0 +1,26 @@
+<template>
+
+<lightning-card title="Available Courses">
+
+<div class="slds-p-around_medium">
+
+<template for:each={courses} for:item="course">
+
+<div key={course.id}
+class="courseCard">
+
+<h3>{course.name}</h3>
+
+<p>{course.duration}</p>
+
+<p>Trainer : {course.trainer}</p>
+
+</div>
+
+</template>
+
+</div>
+
+</lightning-card>
+
+</template>
