@@ -1,0 +1,19 @@
+<template>
+
+<lightning-card title="Today's Tasks">
+
+<template for:each={tasks}
+for:item="task">
+
+<p key={task.id}>{task.name}</p>
+
+</template>
+
+<lightning-button
+label="Add Task"
+onclick={addTask}>
+</lightning-button>
+
+</lightning-card>
+
+</template>
