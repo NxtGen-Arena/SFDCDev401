@@ -1,0 +1,27 @@
+<template>
+
+<lightning-card title="Training Institutes">
+
+<template if:true={institutes.data}>
+
+<template for:each={institutes.data}
+for:item="account">
+
+<div key={account.Id}
+class="card">
+
+<p>{account.Name}</p>
+
+<p>{account.Type}</p>
+
+<p>{account.Phone}</p>
+
+</div>
+
+</template>
+
+</template>
+
+</lightning-card>
+
+</template>
