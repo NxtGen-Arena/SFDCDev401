@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Contact Quick View" icon-name="standard:contact">
+        <div class="slds-p-horizontal_medium slds-p-bottom_medium">
+            <lightning-record-form
+                record-id={recordId}
+                object-api-name={objectApiName}
+                fields={fields}
+                columns="2"
+                mode="edit">
+            </lightning-record-form>
+        </div>
+    </lightning-card>
+</template>

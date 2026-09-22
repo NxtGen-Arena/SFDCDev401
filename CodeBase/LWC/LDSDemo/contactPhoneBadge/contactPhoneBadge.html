@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Shared Cache Badge" icon-name="standard:call">
+        <div class="slds-p-around_medium">
+            <template if:true={contact.data}>
+                <span class="slds-badge slds-badge_lightest slds-text-heading_small">
+                    📞 {phone}
+                </span>
+            </template>
+            <template if:true={contact.error}>
+                <p class="slds-text-color_error">Error loading record.</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
