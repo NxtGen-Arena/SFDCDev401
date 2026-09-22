@@ -1,27 +1,53 @@
 <template>
+    <lightning-card title="Training Institute Directory" icon-name="standard:account">
 
-<lightning-card title="Training Institutes">
+        <!-- Wire with Parameter -->
+        <div class="slds-p-around_medium">
+            <lightning-combobox
+                label="Select Industry"
+                value={selectedIndustry}
+                options={IndustryOptions}
+                onchange={handleIndustryChange}>
+            </lightning-combobox>
+        </div>
 
-<template if:true={institutes.data}>
+        <!-- All Institutes -->
+        <div class="slds-p-around_medium">
+            <h3 class="slds-text-heading_small">All Institutes</h3>
 
-<template for:each={institutes.data}
-for:item="account">
+            <template if:true={institutes.data}>
+                <template for:each={institutes.data} for:item="inst">
+                    <p key={inst.Id}>
+                        {inst.Name} - {inst.BillingCity}
+                    </p>
+                </template>
+            </template>
 
-<div key={account.Id}
-class="card">
+            <template if:true={institutes.error}>
+                <p>Error loading institutes.</p>
+            </template>
+        </div>
 
-<p>{account.Name}</p>
+        <hr/>
 
-<p>{account.Type}</p>
+        <!-- Filtered Institutes -->
+        <div class="slds-p-around_medium">
+            <h3 class="slds-text-heading_small">
+                Institutes in {selectedIndustry}
+            </h3>
 
-<p>{account.Phone}</p>
+            <template if:true={filteredInstitutes.data}>
+                <template for:each={filteredInstitutes.data} for:item="inst">
+                    <p key={inst.Id}>
+                        {inst.Name} - {inst.BillingCity}
+                    </p>
+                </template>
+            </template>
 
-</div>
+            <template if:true={filteredInstitutes.error}>
+                <p>No institutes found.</p>
+            </template>
+        </div>
 
-</template>
-
-</template>
-
-</lightning-card>
-
+    </lightning-card>
 </template>
