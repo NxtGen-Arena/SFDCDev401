@@ -21,7 +21,7 @@ export default class InstituteList extends LightningElement {
     filteredInstitutes;
 
     // Handle dropdown value change
-    handleCityChange(event) {
+    handleIndustryChange(event) {
         this.selectedIndustry = event.target.value;
     }
 
