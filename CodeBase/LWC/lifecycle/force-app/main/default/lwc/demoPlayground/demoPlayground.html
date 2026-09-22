@@ -1,0 +1,47 @@
+<template>
+    <div class="slds-p-around_medium">
+        <h1 class="slds-text-heading_large slds-m-bottom_medium">
+            LWC Concepts Playground
+        </h1>
+
+        <!-- Base component: lightning-input (built-in label, validation,
+             SLDS form styling — no manual <label> wiring needed) -->
+        <lightning-input
+            label="Your name"
+            value={name}
+            onchange={handleNameChange}
+            class="slds-m-bottom_small"
+        ></lightning-input>
+        <p class="slds-m-bottom_medium">{greeting}</p>
+
+        <!-- Base component: lightning-button. Clicking it toggles whether
+             lifecycleLogger is in the template at all — mounting and
+             unmounting a component is exactly what fires
+             connectedCallback / disconnectedCallback. -->
+        <lightning-button
+            label={toggleButtonLabel}
+            onclick={toggleLogger}
+            variant="brand"
+            class="slds-m-bottom_medium"
+        ></lightning-button>
+
+        <template if:true={showLogger}>
+            <c-lifecycle-logger></c-lifecycle-logger>
+        </template>
+
+        <!-- Slots demo: expandableSection receives a default slot
+             (the two <p> tags) and a named "actions" slot (the icon
+             button), and decides where each one renders. -->
+        <c-expandable-section title="More details" class="slds-m-top_medium">
+            <p>This paragraph is passed into the default slot.</p>
+            <p>Anything without a slot="..." attribute lands here.</p>
+            <div slot="actions">
+                <lightning-button-icon
+                    icon-name="utility:refresh"
+                    alternative-text="Refresh"
+                    title="Refresh"
+                ></lightning-button-icon>
+            </div>
+        </c-expandable-section>
+    </div>
+</template>

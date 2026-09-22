@@ -1,0 +1,37 @@
+<template>
+    <div class="slds-box slds-box_x-small slds-m-bottom_medium">
+        <div class="slds-grid slds-grid_align-spread slds-grid_vertical-align-center">
+            <!-- Native <button> — already keyboard/screen-reader friendly,
+                 no extra role/tabindex needed like a clickable <div> would. -->
+            <button
+                type="button"
+                class="slds-button slds-button_reset slds-grid slds-grid_vertical-align-center"
+                onclick={toggleOpen}
+                aria-expanded={toggleAriaExpanded}
+            >
+                <lightning-icon
+                    icon-name={sectionIconName}
+                    size="x-small"
+                    class="slds-m-right_x-small"
+                ></lightning-icon>
+                <span class="slds-text-heading_small">{title}</span>
+            </button>
+
+            <!-- Named slot: the parent targets this exact spot with
+                 slot="actions" on its markup. -->
+            <div class="slds-shrink-none">
+                <slot name="actions"></slot>
+            </div>
+        </div>
+
+        <!-- if:true directive controls whether the slotted content is
+             rendered at all -->
+        <template if:true={isOpen}>
+            <div class="slds-m-top_small">
+                <!-- Default slot: anything the parent puts inside this
+                     component WITHOUT a slot="..." attribute lands here. -->
+                <slot></slot>
+            </div>
+        </template>
+    </div>
+</template>

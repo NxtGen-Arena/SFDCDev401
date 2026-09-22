@@ -1,0 +1,27 @@
+<template>
+    <!-- Base component: lightning-card gives free SLDS card chrome,
+         a title slot, and an icon — no custom CSS required. -->
+    <lightning-card title="Lifecycle Hook Log" icon-name="utility:clock">
+        <div class="slds-p-horizontal_medium slds-p-bottom_medium">
+            <!-- if:true / if:false directive -->
+            <template if:true={hasLogs}>
+                <ul class="slds-has-dividers_around-space">
+                    <!-- for:each directive — key is required on the root element -->
+                    <template for:each={logs} for:item="log">
+                        <li key={log.id} class="slds-item slds-p-vertical_x-small">
+                            <span class="slds-text-title_bold">{log.hook}</span>
+                            <span class="slds-text-body_small slds-text-color_weak">
+                                — {log.message}
+                            </span>
+                        </li>
+                    </template>
+                </ul>
+            </template>
+            <template if:false={hasLogs}>
+                <p class="slds-text-color_weak slds-text-body_small">
+                    No hooks fired yet.
+                </p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
