@@ -1,0 +1,124 @@
+<template>
+    <lightning-card title="querySelector in LWC — Live Demo" icon-name="custom:custom63">
+
+        <!-- ============================================================
+             1. BASIC single-element querySelector (by tag)
+             Purpose: grab one known element after render, e.g. to focus it.
+        ============================================================= -->
+        <div class="slds-p-around_medium slds-border_bottom">
+            <h3 class="slds-text-heading_small slds-m-bottom_small">
+                1. Basic querySelector — focus a single field by tag
+            </h3>
+            <lightning-input
+                label="Email"
+                type="email"
+                value={email}
+                onchange={handleEmailChange}>
+            </lightning-input>
+            <lightning-button
+                class="slds-m-top_small"
+                label="Focus Email Field"
+                onclick={handleFocusEmail}>
+            </lightning-button>
+        </div>
+
+        <!-- ============================================================
+             2. Selecting by CLASS
+             Purpose: distinguish between same-tag elements.
+        ============================================================= -->
+        <div class="slds-p-around_medium slds-border_bottom">
+            <h3 class="slds-text-heading_small slds-m-bottom_small">
+                2. Class selector — highlight one field among several
+            </h3>
+            <lightning-input class="first-name-field slds-m-bottom_x-small" label="First Name"></lightning-input>
+            <lightning-input class="last-name-field" label="Last Name"></lightning-input>
+            <lightning-button
+                class="slds-m-top_small"
+                label="Highlight Last Name"
+                onclick={handleHighlightLastName}>
+            </lightning-button>
+        </div>
+
+        <!-- ============================================================
+             3. Selecting by data-* attribute inside a for:each list
+             Purpose: target one row's element in a dynamically rendered list.
+        ============================================================= -->
+        <div class="slds-p-around_medium slds-border_bottom">
+            <h3 class="slds-text-heading_small slds-m-bottom_small">
+                3. data-id selector — target one row in a list
+            </h3>
+            <template for:each={contacts} for:item="con">
+                <div key={con.id} class="slds-grid slds-grid_vertical-align-center slds-m-bottom_x-small">
+                    <div class="slds-col slds-size_2-of-3">
+                        <lightning-input
+                            data-id={con.id}
+                            label={con.name}
+                            value={con.email}>
+                        </lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_1-of-3 slds-p-left_small">
+                        <lightning-button
+                            label="Focus this row"
+                            data-id={con.id}
+                            onclick={handleFocusRow}>
+                        </lightning-button>
+                    </div>
+                </div>
+            </template>
+        </div>
+
+        <!-- ============================================================
+             4. querySelectorAll — validate every field in one pass
+             Purpose: classic "validate before Save" pattern.
+        ============================================================= -->
+        <div class="slds-p-around_medium slds-border_bottom">
+            <h3 class="slds-text-heading_small slds-m-bottom_small">
+                4. querySelectorAll — validate all required fields at once
+            </h3>
+            <lightning-input class="validated-input" label="Full Name" required></lightning-input>
+            <lightning-input class="validated-input slds-m-top_x-small" label="Phone" type="tel" required></lightning-input>
+            <lightning-button
+                class="slds-m-top_small"
+                variant="brand"
+                label="Validate All Fields"
+                onclick={handleValidateAll}>
+            </lightning-button>
+            <template if:true={validationMessage}>
+                <p class="slds-m-top_small slds-text-color_error">{validationMessage}</p>
+            </template>
+        </div>
+
+        <!-- ============================================================
+             5. lwc:ref — modern alternative to querySelector
+             Purpose: single, known element — faster, no selector typos.
+        ============================================================= -->
+        <div class="slds-p-around_medium slds-border_bottom">
+            <h3 class="slds-text-heading_small slds-m-bottom_small">
+                5. lwc:ref — the modern replacement for single-element querySelector
+            </h3>
+            <lightning-input lwc:ref="refDemoInput" label="Try lwc:ref"></lightning-input>
+            <lightning-button
+                class="slds-m-top_small"
+                label="Focus via this.refs"
+                onclick={handleFocusViaRef}>
+            </lightning-button>
+        </div>
+
+        <!-- ============================================================
+             6. Parent calling a child's @api method via querySelector
+             Purpose: imperative parent -> child communication.
+        ============================================================= -->
+        <div class="slds-p-around_medium">
+            <h3 class="slds-text-heading_small slds-m-bottom_small">
+                6. Parent → child imperative call (querySelector on a custom element)
+            </h3>
+            <c-child-focus-demo></c-child-focus-demo>
+            <lightning-button
+                class="slds-m-top_small"
+                label="Focus Child's Input"
+                onclick={handleFocusChild}>
+            </lightning-button>
+        </div>
+
+    </lightning-card>
+</template>

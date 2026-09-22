@@ -1,0 +1,10 @@
+<template>
+    <div class="slds-box slds-theme_shade slds-m-top_small">
+        <p class="slds-text-body_small slds-m-bottom_x-small">
+            I'm a child component. My input can only be focused by the parent
+            calling my public <code>focusChildInput()</code> method — the parent
+            can never reach into my shadow DOM directly with querySelector.
+        </p>
+        <lightning-input lwc:ref="childInput" label="Child Component Input"></lightning-input>
+    </div>
+</template>
