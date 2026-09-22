@@ -1,0 +1,41 @@
+<template>
+    <lightning-card title="Contact List (Imperative Call)">
+        <div class="slds-var-p-around_medium">
+
+            <!-- Button to trigger Apex call -->
+            <lightning-button variant="brand" label="Load Contacts" onclick={handleLoadContacts} disabled={isLoading}>
+            </lightning-button>
+
+            <!-- Show spinner when loading -->
+            <template if:true={isLoading}>
+                <div class="slds-var-m-top_medium">
+                    <lightning-spinner size="medium"></lightning-spinner>
+                </div>
+            </template>
+
+            <!-- Show list of contacts -->
+            <template if:true={contacts}>
+                <div class="slds-var-m-top_medium">
+                    <lightning-layout multiple-rows>
+                        <template for:each={contacts} for:item="contact">
+                            <lightning-layout-item size="12" padding="around-small" key={contact.Id}>
+                                <div class="slds-box slds-box_xx-small">
+                                    <p><strong>Name:</strong> {contact.Name}</p>
+                                    <p><strong>Email:</strong> {contact.Email}</p>
+                                    <p><strong>Phone:</strong> {contact.Phone}</p>
+                                </div>
+                            </lightning-layout-item>
+                        </template>
+                    </lightning-layout>
+                </div>
+            </template>
+
+            <!-- Show error message -->
+            <template if:true={error}>
+                <div class="slds-var-m-top_medium slds-text-color_error">
+                    {error.body.message}
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>
