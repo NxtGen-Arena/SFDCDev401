@@ -1,0 +1,12 @@
+{
+  "name": "lwc-concepts-demo",
+  "private": true,
+  "scripts": {
+    "test:unit": "sfdx-lwc-jest",
+    "test:unit:watch": "sfdx-lwc-jest --watch",
+    "test:unit:coverage": "sfdx-lwc-jest --coverage"
+  },
+  "devDependencies": {
+    "@salesforce/sfdx-lwc-jest": "^5.0.0"
+  }
+}
