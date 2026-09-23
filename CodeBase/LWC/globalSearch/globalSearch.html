@@ -1,0 +1,92 @@
+<template>
+    <lightning-card title="Global Search — SOSL + LDS" icon-name="standard:search">
+
+        <div class="slds-p-horizontal_medium slds-p-bottom_medium">
+
+            <!-- Object picker -->
+            <div class="slds-grid slds-gutters slds-m-bottom_small">
+                <div class="slds-col slds-size_1-of-3">
+                    <lightning-combobox
+                        label="Search in"
+                        value={selectedObject}
+                        options={objectOptions}
+                        onchange={handleObjectChange}>
+                    </lightning-combobox>
+                </div>
+
+                <!-- Search input -->
+                <div class="slds-col slds-size_2-of-3">
+                    <lightning-input
+                        type="search"
+                        label={searchLabel}
+                        placeholder="Type at least 2 characters..."
+                        onkeyup={handleSearchTermChange}>
+                    </lightning-input>
+                </div>
+            </div>
+
+            <!-- Loading spinner -->
+            <template if:true={isLoading}>
+                <lightning-spinner alternative-text="Searching..." size="small"></lightning-spinner>
+            </template>
+
+            <!-- Error -->
+            <template if:true={hasError}>
+                <div class="slds-text-color_error slds-p-vertical_small">
+                    {errorMessage}
+                </div>
+            </template>
+
+            <!-- Results table -->
+            <template if:true={hasResults}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={pagedRecords}
+                    columns={columns}
+                    onrowaction={handleRowAction}
+                    hide-checkbox-column>
+                </lightning-datatable>
+
+                <!-- Pagination bar -->
+                <div class="slds-grid slds-grid_align-spread slds-p-top_small slds-p-horizontal_x-small">
+                    <div class="slds-text-body_small slds-text-color_weak">
+                        Showing {rangeStart}–{rangeEnd} of {totalRecords}
+                    </div>
+                    <div class="slds-button-group">
+                        <lightning-button
+                            label="Previous"
+                            icon-name="utility:chevronleft"
+                            disabled={isFirstPage}
+                            onclick={handlePrevious}>
+                        </lightning-button>
+                        <span class="slds-p-horizontal_small slds-text-body_small slds-align-middle">
+                            Page {currentPage} of {totalPages}
+                        </span>
+                        <lightning-button
+                            label="Next"
+                            icon-name="utility:chevronright"
+                            icon-position="right"
+                            disabled={isLastPage}
+                            onclick={handleNext}>
+                        </lightning-button>
+                    </div>
+                </div>
+            </template>
+
+            <!-- No results -->
+            <template if:true={showNoResults}>
+                <div class="slds-text-align_center slds-text-color_weak slds-p-vertical_medium">
+                    No {searchLabel} found for "{lastSearchedTerm}".
+                </div>
+            </template>
+
+            <!-- Prompt when search term is too short / empty -->
+            <template if:true={showPrompt}>
+                <div class="slds-text-align_center slds-text-color_weak slds-p-vertical_medium">
+                    Start typing at least 2 characters to search {objectPluralLabel}.
+                </div>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>
